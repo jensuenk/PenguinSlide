@@ -1,0 +1,7 @@
+﻿
+namespace PenguinSlide
+{
+    class EndState
+    {
+    }
+}
