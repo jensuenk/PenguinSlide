@@ -17,7 +17,7 @@ namespace PenguinSlide
             Vector2 playerPosition = new Vector2();
 
             Rectangle playerCollisonRectangle = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 144, playerTexture.Height);
-            player = new Player(playerTexture, playerCollisonRectangle, playerPosition, control);
+            player = new Player(playerTexture, playerCollisonRectangle, playerPosition, 0.8F, control);
         }
 
         public override void Update(GameTime gameTime)

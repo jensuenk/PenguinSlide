@@ -9,12 +9,13 @@ namespace PenguinSlide
         private Rectangle rectangle;
         private Control control;
         private Vector2 position;
+        private float scale;
 
         public Rectangle CollisionRectangle { get; set; }
         private Animation currentAnimation;
         private SpriteEffects spriteEffects;
         private Vector2 velocity;
-        private bool isMoving, isJumping, isFacingRight, isSliding;
+        private bool isJumping, isFacingRight, isSliding;
 
         Animation animationRun = new Animation();
         Animation animationIdle = new Animation();
@@ -25,12 +26,13 @@ namespace PenguinSlide
         Animation animationHurt = new Animation();
         Animation animationDie = new Animation();
 
-        public Player(Texture2D texture, Rectangle rectangle, Vector2 position, Control control)
+        public Player(Texture2D texture, Rectangle rectangle, Vector2 position, float scale, Control control)
         {
             this.texture = texture;
             this.rectangle = rectangle;
-            this.control = control;
             this.position = position;
+            this.scale = scale;
+            this.control = control;
             CreateAnimation();
         }
 
@@ -99,6 +101,7 @@ namespace PenguinSlide
                 }
             }
 
+
             if (control.Idle)
             {
                 currentAnimation = animationIdle;
@@ -129,6 +132,10 @@ namespace PenguinSlide
                 velocity.Y = 0;
                 isJumping = false;
             }
+            if (velocity.Y != 0)
+            {
+                currentAnimation = animationJump;
+            }
 
             rectangle = new Rectangle((int)position.X, (int)position.Y, currentAnimation.CurrentFrame.SourceRectangle.Width, currentAnimation.CurrentFrame.SourceRectangle.Height);
 
@@ -137,7 +144,7 @@ namespace PenguinSlide
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f, new Vector2(0, 0), 2, spriteEffects, 1);
+            spriteBatch.Draw(texture, position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f, new Vector2(0, 0), scale, spriteEffects, 1);
         }
     }
 }
