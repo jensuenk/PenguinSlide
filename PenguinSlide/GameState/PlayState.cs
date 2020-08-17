@@ -6,11 +6,17 @@ namespace PenguinSlide
 {
     class PlayState : State
     {
+        private LevelManager levelManager;
+        private Level currentLevel;
         private Player player;
         private Control control;
 
         public PlayState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(graphicsDevice, contentManager, game)
         {
+            levelManager = new LevelManager(contentManager);
+            levelManager.GenerateLevels();
+            currentLevel = levelManager.CurrentLevel;
+            
             Texture2D playerTexture = contentManager.Load<Texture2D>("player");
 
             control = new KeyboardControl();
@@ -30,6 +36,7 @@ namespace PenguinSlide
         {
             spriteBatch.Begin();
             player.Draw(spriteBatch);
+            currentLevel.Draw(spriteBatch);
             spriteBatch.End();
         }
     }

@@ -11,6 +11,9 @@
         </e>
         <e p="app.manifest" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Collision" t="Include">
+          <e p="CollisionManager.cs" t="Include" />
+        </e>
         <e p="Content" t="Include">
           <e p="bin" t="Include">
             <e p="DesktopGL" t="Include">
@@ -227,7 +230,7 @@
         <e p="Icon.ico" t="Include" />
         <e p="Level" t="Include">
           <e p="Level.cs" t="Include" />
-          <e p="Map.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
         </e>
         <e p="Microsoft.Xna.Framework.Content.ContentTypeReader" t="Include" />
         <e p="obj" t="ExcludeRecursive">
