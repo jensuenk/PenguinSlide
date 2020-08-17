@@ -3,12 +3,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace PenguinSlide
 {
-    class Player : Entity, ICollidable, IControllable
+    public class Player : Entity, ICollidable, IControllable
     {
         private Texture2D texture;
-        private Rectangle rectangle;
         private Control control;
         private Vector2 position;
+        private Vector2 oldPosition;
         private float scale;
 
         public Rectangle CollisionRectangle { get; set; }
@@ -16,6 +16,7 @@ namespace PenguinSlide
         private SpriteEffects spriteEffects;
         private Vector2 velocity;
         private bool isJumping, isFacingRight, isSliding;
+        public bool CanMoveLeft, CanMoveRight, CanMoveUp, CanMoveDown;
 
         Animation animationRun = new Animation();
         Animation animationIdle = new Animation();
@@ -29,7 +30,7 @@ namespace PenguinSlide
         public Player(Texture2D texture, Rectangle rectangle, Vector2 position, float scale, Control control)
         {
             this.texture = texture;
-            this.rectangle = rectangle;
+            this.CollisionRectangle = rectangle;
             this.position = position;
             this.scale = scale;
             this.control = control;
@@ -53,14 +54,20 @@ namespace PenguinSlide
         {
             if (control.Right)
             {
-                velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+                if (CanMoveRight)
+                {
+                    velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+                }
 
                 currentAnimation = animationRun;
                 isFacingRight = true;
             }
             else if (control.Left)
             {
-                velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+                if (CanMoveLeft)
+                {
+                    velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+                }
                 
                 currentAnimation = animationRun;
                 isFacingRight = false;
@@ -77,11 +84,17 @@ namespace PenguinSlide
                 }
                 if (isFacingRight)
                 {
-                    velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 2;
+                    if (CanMoveRight)
+                    {
+                        velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 2;
+                    }
                 }
                 else
                 {
-                    velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 2;
+                    if (CanMoveLeft)
+                    {
+                        velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 2;
+                    }
                 }
             }
             else
@@ -94,8 +107,10 @@ namespace PenguinSlide
                 currentAnimation = animationJump;
                 if (!isJumping)
                 {
-                    position.Y -= 5f;
-                    velocity.Y = -20f;
+                    if (CanMoveUp)
+                    {
+                        velocity.Y = -20f;
+                    }
                     currentAnimation = animationJumpIn;
                     isJumping = true;
                 }
@@ -110,10 +125,13 @@ namespace PenguinSlide
 
         public override void Update(GameTime gameTime)
         {
+            oldPosition = position;
+            
             GetInputs(gameTime);
 
             position += velocity;
 
+            
             if (!isFacingRight)
             {
                 spriteEffects = SpriteEffects.FlipHorizontally;
@@ -125,26 +143,29 @@ namespace PenguinSlide
 
             if (velocity.Y < 10)
             {
-                velocity.Y += 0.6f;
+                if (CanMoveDown)
+                {
+                    velocity.Y += 0.6f;
+                }
+                else
+                {
+                    isJumping = false;
+                }
             }
-            if (position.Y > 500)
-            {
-                velocity.Y = 0;
-                isJumping = false;
-            }
+
             if (velocity.Y != 0)
             {
                 currentAnimation = animationJump;
             }
 
-            rectangle = new Rectangle((int)position.X, (int)position.Y, currentAnimation.CurrentFrame.SourceRectangle.Width, currentAnimation.CurrentFrame.SourceRectangle.Height);
+            CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, currentAnimation.CurrentFrame.SourceRectangle.Width, currentAnimation.CurrentFrame.SourceRectangle.Height);
 
             currentAnimation.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f, new Vector2(0, 0), scale, spriteEffects, 1);
+            spriteBatch.Draw(texture, new Vector2(CollisionRectangle.X,CollisionRectangle.Y), currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f, new Vector2(0, 0), scale, spriteEffects, 1);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace PenguinSlide
 {
-    interface ICollidable
+    public interface ICollidable
     {
         Rectangle CollisionRectangle { get; set; }
     }
