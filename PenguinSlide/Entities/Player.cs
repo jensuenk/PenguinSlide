@@ -20,7 +20,7 @@ namespace PenguinSlide.Entities
         private readonly Control control;
 
         private Animation currentAnimation;
-        private bool isJumping, isFacingRight;
+        private bool isJumping, isFacingRight = true;
         private readonly float scale;
         private Vector2 speed;
         private SpriteEffects spriteEffects;
@@ -90,10 +90,8 @@ namespace PenguinSlide.Entities
             if (control.Idle) currentAnimation = animationIdle;
 
             if (velocity.Y != 0) currentAnimation = animationJump;
-            if (!isFacingRight)
-                spriteEffects = SpriteEffects.FlipHorizontally;
-            else
-                spriteEffects = SpriteEffects.None;
+            
+            spriteEffects = !isFacingRight ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
         }
 
         private void HandleGravity()

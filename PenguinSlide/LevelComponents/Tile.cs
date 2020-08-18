@@ -4,21 +4,10 @@ using PenguinSlide.Collision;
 
 namespace PenguinSlide.LevelComponents
 {
-    public class Tile : ICollidable
+    public class Tile : Component
     {
-        private readonly Texture2D texture;
-
-        public Tile(Texture2D texture, Rectangle rectangle)
+        public Tile(Texture2D texture, Rectangle rectangle) : base(texture, rectangle)
         {
-            this.texture = texture;
-            CollisionRectangle = rectangle;
-        }
-
-        public Rectangle CollisionRectangle { get; set; }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(texture, CollisionRectangle, Color.White);
         }
     }
 }

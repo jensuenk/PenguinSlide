@@ -9,26 +9,22 @@ namespace PenguinSlide.LevelComponents
     {
         private readonly ContentManager contentManager;
         private readonly int[,] map;
-        private int width;
-        private readonly int height;
         private readonly int size;
-        private readonly int windowHeight = 1080;
-        private readonly int windowWidth = 1920;
+        public Rectangle Bounds { get; }
 
-        public Level(ContentManager contentManager, int[,] map)
+        public Level(ContentManager contentManager, Viewport viewport, int[,] map)
         {
             this.contentManager = contentManager;
             this.map = map;
-            width = windowWidth / map.GetLength(1);
-            height = windowHeight / map.GetLength(0);
-            size = height;
+            Bounds = viewport.Bounds;
+            size = viewport.Height / map.GetLength(0);
             PlayerSize = size;
             Generate();
         }
 
         public Vector2 PlayerLocation { get; private set; }
         public int PlayerSize { get; }
-        public List<Tile> Tiles { get; } = new List<Tile>();
+        public List<Component> Components { get; } = new List<Component>();
 
         private void Generate()
         {
@@ -39,11 +35,39 @@ namespace PenguinSlide.LevelComponents
                 switch (number)
                 {
                     case 1:
-                        Tiles.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_ground_00_single"),
-                            new Rectangle(x * size, y * size, size, size)));
+                        PlayerLocation = new Vector2(x * size, y * size);
                         break;
                     case 2:
-                        PlayerLocation = new Vector2(x * size, y * size);
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_ground_00_single"),
+                            new Rectangle(x * size, y * size, size, size)));
+                        break;
+                    case 3:
+                        Components.Add(new Star(contentManager.Load<Texture2D>("star"),
+                            new Rectangle(x * size, y * size, size, size)));
+                        break;
+                    case 4:
+                        Components.Add(new Spike(contentManager.Load<Texture2D>("spikes"),
+                            new Rectangle(x * size, y * size + size / 2, size, size / 2)));
+                        break;
+                    case 5:
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/"),
+                            new Rectangle(x * size, y * size, size, size)));
+                        break;
+                    case 6:
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/"),
+                            new Rectangle(x * size, y * size, size, size)));
+                        break;
+                    case 7:
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_snow_1_left"),
+                            new Rectangle(x * size, y * size, size, size)));
+                        break;
+                    case 8:
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_snow_1_mid_1"),
+                            new Rectangle(x * size, y * size, size, size)));
+                        break;
+                    case 9:
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_snow_1_right"),
+                            new Rectangle(x * size, y * size, size, size)));
                         break;
                 }
             }
@@ -51,7 +75,7 @@ namespace PenguinSlide.LevelComponents
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (var tile in Tiles) tile.Draw(spriteBatch);
+            foreach (var component in Components) component.Draw(spriteBatch);
         }
     }
 }

@@ -22,8 +22,10 @@ namespace PenguinSlide.Collision
             var canMoveRight = true;
             var canMoveDown = true;
 
-            foreach (var tile in level.Tiles)
+            foreach (var tile in level.Components)
             {
+                if (tile is ICollectable || tile is IDamageable)
+                    continue;
                 if (canMoveLeft)
                     canMoveLeft = !IsTouchingRight(tile.CollisionRectangle);
                 if (canMoveUp)
@@ -58,18 +60,20 @@ namespace PenguinSlide.Collision
 
         private bool IsTouchingRight(Rectangle rectangle)
         {
-            return movable.CollisionRectangle.Left - movable.Speed.X - 1 < rectangle.Right &&
+            return (movable.CollisionRectangle.Left - movable.Speed.X - 1 < rectangle.Right &&
                    movable.CollisionRectangle.Right > rectangle.Right &&
                    movable.CollisionRectangle.Bottom > rectangle.Top &&
-                   movable.CollisionRectangle.Top < rectangle.Bottom;
+                   movable.CollisionRectangle.Top < rectangle.Bottom) || 
+                   movable.CollisionRectangle.Left < level.Bounds.Left;
         }
 
         private bool IsTouchingBottom(Rectangle rectangle)
         {
-            return movable.CollisionRectangle.Top + movable.Speed.Y < rectangle.Bottom &&
+            return (movable.CollisionRectangle.Top + movable.Speed.Y < rectangle.Bottom &&
                    movable.CollisionRectangle.Bottom > rectangle.Bottom &&
                    movable.CollisionRectangle.Right > rectangle.Left &&
-                   movable.CollisionRectangle.Left < rectangle.Right;
+                   movable.CollisionRectangle.Left < rectangle.Right) || 
+                   movable.CollisionRectangle.Top < level.Bounds.Top;
         }
     }
 }

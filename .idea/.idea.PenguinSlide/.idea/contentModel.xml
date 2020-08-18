@@ -26,6 +26,7 @@
                 <e p="bg-icebergs-1.xnb" t="Include" />
                 <e p="bg_winter_trees_1.xnb" t="Include" />
                 <e p="player.xnb" t="Include" />
+                <e p="spikes.xnb" t="Include" />
                 <e p="star.xnb" t="Include" />
                 <e p="tiles" t="Include">
                   <e p="block_ground_00_single.xnb" t="Include" />
@@ -62,6 +63,7 @@
                 </e>
               </e>
               <e p="player.xnb" t="Include" />
+              <e p="spikes.xnb" t="Include" />
               <e p="star.xnb" t="Include" />
               <e p="tiles" t="Include">
                 <e p="block_ground_00_single.xnb" t="Include" />
@@ -111,6 +113,7 @@
                 <e p="bg-icebergs-1.mgcontent" t="Include" />
                 <e p="bg_winter_trees_1.mgcontent" t="Include" />
                 <e p="player.mgcontent" t="Include" />
+                <e p="spikes.mgcontent" t="Include" />
                 <e p="star.mgcontent" t="Include" />
                 <e p="tiles" t="Include">
                   <e p="block_ground_00_single.mgcontent" t="Include" />
@@ -147,6 +150,7 @@
                 </e>
               </e>
               <e p="player.mgcontent" t="Include" />
+              <e p="spikes.mgcontent" t="Include" />
               <e p="star.mgcontent" t="Include" />
               <e p="tiles" t="Include">
                 <e p="block_ground_00_single.mgcontent" t="Include" />
@@ -185,6 +189,7 @@
           </e>
           <e p="object_04_star.png" t="Include" />
           <e p="player.png" t="Include" />
+          <e p="spikes.png" t="Include" />
           <e p="tiles" t="Include">
             <e p="block_ground_00_single.png" t="Include" />
             <e p="block_ground_01_top_left.png" t="Include" />
@@ -239,8 +244,12 @@
         <e p="LevelComponents" t="Include">
           <e p="Background.cs" t="Include" />
           <e p="Camera.cs" t="Include" />
+          <e p="Component.cs" t="Include" />
+          <e p="ICollectable.cs" t="Include" />
+          <e p="IDamageable.cs" t="Include" />
           <e p="Level.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
+          <e p="Spike.cs" t="Include" />
           <e p="Star.cs" t="Include" />
           <e p="Tile.cs" t="Include" />
         </e>

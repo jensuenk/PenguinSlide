@@ -21,7 +21,7 @@ namespace PenguinSlide.GameState
         public PlayState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
             graphicsDevice, contentManager, game)
         {
-            levelManager = new LevelManager(contentManager);
+            levelManager = new LevelManager(contentManager, graphicsDevice.Viewport);
             levelManager.GenerateLevels();
             currentLevel = levelManager.CurrentLevel;
 
@@ -33,7 +33,7 @@ namespace PenguinSlide.GameState
             var playerSpeed = new Vector2(7, 10);
             var playerScale = (float) currentLevel.PlayerSize / 144;
 
-            var playerCollisionRectangle =
+            var playerCollisionRectangle = 
                 new Rectangle((int) playerPosition.X, (int) playerPosition.Y, 144, playerTexture.Height);
             player = new Player(playerTexture, playerCollisionRectangle, playerSpeed, playerScale, control);
 
