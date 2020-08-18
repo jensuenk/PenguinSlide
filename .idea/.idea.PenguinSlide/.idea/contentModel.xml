@@ -13,7 +13,6 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Collision" t="Include">
           <e p="CollisionManager.cs" t="Include" />
-          <e p="RectangleHelper.cs" t="Include" />
         </e>
         <e p="Content" t="Include">
           <e p="bin" t="Include">
@@ -216,7 +215,7 @@
         <e p="Entities" t="Include">
           <e p="Entity.cs" t="Include" />
           <e p="ICollidable.cs" t="Include" />
-          <e p="IControllable.cs" t="Include" />
+          <e p="IMovable.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Star.cs" t="Include" />
           <e p="Tile.cs" t="Include" />

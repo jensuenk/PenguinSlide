@@ -1,4 +1,3 @@
-using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 
@@ -6,29 +5,64 @@ namespace PenguinSlide
 {
     public class CollisionManager
     {
-        public void UpdateCollision(Player player, Level level)
+        private IMovable movable;
+        private Level level;
+        public CollisionManager(IMovable movable, Level level)
         {
-            var canMoveDown = true;
+            this.movable = movable;
+            this.level = level;
+        }
+        public void UpdateCollision()
+        {
             var canMoveLeft = true;
-            var canMoveRight = true;
             var canMoveUp = true;
+            var canMoveRight = true;
+            var canMoveDown = true;
 
             foreach (var tile in level.Tiles)
             {
-                if (canMoveDown)
-                    canMoveDown = !(RectangleHelper.CheckTopCollision(player, tile.CollisionRectangle));
-                if (canMoveRight)
-                    canMoveRight = !(RectangleHelper.CheckLeftCollision(player, tile.CollisionRectangle));
                 if (canMoveLeft)
-                    canMoveLeft = !(RectangleHelper.CheckRightCollision(player, tile.CollisionRectangle));
+                    canMoveLeft = !(IsTouchingRight(tile.CollisionRectangle));
                 if (canMoveUp)
-                    canMoveUp = !(RectangleHelper.CheckBottomCollision(player, tile.CollisionRectangle));
+                    canMoveUp = !(IsTouchingBottom(tile.CollisionRectangle));
+                if (canMoveRight)
+                    canMoveRight = !(IsTouchingLeft(tile.CollisionRectangle));
+                if (canMoveDown)
+                    canMoveDown = !(IsTouchingTop(tile.CollisionRectangle));
             }
             
-            player.CanMoveDown = canMoveDown;
-            player.CanMoveLeft = canMoveLeft;
-            player.CanMoveRight = canMoveRight;
-            player.CanMoveUp = canMoveUp;
+            movable.CanMoveLeft = canMoveLeft;
+            movable.CanMoveUp = canMoveUp;
+            movable.CanMoveRight = canMoveRight;
+            movable.CanMoveDown = canMoveDown;
+        }
+        private bool IsTouchingLeft(Rectangle rectangle)
+        {
+            return (movable.CollisionRectangle.Right + movable.Speed.X + 1 > rectangle.Left &&
+                    movable.CollisionRectangle.Left < rectangle.Left &&
+                    movable.CollisionRectangle.Bottom > rectangle.Top &&
+                    movable.CollisionRectangle.Top < rectangle.Bottom);
+        }
+        private bool IsTouchingTop(Rectangle rectangle)
+        {
+            return (movable.CollisionRectangle.Bottom + movable.Speed.Y + 10 > rectangle.Top &&
+                    movable.CollisionRectangle.Top < rectangle.Top &&
+                    movable.CollisionRectangle.Right > rectangle.Left &&
+                    movable.CollisionRectangle.Left < rectangle.Right);
+        }
+        private bool IsTouchingRight(Rectangle rectangle)
+        {
+            return (movable.CollisionRectangle.Left - movable.Speed.X + 1 < rectangle.Right &&
+                    movable.CollisionRectangle.Right > rectangle.Right &&
+                    movable.CollisionRectangle.Bottom > rectangle.Top &&
+                    movable.CollisionRectangle.Top < rectangle.Bottom);
+        }
+        private bool IsTouchingBottom(Rectangle rectangle)
+        {
+            return (movable.CollisionRectangle.Top + movable.Speed.Y - 1 < rectangle.Bottom &&
+                    movable.CollisionRectangle.Bottom > rectangle.Bottom &&
+                    movable.CollisionRectangle.Right > rectangle.Left &&
+                    movable.CollisionRectangle.Left < rectangle.Right);
         }
     }
 }

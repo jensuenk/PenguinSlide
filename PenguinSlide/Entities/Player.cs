@@ -1,24 +1,29 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PenguinSlide
 {
-    public class Player : Entity, ICollidable, IControllable
+    public class Player : Entity, IMovable
     {
         private Texture2D texture;
         private Control control;
         private Vector2 position;
-        public Vector2 Speed;
+        private Vector2 speed;
+        public Vector2 Speed { 
+            get { return speed; } 
+        }
         private float scale;
         private int airTime;
-
         public Rectangle CollisionRectangle { get; set; }
+        public bool CanMoveLeft { get; set; }
+        public bool CanMoveRight { get; set; }
+        public bool CanMoveUp { get; set; }
+        public bool CanMoveDown { get; set; }
+        
         private Animation currentAnimation;
         private SpriteEffects spriteEffects;
         private Vector2 velocity;
-        private bool isJumping, isFalling, isFacingRight;
-        public bool CanMoveLeft, CanMoveRight, CanMoveUp, CanMoveDown;
+        private bool isJumping, isFacingRight;
 
         Animation animationRun = new Animation();
         Animation animationIdle = new Animation();
@@ -32,9 +37,9 @@ namespace PenguinSlide
         public Player(Texture2D texture, Rectangle rectangle, Vector2 position, Vector2 speed, float scale, Control control)
         {
             this.texture = texture;
-            CollisionRectangle = rectangle;
+            this.CollisionRectangle = rectangle;
             this.position = position;
-            Speed = speed;
+            this.speed = speed;
             this.scale = scale;
             this.control = control;
             CreateAnimation();
@@ -109,7 +114,7 @@ namespace PenguinSlide
         }
         public void HandleGravity()
         {
-            Speed.Y = 10;
+            speed.Y = 10;
             if (!isJumping && CanMoveDown)
             {
 
@@ -123,13 +128,13 @@ namespace PenguinSlide
 
             if (!CanMoveDown)
             {
-                Speed.Y = 0;
+                speed.Y = 0;
                 airTime = 0;
             }
         }
         public void HandleJump()
         {
-            Speed.Y = 10;
+            speed.Y = 10;
 
             if (isJumping && airTime < 25)
             {
@@ -154,7 +159,7 @@ namespace PenguinSlide
         {
             airTime = 0;
             isJumping = false;
-            Speed.Y = 0;
+            speed.Y = 0;
             velocity.Y = 0;
         }
 
@@ -178,5 +183,6 @@ namespace PenguinSlide
         {
             spriteBatch.Draw(texture, position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f, new Vector2(0, 0), scale, spriteEffects, 1);
         }
+
     }
 }

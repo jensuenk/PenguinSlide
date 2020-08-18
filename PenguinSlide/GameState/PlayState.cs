@@ -28,14 +28,14 @@ namespace PenguinSlide
             Rectangle playerCollisonRectangle = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 144, playerTexture.Height);
             player = new Player(playerTexture, playerCollisonRectangle, playerPosition, playerSpeed, 0.5F, control);
             
-            collisionManager = new CollisionManager();
+            collisionManager = new CollisionManager(player, currentLevel);
         }
 
         public override void Update(GameTime gameTime)
         {
             control.Update();
+            collisionManager.UpdateCollision();
             player.Update(gameTime);
-            collisionManager.UpdateCollision(player, currentLevel);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
