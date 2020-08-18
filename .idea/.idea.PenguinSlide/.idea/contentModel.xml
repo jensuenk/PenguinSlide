@@ -4,7 +4,7 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="PenguinSlide" t="IncludeRecursive">
-        <e p="Animation" t="Include">
+        <e p="Animations" t="Include">
           <e p="AnimationCreator.cs" t="Include" />
           <e p="AnimationFrame.cs" t="Include" />
           <e p="Annimation.cs" t="Include" />
@@ -228,7 +228,7 @@
         </e>
         <e p="Icon.bmp" t="Include" />
         <e p="Icon.ico" t="Include" />
-        <e p="Level" t="Include">
+        <e p="Levels" t="Include">
           <e p="Level.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
         </e>

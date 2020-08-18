@@ -2,18 +2,18 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace PenguinSlide
+namespace PenguinSlide.GameState
 {
     public abstract class State
     {
-        protected ContentManager ContentManager;
-        protected GraphicsDevice GraphicsDevice;
-        protected PenguinSlide Game;
+        protected ContentManager contentManager;
+        protected GraphicsDevice graphicsDevice;
+        protected PenguinSlide game;
         public State(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game)
         {
-            this.GraphicsDevice = graphicsDevice;
-            this.ContentManager = contentManager;
-            this.Game = game;
+            this.graphicsDevice = graphicsDevice;
+            this.contentManager = contentManager;
+            this.game = game;
         }
 
         public abstract void Update(GameTime gameTime);

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace PenguinSlide
+namespace PenguinSlide.Entities
 {
     public abstract class Entity
     {

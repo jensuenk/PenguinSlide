@@ -1,7 +1,8 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
+using PenguinSlide.Entities;
+using PenguinSlide.Levels;
 
-namespace PenguinSlide
+namespace PenguinSlide.Collision
 {
     public class CollisionManager
     {

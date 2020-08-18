@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-namespace PenguinSlide
+namespace PenguinSlide.Animations
 {
     public class Animation
     {
@@ -9,19 +9,16 @@ namespace PenguinSlide
         public AnimationFrame CurrentFrame;
         private double xOffset;
         private int speed = 80;
-        private int counter = 0;
-
+        private int counter;
         public Animation()
         {
             frames = new List<AnimationFrame>();
         }
-
         public Animation(int speed)
         {
             this.speed = speed;
             frames = new List<AnimationFrame>();
         }
-
         public void AddFrame(Rectangle rectangle)
         {
             AnimationFrame newFrame = new AnimationFrame()
@@ -32,8 +29,6 @@ namespace PenguinSlide
             frames.Add(newFrame);
             CurrentFrame = frames[0];
         }
-
-
         public void Update(GameTime gameTime)
         {
             xOffset += CurrentFrame.SourceRectangle.Width * gameTime.ElapsedGameTime.Milliseconds / speed;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 
-namespace PenguinSlide
+namespace PenguinSlide.Levels
 {
     public class LevelManager
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Input;
 
-namespace PenguinSlide
+namespace PenguinSlide.Controls
 {
     public class KeyboardControl : Control
     {
@@ -40,14 +40,7 @@ namespace PenguinSlide
             {
                 Slide = false;
             }
-            if (stateKey.GetPressedKeys().Length == 0)
-            {
-                Idle = true;
-            }
-            else
-            {
-                Idle = false;
-            }
+            Idle = stateKey.GetPressedKeys().Length == 0;
         }
     }
 }

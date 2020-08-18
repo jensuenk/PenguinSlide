@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using PenguinSlide.Animations;
+using PenguinSlide.Controls;
 
-namespace PenguinSlide
+namespace PenguinSlide.Entities
 {
     public class Player : Entity, IMovable
     {

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using PenguinSlide.Entities;
 
- namespace PenguinSlide
+namespace PenguinSlide.Levels
 {
     public class Level
     {

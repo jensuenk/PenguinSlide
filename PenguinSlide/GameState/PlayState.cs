@@ -1,9 +1,12 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using PenguinSlide.Collision;
+using PenguinSlide.Controls;
+using PenguinSlide.Entities;
+using PenguinSlide.Levels;
 
-namespace PenguinSlide
+namespace PenguinSlide.GameState
 {
     class PlayState : State
     {

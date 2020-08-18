@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace PenguinSlide
+namespace PenguinSlide.Animations
 {
     public class AnimationFrame
     {

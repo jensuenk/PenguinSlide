@@ -8,14 +8,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a48775f0-d6e9-4418-aa4b-9452ba781eff" name="Default Changelist" comment="Collision + jump working">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a48775f0-d6e9-4418-aa4b-9452ba781eff" name="Default Changelist" comment="Reworked CollisionManager.cs">
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Animation/AnimationCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Animations/AnimationCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Animation/AnimationFrame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Animations/AnimationFrame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Animation/Annimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Animations/Annimation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Collision/RectangleHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Entities/IControllable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Entities/IMovable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Controls/Control.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Controls/Control.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Controls/KeyboardControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Controls/KeyboardControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Entities/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Entities/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Entities/ICollidable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Entities/ICollidable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Entities/IMovable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Entities/IMovable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenguinSlide/Entities/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Entities/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Entities/Star.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Entities/Star.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Entities/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Entities/Tile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Levels/Level.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Levels/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/PenguinSlide.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/PenguinSlide.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,27 +44,32 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Entities/Star.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Entities/Entity.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Controls/KeyboardControl.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Controls/Control.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Animation/Annimation.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Animation/AnimationFrame.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Animation/AnimationCreator.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/GameState/State.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/PenguinSlide.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Entities/Tile.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Entities/IControllable.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Collision/RectangleHelper.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Animation/AnimationCreator.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Animation/AnimationFrame.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Animations/AnimationFrame.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Animations/Annimation.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Animations/AnimationCreator.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Controls/Control.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Controls/KeyboardControl.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Entities/Entity.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Entities/ICollidable.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Entities/IMovable.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Collision/RectangleHelper.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Entities/Player.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Entities/Star.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Entities/Tile.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/GameState/State.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Levels/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Levels/Level.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" />
       </list>
     </option>
   </component>
@@ -104,7 +121,7 @@
       <workItem from="1597614209900" duration="419000" />
       <workItem from="1597652615548" duration="1388000" />
       <workItem from="1597662725598" duration="18146000" />
-      <workItem from="1597740194302" duration="13997000" />
+      <workItem from="1597740194302" duration="14448000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1597580731542</created>
@@ -162,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597752829810</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Reworked CollisionManager.cs">
+      <created>1597756133966</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597756133966</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -189,7 +213,8 @@
     <MESSAGE value="Commit before CollisionManager changes" />
     <MESSAGE value="Broken Jump" />
     <MESSAGE value="Collision + jump working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Collision + jump working" />
+    <MESSAGE value="Reworked CollisionManager.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworked CollisionManager.cs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="744" y="353" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597580889639">
@@ -204,25 +229,25 @@
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
     <state x="1026" y="544" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597578226954" />
-    <state width="1390" height="201" key="GridCell.Tab.0.bottom" timestamp="1597755749624">
+    <state width="2518" height="201" key="GridCell.Tab.0.bottom" timestamp="1597756111029">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1390" height="201" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597755749624" />
+    <state width="2518" height="201" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597756111029" />
     <state width="1750" height="381" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251403" />
-    <state width="1390" height="201" key="GridCell.Tab.0.center" timestamp="1597755749624">
+    <state width="2518" height="201" key="GridCell.Tab.0.center" timestamp="1597756111028">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1390" height="201" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597755749624" />
+    <state width="2518" height="201" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597756111028" />
     <state width="1750" height="381" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251402" />
-    <state width="1390" height="201" key="GridCell.Tab.0.left" timestamp="1597755749623">
+    <state width="2518" height="201" key="GridCell.Tab.0.left" timestamp="1597756111027">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1390" height="201" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597755749623" />
+    <state width="2518" height="201" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597756111027" />
     <state width="1750" height="381" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251401" />
-    <state width="1390" height="201" key="GridCell.Tab.0.right" timestamp="1597755749624">
+    <state width="2518" height="201" key="GridCell.Tab.0.right" timestamp="1597756111028">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1390" height="201" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597755749624" />
+    <state width="2518" height="201" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597756111028" />
     <state width="1750" height="381" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251402" />
     <state width="1390" height="497" key="GridCell.Tab.1.bottom" timestamp="1597750132885">
       <screen x="0" y="23" width="2560" height="1338" />
