@@ -6,76 +6,52 @@ namespace PenguinSlide
 {
     public class CollisionManager
     {
-        public void UpdateCollision(Player player, Level level)
+        
+        public void CheckCollision(Player player, Level currentLevel)
         {
-            player.CanMoveLeft = true;
-            player.CanMoveRight = true;
-            player.CanMoveUp = true;
-            player.CanMoveDown = true;
-            
-            Rectangle playerRectangle = player.CollisionRectangle;
-            foreach (var tile in level.Tiles)
+            CheckPlatformCollision(player, currentLevel);
+        }
+
+
+
+        private void CheckPlatformCollision(Player player, Level level)
+        {
+            bool canMoveDown = true;
+            bool canMoveLeft = true;
+            bool canMoveRight = true;
+            bool canMoveUp = true;
+
+            foreach (Tile block in level.Tiles)
             {
-                if (IsTouchingLeft(playerRectangle, tile.CollisionRectangle, player))
-                {
-                    player.CanMoveLeft = false;
-                }
-                if (IsTouchingRight(playerRectangle, tile.CollisionRectangle, player))
-                {
-                    player.CanMoveRight = false;
-                }
-                if (IsTouchingTop(playerRectangle, tile.CollisionRectangle, player))
-                {
-                    player.CanMoveUp = false;
-                }
-                if (IsTouchingBottom(playerRectangle, tile.CollisionRectangle, player))
-                {
-                    player.CanMoveDown = false;
-                }
-            }
-        }
-        public bool CanMove(ICollidable collidable, Level level)
-        {
-            foreach (var tile in level.Tiles)
-            {
-                if (collidable.CollisionRectangle.Intersects(tile.CollisionRectangle))
-                {
-                    return false;
-                }
+                    if (canMoveDown == true)
+                    {
+                        canMoveDown = !(RectangleHelper.CheckTopCollision(player, block));
+                    }
+
+                    if (canMoveRight == true)
+                    {
+                        canMoveRight = !(RectangleHelper.CheckLeftCollision(player, block));
+                    }
+
+                    if (canMoveLeft == true)
+                    {
+                        canMoveLeft = !(RectangleHelper.CheckRightCollision(player, block));
+                    }
+
+                    if (canMoveUp)
+                    {
+                        canMoveUp = !(RectangleHelper.CheckBottomCollision(player, block));
+                    }
+
+                
             }
 
-            return true;
-        } 
-        private bool IsTouchingLeft(Rectangle rectangle1, Rectangle rectangle2, Player player)
-        {
-            return rectangle1.Right + 1 > rectangle2.Left &&
-                   rectangle1.Left < rectangle2.Left &&
-                   rectangle1.Bottom > rectangle2.Top &&
-                   rectangle1.Top < rectangle2.Bottom;
+            player.CanMoveDown = canMoveDown;
+            player.CanMoveLeft = canMoveLeft;
+            player.CanMoveRight = canMoveRight;
+            player.CanMoveUp = canMoveUp;
+
         }
 
-        private bool IsTouchingRight(Rectangle rectangle1, Rectangle rectangle2, Player player)
-        {
-            return rectangle1.Left - 1 < rectangle2.Right &&
-                   rectangle1.Right > rectangle2.Right &&
-                   rectangle1.Bottom > rectangle2.Top &&
-                   rectangle1.Top < rectangle2.Bottom;
-        }
-
-        private bool IsTouchingTop(Rectangle rectangle1, Rectangle rectangle2, Player player)
-        {
-            return rectangle1.Bottom + 1 > rectangle2.Top &&
-                   rectangle1.Top < rectangle2.Top &&
-                   rectangle1.Right > rectangle2.Left &&
-                   rectangle1.Left < rectangle2.Right;
-        }
-
-        private bool IsTouchingBottom(Rectangle rectangle1, Rectangle rectangle2, Player player)
-        {
-            return rectangle1.Top - 1 < rectangle2.Bottom &&
-                   rectangle1.Bottom > rectangle2.Bottom &&
-                   rectangle1.Right > rectangle2.Left &&
-                   rectangle1.Left < rectangle2.Right;
-        }
     }
 }

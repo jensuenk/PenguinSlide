@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PenguinSlide
@@ -10,11 +11,12 @@ namespace PenguinSlide
         private Vector2 position;
         public Vector2 Speed;
         private float scale;
+        private int airTime;
 
         public Rectangle CollisionRectangle { get; set; }
         private Animation currentAnimation;
         private SpriteEffects spriteEffects;
-        private Vector2 velocity;
+        private Vector2 velocity = new Vector2(0, 0);
         private bool isJumping, isFacingRight;
         public bool CanMoveLeft, CanMoveRight, CanMoveUp, CanMoveDown;
 
@@ -57,7 +59,7 @@ namespace PenguinSlide
             {
                 if (CanMoveRight)
                 {
-                    velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+                    velocity.X = Speed.X;
                 }
                 currentAnimation = animationRun;
                 isFacingRight = true;
@@ -66,13 +68,11 @@ namespace PenguinSlide
             {
                 if (CanMoveLeft)
                 {
-                    velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
+                    velocity.X = -Speed.X;
                 }
                 currentAnimation = animationRun;
                 isFacingRight = false;
             }
-            else velocity.X = 0f;
-            
             if (control.Slide)
             {
                 if (isFacingRight && CanMoveRight)
@@ -86,11 +86,37 @@ namespace PenguinSlide
                 }
                 currentAnimation = animationSlide;
             }
-            if (control.Jump && CanMoveUp && !isJumping)
+            if (control.Jump && CanMoveUp && !isJumping && !CanMoveDown)
             {
-                velocity.Y = -20f;
                 isJumping = true;
                 currentAnimation = animationJump;
+            }
+
+            if (!control.Jump)
+            {
+                isJumping = false;
+            }
+            if (isJumping && airTime < 15 && CanMoveUp)
+            {
+                velocity.Y -= Speed.Y;
+                airTime++;
+            }
+            else
+            {
+                if (!CanMoveUp)
+                {
+                    velocity.Y = 0;
+                }
+                airTime = 0;
+                if (CanMoveDown)
+                {
+                    velocity.Y += Speed.Y;
+                }
+                else
+                {
+                    velocity.Y = 0;
+                }
+                isJumping = false;
             }
             if (control.Idle)
             {
@@ -108,30 +134,19 @@ namespace PenguinSlide
 
         public override void Update(GameTime gameTime)
         {
+            velocity.X = 0;
             Move(gameTime);
-            position += velocity;
 
-            /*
-
-            if (velocity.Y < 10)
-            {
-                if (CanMoveDown)
-                {
-                    velocity.Y += 0.6f;
-                }
-                else
-                {
-                    isJumping = false;
-                }
-            }
 
             if (velocity.Y != 0)
             {
                 currentAnimation = animationJump;
             }
-            */
+            
 
-            CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, currentAnimation.CurrentFrame.SourceRectangle.Width, currentAnimation.CurrentFrame.SourceRectangle.Height);
+            position += velocity;
+            
+            CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, (int)((currentAnimation.CurrentFrame.SourceRectangle.Width - 10) * scale), (int)(currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
             currentAnimation.Update(gameTime);
         }
 

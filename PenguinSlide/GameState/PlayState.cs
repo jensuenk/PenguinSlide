@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -21,11 +22,11 @@ namespace PenguinSlide
             Texture2D playerTexture = contentManager.Load<Texture2D>("player");
 
             control = new KeyboardControl();
-            Vector2 playerPosition = new Vector2(0, 320);
-            Vector2 playerSpeed = new Vector2(7, 0);
+            Vector2 playerPosition = new Vector2(0, 550);
+            Vector2 playerSpeed = new Vector2(7, 1);
 
             Rectangle playerCollisonRectangle = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 144, playerTexture.Height);
-            player = new Player(playerTexture, playerCollisonRectangle, playerPosition, playerSpeed, 0.8F, control);
+            player = new Player(playerTexture, playerCollisonRectangle, playerPosition, playerSpeed, 0.5F, control);
             
             collisionManager = new CollisionManager();
         }
@@ -33,8 +34,9 @@ namespace PenguinSlide
         public override void Update(GameTime gameTime)
         {
             control.Update();
+            //collisionManager.UpdateCollision(player, currentLevel);
             player.Update(gameTime);
-            collisionManager.UpdateCollision(player, currentLevel);
+            collisionManager.CheckCollision(player, currentLevel);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
