@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 
@@ -15,27 +16,25 @@ namespace PenguinSlide
             Rectangle playerRectangle = player.CollisionRectangle;
             foreach (var tile in level.Tiles)
             {
-                if (playerRectangle.Intersects(tile.CollisionRectangle))
-                    player.CanMoveDown = false;
-                if (IsTouchingLeft(playerRectangle, tile.CollisionRectangle))
+                if (IsTouchingLeft(playerRectangle, tile.CollisionRectangle, player))
                 {
                     player.CanMoveLeft = false;
                 }
-                if (IsTouchingRight(playerRectangle, tile.CollisionRectangle))
+                if (IsTouchingRight(playerRectangle, tile.CollisionRectangle, player))
                 {
                     player.CanMoveRight = false;
                 }
-                if (IsTouchingTop(playerRectangle, tile.CollisionRectangle))
+                if (IsTouchingTop(playerRectangle, tile.CollisionRectangle, player))
                 {
                     player.CanMoveUp = false;
                 }
-                if (IsTouchingBottom(playerRectangle, tile.CollisionRectangle))
+                if (IsTouchingBottom(playerRectangle, tile.CollisionRectangle, player))
                 {
                     player.CanMoveDown = false;
                 }
             }
         }
-        public bool canMove(ICollidable collidable, Level level)
+        public bool CanMove(ICollidable collidable, Level level)
         {
             foreach (var tile in level.Tiles)
             {
@@ -47,33 +46,33 @@ namespace PenguinSlide
 
             return true;
         } 
-        private bool IsTouchingLeft(Rectangle rectangle1, Rectangle rectangle2)
+        private bool IsTouchingLeft(Rectangle rectangle1, Rectangle rectangle2, Player player)
         {
-            return rectangle1.Right > rectangle2.Left &&
+            return rectangle1.Right + 1 > rectangle2.Left &&
                    rectangle1.Left < rectangle2.Left &&
                    rectangle1.Bottom > rectangle2.Top &&
                    rectangle1.Top < rectangle2.Bottom;
         }
 
-        private bool IsTouchingRight(Rectangle rectangle1, Rectangle rectangle2)
+        private bool IsTouchingRight(Rectangle rectangle1, Rectangle rectangle2, Player player)
         {
-            return rectangle1.Left < rectangle2.Right &&
+            return rectangle1.Left - 1 < rectangle2.Right &&
                    rectangle1.Right > rectangle2.Right &&
                    rectangle1.Bottom > rectangle2.Top &&
                    rectangle1.Top < rectangle2.Bottom;
         }
 
-        private bool IsTouchingTop(Rectangle rectangle1, Rectangle rectangle2)
+        private bool IsTouchingTop(Rectangle rectangle1, Rectangle rectangle2, Player player)
         {
-            return rectangle1.Bottom > rectangle2.Top &&
+            return rectangle1.Bottom + 1 > rectangle2.Top &&
                    rectangle1.Top < rectangle2.Top &&
                    rectangle1.Right > rectangle2.Left &&
                    rectangle1.Left < rectangle2.Right;
         }
 
-        private bool IsTouchingBottom(Rectangle rectangle1, Rectangle rectangle2)
+        private bool IsTouchingBottom(Rectangle rectangle1, Rectangle rectangle2, Player player)
         {
-            return rectangle1.Top < rectangle2.Bottom &&
+            return rectangle1.Top - 1 < rectangle2.Bottom &&
                    rectangle1.Bottom > rectangle2.Bottom &&
                    rectangle1.Right > rectangle2.Left &&
                    rectangle1.Left < rectangle2.Right;
