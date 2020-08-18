@@ -58,19 +58,25 @@ namespace PenguinSlide.LevelComponents
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                     case 7:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_snow_1_left"),
-                            new Rectangle(x * size, y * size, size, size)));
+                        Components.Add(new Decoration(contentManager.Load<Texture2D>("igloo"),
+                            new Rectangle(x * size, y * size, size * 2, size)));
                         break;
                     case 8:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_snow_1_mid_1"),
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("crate"),
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                     case 9:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_snow_1_right"),
+                        Components.Add(new Decoration(contentManager.Load<Texture2D>("sign_2"),
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                 }
             }
+        }
+
+        public List<Component> getComponentsByType(Component component)
+        {
+            // TODO:
+            return Components;
         }
 
         public void Draw(SpriteBatch spriteBatch)

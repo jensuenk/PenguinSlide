@@ -56,8 +56,8 @@ namespace PenguinSlide.GameState
         {
             spriteBatch.Begin(transformMatrix: camera.Transform);
             background.Draw(spriteBatch);
-            player.Draw(spriteBatch);
             currentLevel.Draw(spriteBatch);
+            player.Draw(spriteBatch);
             spriteBatch.End();
         }
     }

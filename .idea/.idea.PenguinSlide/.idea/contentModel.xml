@@ -17,17 +17,26 @@
         </e>
         <e p="Content" t="Include">
           <e p="bg-icebergs-1.png" t="Include" />
+          <e p="bg_night_1.png" t="Include" />
           <e p="bg_winter_trees_1.png" t="Include" />
           <e p="bin" t="Include">
             <e p="DesktopGL" t="Include">
               <e p="bg-icebergs-1.xnb" t="Include" />
+              <e p="bg_night_1.xnb" t="Include" />
               <e p="bg_winter_trees_1.xnb" t="Include" />
               <e p="Content" t="Include">
                 <e p="bg-icebergs-1.xnb" t="Include" />
+                <e p="bg_night_1.xnb" t="Include" />
                 <e p="bg_winter_trees_1.xnb" t="Include" />
+                <e p="crate.xnb" t="Include" />
+                <e p="crystal.xnb" t="Include" />
+                <e p="igloo.xnb" t="Include" />
                 <e p="player.xnb" t="Include" />
+                <e p="sign_1.xnb" t="Include" />
+                <e p="Sign_2.xnb" t="Include" />
                 <e p="spikes.xnb" t="Include" />
                 <e p="star.xnb" t="Include" />
+                <e p="stone.xnb" t="Include" />
                 <e p="tiles" t="Include">
                   <e p="block_ground_00_single.xnb" t="Include" />
                   <e p="block_ground_01_top_left.xnb" t="Include" />
@@ -61,10 +70,18 @@
                   <e p="block_snow_2_right.xnb" t="Include" />
                   <e p="block_snow_2_single.xnb" t="Include" />
                 </e>
+                <e p="tree_1.xnb" t="Include" />
+                <e p="tree_2.xnb" t="Include" />
               </e>
+              <e p="crate.xnb" t="Include" />
+              <e p="crystal.xnb" t="Include" />
+              <e p="igloo.xnb" t="Include" />
               <e p="player.xnb" t="Include" />
+              <e p="sign_1.xnb" t="Include" />
+              <e p="Sign_2.xnb" t="Include" />
               <e p="spikes.xnb" t="Include" />
               <e p="star.xnb" t="Include" />
+              <e p="stone.xnb" t="Include" />
               <e p="tiles" t="Include">
                 <e p="block_ground_00_single.xnb" t="Include" />
                 <e p="block_ground_01_top_left.xnb" t="Include" />
@@ -98,23 +115,36 @@
                 <e p="block_snow_2_right.xnb" t="Include" />
                 <e p="block_snow_2_single.xnb" t="Include" />
               </e>
+              <e p="tree_1.xnb" t="Include" />
+              <e p="tree_2.xnb" t="Include" />
             </e>
           </e>
           <e p="Content.mgcb" t="Include" />
+          <e p="crate.png" t="Include" />
+          <e p="crystal.png" t="Include" />
+          <e p="igloo.png" t="Include" />
           <e p="obj" t="Include">
             <e p="DesktopGL" t="Include">
               <e p=".mgcontent" t="Include" />
               <e p=".mgstats" t="Include" />
               <e p="bg-icebergs-1.mgcontent" t="Include" />
+              <e p="bg_night_1.mgcontent" t="Include" />
               <e p="bg_winter_trees_1.mgcontent" t="Include" />
               <e p="Content" t="Include">
                 <e p=".mgcontent" t="Include" />
                 <e p=".mgstats" t="Include" />
                 <e p="bg-icebergs-1.mgcontent" t="Include" />
+                <e p="bg_night_1.mgcontent" t="Include" />
                 <e p="bg_winter_trees_1.mgcontent" t="Include" />
+                <e p="crate.mgcontent" t="Include" />
+                <e p="crystal.mgcontent" t="Include" />
+                <e p="igloo.mgcontent" t="Include" />
                 <e p="player.mgcontent" t="Include" />
+                <e p="sign_1.mgcontent" t="Include" />
+                <e p="Sign_2.mgcontent" t="Include" />
                 <e p="spikes.mgcontent" t="Include" />
                 <e p="star.mgcontent" t="Include" />
+                <e p="stone.mgcontent" t="Include" />
                 <e p="tiles" t="Include">
                   <e p="block_ground_00_single.mgcontent" t="Include" />
                   <e p="block_ground_01_top_left.mgcontent" t="Include" />
@@ -148,10 +178,18 @@
                   <e p="block_snow_2_right.mgcontent" t="Include" />
                   <e p="block_snow_2_single.mgcontent" t="Include" />
                 </e>
+                <e p="tree_1.mgcontent" t="Include" />
+                <e p="tree_2.mgcontent" t="Include" />
               </e>
+              <e p="crate.mgcontent" t="Include" />
+              <e p="crystal.mgcontent" t="Include" />
+              <e p="igloo.mgcontent" t="Include" />
               <e p="player.mgcontent" t="Include" />
+              <e p="sign_1.mgcontent" t="Include" />
+              <e p="Sign_2.mgcontent" t="Include" />
               <e p="spikes.mgcontent" t="Include" />
               <e p="star.mgcontent" t="Include" />
+              <e p="stone.mgcontent" t="Include" />
               <e p="tiles" t="Include">
                 <e p="block_ground_00_single.mgcontent" t="Include" />
                 <e p="block_ground_01_top_left.mgcontent" t="Include" />
@@ -185,11 +223,16 @@
                 <e p="block_snow_2_right.mgcontent" t="Include" />
                 <e p="block_snow_2_single.mgcontent" t="Include" />
               </e>
+              <e p="tree_1.mgcontent" t="Include" />
+              <e p="tree_2.mgcontent" t="Include" />
             </e>
           </e>
           <e p="object_04_star.png" t="Include" />
           <e p="player.png" t="Include" />
+          <e p="sign_1.png" t="Include" />
+          <e p="Sign_2.png" t="Include" />
           <e p="spikes.png" t="Include" />
+          <e p="stone.png" t="Include" />
           <e p="tiles" t="Include">
             <e p="block_ground_00_single.png" t="Include" />
             <e p="block_ground_01_top_left.png" t="Include" />
@@ -223,6 +266,8 @@
             <e p="block_snow_2_right.png" t="Include" />
             <e p="block_snow_2_single.png" t="Include" />
           </e>
+          <e p="tree_1.png" t="Include" />
+          <e p="tree_2.png" t="Include" />
         </e>
         <e p="Controls" t="Include">
           <e p="Control.cs" t="Include" />
@@ -245,8 +290,10 @@
           <e p="Background.cs" t="Include" />
           <e p="Camera.cs" t="Include" />
           <e p="Component.cs" t="Include" />
+          <e p="Decoration.cs" t="Include" />
           <e p="ICollectable.cs" t="Include" />
           <e p="IDamageable.cs" t="Include" />
+          <e p="IDecoration.cs" t="Include" />
           <e p="Level.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
           <e p="Spike.cs" t="Include" />

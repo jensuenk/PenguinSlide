@@ -40,7 +40,12 @@ namespace PenguinSlide.Entities
 
         public Vector2 Position { get; private set; }
 
-        public Vector2 Speed => speed;
+        public Vector2 Speed
+        {
+            get { return speed; }
+        }
+        
+        public bool IsAlive { get; set; }
 
         public Rectangle CollisionRectangle { get; set; }
         public bool CanMoveLeft { get; set; }
@@ -143,7 +148,7 @@ namespace PenguinSlide.Entities
         {
             velocity.X = 0;
             velocity.Y = 0;
-
+            
             HandleJump();
             HandleGravity();
             HandleMovement();

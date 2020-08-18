@@ -8,6 +8,7 @@ namespace PenguinSlide.LevelComponents
     {
         public Star(Texture2D texture, Rectangle rectangle) : base(texture, rectangle)
         {
+            CollisionRectangle = rectangle;
         }
     }
 }

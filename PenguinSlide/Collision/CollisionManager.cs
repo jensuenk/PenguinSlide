@@ -22,18 +22,23 @@ namespace PenguinSlide.Collision
             var canMoveRight = true;
             var canMoveDown = true;
 
-            foreach (var tile in level.Components)
+            foreach (var component in level.Components)
             {
-                if (tile is ICollectable || tile is IDamageable)
+                if (component is IDamageable)
                     continue;
+                if (component is ICollectable || component is IDecoration)
+                {
+                    //TODO: collectables
+                    continue;
+                }
                 if (canMoveLeft)
-                    canMoveLeft = !IsTouchingRight(tile.CollisionRectangle);
+                    canMoveLeft = !IsTouchingRight(component.CollisionRectangle);
                 if (canMoveUp)
-                    canMoveUp = !IsTouchingBottom(tile.CollisionRectangle);
+                    canMoveUp = !IsTouchingBottom(component.CollisionRectangle);
                 if (canMoveRight)
-                    canMoveRight = !IsTouchingLeft(tile.CollisionRectangle);
+                    canMoveRight = !IsTouchingLeft(component.CollisionRectangle);
                 if (canMoveDown)
-                    canMoveDown = !IsTouchingTop(tile.CollisionRectangle);
+                    canMoveDown = !IsTouchingTop(component.CollisionRectangle);
             }
 
             movable.CanMoveLeft = canMoveLeft;
