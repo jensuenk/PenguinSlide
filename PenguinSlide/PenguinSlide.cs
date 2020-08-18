@@ -20,12 +20,12 @@ namespace PenguinSlide
         
         protected override void Initialize()
         {
-            state = new PlayState(GraphicsDevice, Content, this);
-            base.Initialize();
-            
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
             graphics.ApplyChanges();
+            
+            state = new PlayState(GraphicsDevice, Content, this);
+            base.Initialize();
         }
         
         protected override void LoadContent()

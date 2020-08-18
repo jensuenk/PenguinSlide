@@ -15,9 +15,7 @@ namespace PenguinSlide.GameState
             this.contentManager = contentManager;
             this.game = game;
         }
-
         public abstract void Update(GameTime gameTime);
-
         public abstract void Draw(SpriteBatch spriteBatch);
     }
 }

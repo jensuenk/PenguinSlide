@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace PenguinSlide.Entities
+namespace PenguinSlide.Collision
 {
     public interface ICollidable
     {

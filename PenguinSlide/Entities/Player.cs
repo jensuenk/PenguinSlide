@@ -11,9 +11,7 @@ namespace PenguinSlide.Entities
         private Control control;
         private Vector2 position;
         private Vector2 speed;
-        public Vector2 Speed { 
-            get { return speed; } 
-        }
+        public Vector2 Speed => speed;
         private float scale;
         private int airTime;
         public Rectangle CollisionRectangle { get; set; }
@@ -46,7 +44,6 @@ namespace PenguinSlide.Entities
             this.control = control;
             CreateAnimation();
         }
-
         private void CreateAnimation()
         {
             AnimationCreator animationCreator = new AnimationCreator();
@@ -59,7 +56,6 @@ namespace PenguinSlide.Entities
             animationCreator.Create(animationHurt, 576, 0, 144, 128, 2);
             animationCreator.Create(animationDie, 0, 0, 144, 128, 4);
         }
-
         private void HandleMovement()
         {
             if (control.Right)
@@ -164,8 +160,6 @@ namespace PenguinSlide.Entities
             speed.Y = 0;
             velocity.Y = 0;
         }
-
-
         public override void Update(GameTime gameTime)
         {
             velocity.X = 0;
@@ -180,7 +174,6 @@ namespace PenguinSlide.Entities
             
             currentAnimation.Update(gameTime);
         }
-
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f, new Vector2(0, 0), scale, spriteEffects, 1);

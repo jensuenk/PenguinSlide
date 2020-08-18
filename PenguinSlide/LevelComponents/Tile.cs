@@ -1,23 +1,24 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using PenguinSlide.Collision;
 
-namespace PenguinSlide.Entities
+namespace PenguinSlide.LevelComponents
 {
     public class Tile: ICollidable
     {
-        protected Texture2D Texture;
+        private Texture2D texture;
         public Vector2 Position;
         public Rectangle CollisionRectangle { get; set; }
 
         public Tile(Texture2D texture, Vector2 position)
         {
-            this.Texture = texture;
+            this.texture = texture;
             this.CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
             this.Position = position;
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, CollisionRectangle, Color.White);
+            spriteBatch.Draw(texture, CollisionRectangle, Color.White);
         }
     }
 }

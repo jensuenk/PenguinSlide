@@ -4,20 +4,15 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using PenguinSlide.Entities;
 
-namespace PenguinSlide.Levels
+namespace PenguinSlide.LevelComponents
 {
     public class Level
     {
         private ContentManager contentManager;
         private int[,] map;
-        private List<Tile> tiles = new List<Tile>();
-        public List<Tile> Tiles
-        {
-            get { return tiles; }
-        }
+        public List<Tile> Tiles { get; } = new List<Tile>();
 
         private int width, height;
-
         public Level(ContentManager contentManager, int[,] map)
         {
             this.contentManager = contentManager;
@@ -33,17 +28,16 @@ namespace PenguinSlide.Levels
                     int number = map[y, x];
                     if (number == 1)
                     {
-                        tiles.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_ground_00_single"), new Vector2(x*128, y*128)));
+                        Tiles.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_ground_00_single"), new Vector2(x*128, y*128)));
                     }
                     width = (x + 1) * map.GetLength(1);
                     height = (y + 1) * map.GetLength(0);
                 }
             }
         }
-
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (var tile in tiles)
+            foreach (var tile in Tiles)
             {
                 tile.Draw(spriteBatch);
             }

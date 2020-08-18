@@ -13,11 +13,15 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Collision" t="Include">
           <e p="CollisionManager.cs" t="Include" />
+          <e p="ICollidable.cs" t="Include" />
         </e>
         <e p="Content" t="Include">
+          <e p="bg-icebergs-1.png" t="Include" />
           <e p="bin" t="Include">
             <e p="DesktopGL" t="Include">
+              <e p="bg-icebergs-1.xnb" t="Include" />
               <e p="Content" t="Include">
+                <e p="bg-icebergs-1.xnb" t="Include" />
                 <e p="player.xnb" t="Include" />
                 <e p="star.xnb" t="Include" />
                 <e p="tiles" t="Include">
@@ -96,9 +100,11 @@
             <e p="DesktopGL" t="Include">
               <e p=".mgcontent" t="Include" />
               <e p=".mgstats" t="Include" />
+              <e p="bg-icebergs-1.mgcontent" t="Include" />
               <e p="Content" t="Include">
                 <e p=".mgcontent" t="Include" />
                 <e p=".mgstats" t="Include" />
+                <e p="bg-icebergs-1.mgcontent" t="Include" />
                 <e p="player.mgcontent" t="Include" />
                 <e p="star.mgcontent" t="Include" />
                 <e p="tiles" t="Include">
@@ -214,11 +220,8 @@
         </e>
         <e p="Entities" t="Include">
           <e p="Entity.cs" t="Include" />
-          <e p="ICollidable.cs" t="Include" />
           <e p="IMovable.cs" t="Include" />
           <e p="Player.cs" t="Include" />
-          <e p="Star.cs" t="Include" />
-          <e p="Tile.cs" t="Include" />
         </e>
         <e p="GameState" t="Include">
           <e p="EndState.cs" t="Include" />
@@ -228,9 +231,12 @@
         </e>
         <e p="Icon.bmp" t="Include" />
         <e p="Icon.ico" t="Include" />
-        <e p="Levels" t="Include">
+        <e p="LevelComponents" t="Include">
+          <e p="Background.cs" t="Include" />
           <e p="Level.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
+          <e p="Star.cs" t="Include" />
+          <e p="Tile.cs" t="Include" />
         </e>
         <e p="Microsoft.Xna.Framework.Content.ContentTypeReader" t="Include" />
         <e p="obj" t="ExcludeRecursive">

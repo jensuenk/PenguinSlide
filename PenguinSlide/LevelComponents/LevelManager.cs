@@ -1,20 +1,17 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 
-namespace PenguinSlide.Levels
+namespace PenguinSlide.LevelComponents
 {
     public class LevelManager
     {
         private ContentManager contentManager;
-        
         private List<Level> levels;
         public Level CurrentLevel { get; private set; }
-
         public LevelManager(ContentManager contentManager)
         {
             this.contentManager = contentManager;
         }
-        
         public void GenerateLevels()
         {
             levels = new List<Level>
@@ -51,22 +48,18 @@ namespace PenguinSlide.Levels
             };
             CurrentLevel = levels[0];
         }
-
         public Level GetLevel(int number)
         {
             return levels[number];
         }
-        
         public Level GetNextLevel()
         {
             return IsLastLevel(CurrentLevel) ? null : levels[levels.IndexOf(CurrentLevel) + 1];
         }
-
         private bool IsLastLevel(Level level)
         {
             return levels.Count >= levels.IndexOf(level) + 1;
         }
-
         public void NextLevel()
         {
             if (!IsLastLevel(CurrentLevel))

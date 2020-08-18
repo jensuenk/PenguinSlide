@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 using PenguinSlide.Entities;
-using PenguinSlide.Levels;
+using PenguinSlide.LevelComponents;
 
 namespace PenguinSlide.Collision
 {
