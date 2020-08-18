@@ -7,14 +7,12 @@ namespace PenguinSlide.LevelComponents
     public class Tile: ICollidable
     {
         private Texture2D texture;
-        public Vector2 Position;
         public Rectangle CollisionRectangle { get; set; }
 
-        public Tile(Texture2D texture, Vector2 position)
+        public Tile(Texture2D texture, Rectangle rectangle)
         {
             this.texture = texture;
-            this.CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
-            this.Position = position;
+            CollisionRectangle = rectangle;
         }
         public void Draw(SpriteBatch spriteBatch)
         {

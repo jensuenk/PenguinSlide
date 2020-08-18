@@ -17,11 +17,14 @@
         </e>
         <e p="Content" t="Include">
           <e p="bg-icebergs-1.png" t="Include" />
+          <e p="bg_winter_trees_1.png" t="Include" />
           <e p="bin" t="Include">
             <e p="DesktopGL" t="Include">
               <e p="bg-icebergs-1.xnb" t="Include" />
+              <e p="bg_winter_trees_1.xnb" t="Include" />
               <e p="Content" t="Include">
                 <e p="bg-icebergs-1.xnb" t="Include" />
+                <e p="bg_winter_trees_1.xnb" t="Include" />
                 <e p="player.xnb" t="Include" />
                 <e p="star.xnb" t="Include" />
                 <e p="tiles" t="Include">
@@ -101,10 +104,12 @@
               <e p=".mgcontent" t="Include" />
               <e p=".mgstats" t="Include" />
               <e p="bg-icebergs-1.mgcontent" t="Include" />
+              <e p="bg_winter_trees_1.mgcontent" t="Include" />
               <e p="Content" t="Include">
                 <e p=".mgcontent" t="Include" />
                 <e p=".mgstats" t="Include" />
                 <e p="bg-icebergs-1.mgcontent" t="Include" />
+                <e p="bg_winter_trees_1.mgcontent" t="Include" />
                 <e p="player.mgcontent" t="Include" />
                 <e p="star.mgcontent" t="Include" />
                 <e p="tiles" t="Include">
@@ -233,6 +238,7 @@
         <e p="Icon.ico" t="Include" />
         <e p="LevelComponents" t="Include">
           <e p="Background.cs" t="Include" />
+          <e p="Camera.cs" t="Include" />
           <e p="Level.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
           <e p="Star.cs" t="Include" />

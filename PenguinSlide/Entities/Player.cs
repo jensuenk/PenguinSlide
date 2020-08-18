@@ -9,9 +9,14 @@ namespace PenguinSlide.Entities
     {
         private Texture2D texture;
         private Control control;
-        private Vector2 position;
+        public Vector2 Position { get; private set; }
         private Vector2 speed;
-        public Vector2 Speed => speed;
+        public Vector2 Speed {
+            get
+            {
+                return speed;
+            }
+        }
         private float scale;
         private int airTime;
         public Rectangle CollisionRectangle { get; set; }
@@ -38,7 +43,7 @@ namespace PenguinSlide.Entities
         {
             this.texture = texture;
             this.CollisionRectangle = rectangle;
-            this.position = position;
+            this.Position = position;
             this.speed = speed;
             this.scale = scale;
             this.control = control;
@@ -88,9 +93,13 @@ namespace PenguinSlide.Entities
                 }
                 currentAnimation = animationSlide;
             }
-            if (control.Jump && isJumping == false && !CanMoveDown)
+            if (control.Jump && !isJumping && !CanMoveDown)
             {
                 isJumping = true;
+            }
+            else if (!control.Jump && isJumping)
+            {
+                isJumping = false;
             }
             if (control.Idle)
             {
@@ -110,7 +119,7 @@ namespace PenguinSlide.Entities
                 spriteEffects = SpriteEffects.None;
             }
         }
-        public void HandleGravity()
+        private void HandleGravity()
         {
             speed.Y = 10;
             if (!isJumping && CanMoveDown)
@@ -130,7 +139,7 @@ namespace PenguinSlide.Entities
                 airTime = 0;
             }
         }
-        public void HandleJump()
+        private void HandleJump()
         {
             speed.Y = 10;
 
@@ -169,14 +178,14 @@ namespace PenguinSlide.Entities
             HandleGravity();
             HandleMovement();
 
-            position += velocity;
-            CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, (int)((currentAnimation.CurrentFrame.SourceRectangle.Width - 10) * scale), (int)(currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
+            Position += velocity;
+            CollisionRectangle = new Rectangle((int)Position.X, (int)Position.Y, (int)((currentAnimation.CurrentFrame.SourceRectangle.Width - 25) * scale), (int)(currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
             
             currentAnimation.Update(gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f, new Vector2(0, 0), scale, spriteEffects, 1);
+            spriteBatch.Draw(texture, Position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f, new Vector2(0, 0), scale, spriteEffects, 1);
         }
 
     }
