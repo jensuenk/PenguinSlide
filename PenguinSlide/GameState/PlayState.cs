@@ -23,7 +23,7 @@ namespace PenguinSlide
 
             control = new KeyboardControl();
             Vector2 playerPosition = new Vector2(0, 550);
-            Vector2 playerSpeed = new Vector2(7, 1);
+            Vector2 playerSpeed = new Vector2(7, 10);
 
             Rectangle playerCollisonRectangle = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 144, playerTexture.Height);
             player = new Player(playerTexture, playerCollisonRectangle, playerPosition, playerSpeed, 0.5F, control);
@@ -34,9 +34,8 @@ namespace PenguinSlide
         public override void Update(GameTime gameTime)
         {
             control.Update();
-            //collisionManager.UpdateCollision(player, currentLevel);
             player.Update(gameTime);
-            collisionManager.CheckCollision(player, currentLevel);
+            collisionManager.UpdateCollision(player, currentLevel);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -1,39 +1,39 @@
+using Microsoft.Xna.Framework;
+
 namespace PenguinSlide
 {
-    public class RectangleHelper
+    public static class RectangleHelper
     {
-        
-        static public bool CheckTopCollision(Player player, Tile block)
+        public static bool CheckTopCollision(Player player, Rectangle rectangle)
         {
-            return (player.CollisionRectangle.Bottom + player.Speed.Y + 10 > block.CollisionRectangle.Top &&
-                    player.CollisionRectangle.Top < block.CollisionRectangle.Top &&
-                    player.CollisionRectangle.Right > block.CollisionRectangle.Left &&
-                    player.CollisionRectangle.Left < block.CollisionRectangle.Right);
+            return (player.CollisionRectangle.Bottom + player.Speed.Y + 10 > rectangle.Top &&
+                    player.CollisionRectangle.Top < rectangle.Top &&
+                    player.CollisionRectangle.Right > rectangle.Left &&
+                    player.CollisionRectangle.Left < rectangle.Right);
         }
 
-        static public bool CheckBottomCollision(Player player, Tile block)
+        public static bool CheckBottomCollision(Player player, Rectangle rectangle)
         {
-            return (player.CollisionRectangle.Top + player.Speed.Y - 1 < block.CollisionRectangle.Bottom &&
-                    player.CollisionRectangle.Bottom > block.CollisionRectangle.Bottom &&
-                    player.CollisionRectangle.Right > block.CollisionRectangle.Left &&
-                    player.CollisionRectangle.Left < block.CollisionRectangle.Right);
+            return (player.CollisionRectangle.Top + player.Speed.Y - 1 < rectangle.Bottom &&
+                    player.CollisionRectangle.Bottom > rectangle.Bottom &&
+                    player.CollisionRectangle.Right > rectangle.Left &&
+                    player.CollisionRectangle.Left < rectangle.Right);
         }
 
-        static public bool CheckRightCollision(Player player, Tile block)
+        public static bool CheckRightCollision(Player player, Rectangle rectangle)
         {
-            return (player.CollisionRectangle.Left - player.Speed.X + 1 < block.CollisionRectangle.Right &&
-                    player.CollisionRectangle.Right > block.CollisionRectangle.Right &&
-                    player.CollisionRectangle.Bottom > block.CollisionRectangle.Top &&
-                    player.CollisionRectangle.Top < block.CollisionRectangle.Bottom);
+            return (player.CollisionRectangle.Left - player.Speed.X + 1 < rectangle.Right &&
+                    player.CollisionRectangle.Right > rectangle.Right &&
+                    player.CollisionRectangle.Bottom > rectangle.Top &&
+                    player.CollisionRectangle.Top < rectangle.Bottom);
         }
 
-        static public bool CheckLeftCollision(Player player, Tile block)
+        public static bool CheckLeftCollision(Player player, Rectangle rectangle)
         {
-            return (player.CollisionRectangle.Right + player.Speed.X + 1 > block.CollisionRectangle.Left &&
-                    player.CollisionRectangle.Left < block.CollisionRectangle.Left &&
-                    player.CollisionRectangle.Bottom > block.CollisionRectangle.Top &&
-                    player.CollisionRectangle.Top < block.CollisionRectangle.Bottom);
+            return (player.CollisionRectangle.Right + player.Speed.X + 1 > rectangle.Left &&
+                    player.CollisionRectangle.Left < rectangle.Left &&
+                    player.CollisionRectangle.Bottom > rectangle.Top &&
+                    player.CollisionRectangle.Top < rectangle.Bottom);
         }
-    
     }
 }

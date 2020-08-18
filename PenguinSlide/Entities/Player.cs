@@ -16,8 +16,8 @@ namespace PenguinSlide
         public Rectangle CollisionRectangle { get; set; }
         private Animation currentAnimation;
         private SpriteEffects spriteEffects;
-        private Vector2 velocity = new Vector2(0, 0);
-        private bool isJumping, isFacingRight;
+        private Vector2 velocity;
+        private bool isJumping, isFalling, isFacingRight;
         public bool CanMoveLeft, CanMoveRight, CanMoveUp, CanMoveDown;
 
         Animation animationRun = new Animation();
@@ -32,9 +32,9 @@ namespace PenguinSlide
         public Player(Texture2D texture, Rectangle rectangle, Vector2 position, Vector2 speed, float scale, Control control)
         {
             this.texture = texture;
-            this.CollisionRectangle = rectangle;
+            CollisionRectangle = rectangle;
             this.position = position;
-            this.Speed = speed;
+            Speed = speed;
             this.scale = scale;
             this.control = control;
             CreateAnimation();
@@ -44,7 +44,7 @@ namespace PenguinSlide
         {
             AnimationCreator animationCreator = new AnimationCreator();
             animationCreator.Create(animationRun, 1440, 0, 144, 128, 4);
-            animationCreator.Create(animationIdle, 1440, 0, 144, 128, 4);
+            animationCreator.Create(animationIdle, 1440, 0, 144, 128, 1);
             animationCreator.Create(animationJumpIn, 720, 0, 144, 128, 1);
             animationCreator.Create(animationJump, 864, 0, 144, 128, 1);
             animationCreator.Create(animationSlideIn, 1152, 0, 144, 128, 1);
@@ -53,7 +53,7 @@ namespace PenguinSlide
             animationCreator.Create(animationDie, 0, 0, 144, 128, 4);
         }
 
-        private void Move(GameTime gameTime)
+        private void HandleMovement()
         {
             if (control.Right)
             {
@@ -77,50 +77,26 @@ namespace PenguinSlide
             {
                 if (isFacingRight && CanMoveRight)
                 {
-                    velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 2;
+                    velocity.X = Speed.X;
                 }
                 else if (CanMoveLeft)
                 {
-                    velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 2;
-                    
+                    velocity.X = -Speed.X;
                 }
                 currentAnimation = animationSlide;
             }
-            if (control.Jump && CanMoveUp && !isJumping && !CanMoveDown)
+            if (control.Jump && isJumping == false && !CanMoveDown)
             {
                 isJumping = true;
-                currentAnimation = animationJump;
-            }
-
-            if (!control.Jump)
-            {
-                isJumping = false;
-            }
-            if (isJumping && airTime < 15 && CanMoveUp)
-            {
-                velocity.Y -= Speed.Y;
-                airTime++;
-            }
-            else
-            {
-                if (!CanMoveUp)
-                {
-                    velocity.Y = 0;
-                }
-                airTime = 0;
-                if (CanMoveDown)
-                {
-                    velocity.Y += Speed.Y;
-                }
-                else
-                {
-                    velocity.Y = 0;
-                }
-                isJumping = false;
             }
             if (control.Idle)
             {
                 currentAnimation = animationIdle;
+            }
+            
+            if (velocity.Y != 0)
+            {
+                currentAnimation = animationJump;
             }
             if (!isFacingRight)
             {
@@ -131,22 +107,70 @@ namespace PenguinSlide
                 spriteEffects = SpriteEffects.None;
             }
         }
+        public void HandleGravity()
+        {
+            Speed.Y = 10;
+            if (!isJumping && CanMoveDown)
+            {
+
+                if (airTime < 20)
+                {
+                    airTime++;
+                }
+
+                velocity.Y += Speed.Y;
+            }
+
+            if (!CanMoveDown)
+            {
+                Speed.Y = 0;
+                airTime = 0;
+            }
+        }
+        public void HandleJump()
+        {
+            Speed.Y = 10;
+
+            if (isJumping && airTime < 25)
+            {
+                airTime++;
+
+
+                if (CanMoveUp)
+                {
+                    velocity.Y -= Speed.Y;
+                }
+                else
+                {
+                    StopJump();
+                }
+            }
+            else
+            {
+                StopJump();
+            }
+        }
+        private void StopJump()
+        {
+            airTime = 0;
+            isJumping = false;
+            Speed.Y = 0;
+            velocity.Y = 0;
+        }
+
 
         public override void Update(GameTime gameTime)
         {
             velocity.X = 0;
-            Move(gameTime);
-
-
-            if (velocity.Y != 0)
-            {
-                currentAnimation = animationJump;
-            }
+            velocity.Y = 0;
             
+            HandleJump();
+            HandleGravity();
+            HandleMovement();
 
             position += velocity;
-            
             CollisionRectangle = new Rectangle((int)position.X, (int)position.Y, (int)((currentAnimation.CurrentFrame.SourceRectangle.Width - 10) * scale), (int)(currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
+            
             currentAnimation.Update(gameTime);
         }
 

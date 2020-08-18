@@ -6,52 +6,29 @@ namespace PenguinSlide
 {
     public class CollisionManager
     {
-        
-        public void CheckCollision(Player player, Level currentLevel)
+        public void UpdateCollision(Player player, Level level)
         {
-            CheckPlatformCollision(player, currentLevel);
-        }
+            var canMoveDown = true;
+            var canMoveLeft = true;
+            var canMoveRight = true;
+            var canMoveUp = true;
 
-
-
-        private void CheckPlatformCollision(Player player, Level level)
-        {
-            bool canMoveDown = true;
-            bool canMoveLeft = true;
-            bool canMoveRight = true;
-            bool canMoveUp = true;
-
-            foreach (Tile block in level.Tiles)
+            foreach (var tile in level.Tiles)
             {
-                    if (canMoveDown == true)
-                    {
-                        canMoveDown = !(RectangleHelper.CheckTopCollision(player, block));
-                    }
-
-                    if (canMoveRight == true)
-                    {
-                        canMoveRight = !(RectangleHelper.CheckLeftCollision(player, block));
-                    }
-
-                    if (canMoveLeft == true)
-                    {
-                        canMoveLeft = !(RectangleHelper.CheckRightCollision(player, block));
-                    }
-
-                    if (canMoveUp)
-                    {
-                        canMoveUp = !(RectangleHelper.CheckBottomCollision(player, block));
-                    }
-
-                
+                if (canMoveDown)
+                    canMoveDown = !(RectangleHelper.CheckTopCollision(player, tile.CollisionRectangle));
+                if (canMoveRight)
+                    canMoveRight = !(RectangleHelper.CheckLeftCollision(player, tile.CollisionRectangle));
+                if (canMoveLeft)
+                    canMoveLeft = !(RectangleHelper.CheckRightCollision(player, tile.CollisionRectangle));
+                if (canMoveUp)
+                    canMoveUp = !(RectangleHelper.CheckBottomCollision(player, tile.CollisionRectangle));
             }
-
+            
             player.CanMoveDown = canMoveDown;
             player.CanMoveLeft = canMoveLeft;
             player.CanMoveRight = canMoveRight;
             player.CanMoveUp = canMoveUp;
-
         }
-
     }
 }
