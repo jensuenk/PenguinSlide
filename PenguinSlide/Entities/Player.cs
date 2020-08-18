@@ -39,11 +39,11 @@ namespace PenguinSlide.Entities
         Animation animationHurt = new Animation();
         Animation animationDie = new Animation();
 
-        public Player(Texture2D texture, Rectangle rectangle, Vector2 position, Vector2 speed, float scale, Control control)
+        public Player(Texture2D texture, Rectangle rectangle, Vector2 speed, float scale, Control control)
         {
             this.texture = texture;
-            this.CollisionRectangle = rectangle;
-            this.Position = position;
+            CollisionRectangle = rectangle;
+            Position = new Vector2(rectangle.X, rectangle.Y);
             this.speed = speed;
             this.scale = scale;
             this.control = control;
@@ -179,7 +179,7 @@ namespace PenguinSlide.Entities
             HandleMovement();
 
             Position += velocity;
-            CollisionRectangle = new Rectangle((int)Position.X, (int)Position.Y, (int)((currentAnimation.CurrentFrame.SourceRectangle.Width - 25) * scale), (int)(currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
+            CollisionRectangle = new Rectangle((int)Position.X + (int)(25 * scale), (int)Position.Y, (int)((currentAnimation.CurrentFrame.SourceRectangle.Width - 50) * scale), (int)(currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
             
             currentAnimation.Update(gameTime);
         }

@@ -6,8 +6,8 @@ namespace PenguinSlide.Collision
 {
     public class CollisionManager
     {
-        private IMovable movable;
-        private Level level;
+        private readonly IMovable movable;
+        private readonly Level level;
         public CollisionManager(IMovable movable, Level level)
         {
             this.movable = movable;
@@ -53,14 +53,14 @@ namespace PenguinSlide.Collision
         }
         private bool IsTouchingRight(Rectangle rectangle)
         {
-            return (movable.CollisionRectangle.Left - movable.Speed.X + 1 < rectangle.Right &&
+            return (movable.CollisionRectangle.Left - movable.Speed.X - 1 < rectangle.Right &&
                     movable.CollisionRectangle.Right > rectangle.Right &&
                     movable.CollisionRectangle.Bottom > rectangle.Top &&
                     movable.CollisionRectangle.Top < rectangle.Bottom);
         }
         private bool IsTouchingBottom(Rectangle rectangle)
         {
-            return (movable.CollisionRectangle.Top + movable.Speed.Y - 1 < rectangle.Bottom &&
+            return (movable.CollisionRectangle.Top + movable.Speed.Y < rectangle.Bottom &&
                     movable.CollisionRectangle.Bottom > rectangle.Bottom &&
                     movable.CollisionRectangle.Right > rectangle.Left &&
                     movable.CollisionRectangle.Left < rectangle.Right);

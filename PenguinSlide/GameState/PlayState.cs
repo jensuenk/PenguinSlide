@@ -25,18 +25,18 @@ namespace PenguinSlide.GameState
             currentLevel = levelManager.CurrentLevel;
             
             Texture2D playerTexture = contentManager.Load<Texture2D>("player");
-            Texture2D backgroundtexture = contentManager.Load<Texture2D>("bg-icebergs-1");
+            Texture2D backgroundTexture = contentManager.Load<Texture2D>("bg-icebergs-1");
 
             control = new KeyboardControl();
             Vector2 playerPosition = currentLevel.PlayerLocation;
             Vector2 playerSpeed = new Vector2(7, 10);
             float playerScale = (float)currentLevel.PlayerSize / 144;
 
-            Rectangle playerCollisonRectangle = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 144, playerTexture.Height);
-            player = new Player(playerTexture, playerCollisonRectangle, playerPosition, playerSpeed, playerScale, control);
+            Rectangle playerCollisionRectangle = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 144, playerTexture.Height);
+            player = new Player(playerTexture, playerCollisionRectangle, playerSpeed, playerScale, control);
             
             collisionManager = new CollisionManager(player, currentLevel);
-            background = new Background(backgroundtexture, new Rectangle(0, 0, backgroundtexture.Width, graphicsDevice.Viewport.Bounds.Height));
+            background = new Background(backgroundTexture, new Rectangle(0, 0, backgroundTexture.Width, graphicsDevice.Viewport.Bounds.Height));
             
             camera = new Camera(graphicsDevice.Viewport);
         }
