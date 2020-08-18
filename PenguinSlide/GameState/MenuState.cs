@@ -1,6 +1,6 @@
 ﻿namespace PenguinSlide.GameState
 {
-    class MenuState
+    internal class MenuState
     {
     }
 }

@@ -8,38 +8,42 @@ using PenguinSlide.LevelComponents;
 
 namespace PenguinSlide.GameState
 {
-    class PlayState : State
+    internal class PlayState : State
     {
-        private LevelManager levelManager;
-        private Level currentLevel;
-        private Player player;
-        private Control control;
-        private CollisionManager collisionManager;
-        private Background background;
-        private Camera camera;
+        private readonly Background background;
+        private readonly Camera camera;
+        private readonly CollisionManager collisionManager;
+        private readonly Control control;
+        private readonly Level currentLevel;
+        private readonly LevelManager levelManager;
+        private readonly Player player;
 
-        public PlayState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(graphicsDevice, contentManager, game)
+        public PlayState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
+            graphicsDevice, contentManager, game)
         {
             levelManager = new LevelManager(contentManager);
             levelManager.GenerateLevels();
             currentLevel = levelManager.CurrentLevel;
-            
-            Texture2D playerTexture = contentManager.Load<Texture2D>("player");
-            Texture2D backgroundTexture = contentManager.Load<Texture2D>("bg-icebergs-1");
+
+            var playerTexture = contentManager.Load<Texture2D>("player");
+            var backgroundTexture = contentManager.Load<Texture2D>("bg-icebergs-1");
 
             control = new KeyboardControl();
-            Vector2 playerPosition = currentLevel.PlayerLocation;
-            Vector2 playerSpeed = new Vector2(7, 10);
-            float playerScale = (float)currentLevel.PlayerSize / 144;
+            var playerPosition = currentLevel.PlayerLocation;
+            var playerSpeed = new Vector2(7, 10);
+            var playerScale = (float) currentLevel.PlayerSize / 144;
 
-            Rectangle playerCollisionRectangle = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 144, playerTexture.Height);
+            var playerCollisionRectangle =
+                new Rectangle((int) playerPosition.X, (int) playerPosition.Y, 144, playerTexture.Height);
             player = new Player(playerTexture, playerCollisionRectangle, playerSpeed, playerScale, control);
-            
+
             collisionManager = new CollisionManager(player, currentLevel);
-            background = new Background(backgroundTexture, new Rectangle(0, 0, backgroundTexture.Width, graphicsDevice.Viewport.Bounds.Height));
-            
+            background = new Background(backgroundTexture,
+                new Rectangle(0, 0, backgroundTexture.Width, graphicsDevice.Viewport.Bounds.Height));
+
             camera = new Camera(graphicsDevice.Viewport);
         }
+
         public override void Update(GameTime gameTime)
         {
             control.Update();
@@ -47,6 +51,7 @@ namespace PenguinSlide.GameState
             player.Update(gameTime);
             camera.Follow(player);
         }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin(transformMatrix: camera.Transform);

@@ -6,8 +6,8 @@ namespace PenguinSlide.Controls
     {
         public override void Update()
         {
-            KeyboardState stateKey = Keyboard.GetState();
-            
+            var stateKey = Keyboard.GetState();
+
             if (stateKey.IsKeyDown(Keys.Left))
                 Left = true;
             if (stateKey.IsKeyUp(Keys.Left))

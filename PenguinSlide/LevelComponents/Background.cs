@@ -5,13 +5,15 @@ namespace PenguinSlide.LevelComponents
 {
     public class Background
     {
-        private Texture2D texture;
-        private Rectangle rectangle;
+        private readonly Rectangle rectangle;
+        private readonly Texture2D texture;
+
         public Background(Texture2D texture, Rectangle rectangle)
         {
             this.texture = texture;
             this.rectangle = rectangle;
         }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, rectangle, Color.White);

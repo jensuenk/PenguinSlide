@@ -1,7 +1,6 @@
-﻿
-namespace PenguinSlide.GameState
+﻿namespace PenguinSlide.GameState
 {
-    class EndState
+    internal class EndState
     {
     }
 }
