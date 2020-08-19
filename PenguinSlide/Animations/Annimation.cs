@@ -8,7 +8,7 @@ namespace PenguinSlide.Animations
         private int counter;
         public AnimationFrame CurrentFrame;
         private readonly List<AnimationFrame> frames;
-        private readonly int speed = 80;
+        private readonly int speed = 100;
         private double xOffset;
 
         public Animation()
@@ -31,6 +31,11 @@ namespace PenguinSlide.Animations
 
             frames.Add(newFrame);
             CurrentFrame = frames[0];
+        }
+
+        public int GetFrameAmount()
+        {
+            return frames.Count;
         }
 
         public void Update(GameTime gameTime)

@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Entities;
 
-namespace PenguinSlide.LevelComponents
+namespace PenguinSlide.Level
 {
     public class Camera
     {

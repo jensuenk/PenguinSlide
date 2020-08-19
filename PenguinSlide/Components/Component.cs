@@ -2,9 +2,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Collision;
 
-namespace PenguinSlide.LevelComponents
+namespace PenguinSlide.Components
 {
-    public abstract class Component : ICollidable
+    public abstract class Component
     {
         private readonly Texture2D texture;
         private readonly Rectangle rectangle;

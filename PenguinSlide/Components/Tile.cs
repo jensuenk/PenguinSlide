@@ -2,11 +2,11 @@
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Collision;
 
-namespace PenguinSlide.LevelComponents
+namespace PenguinSlide.Components
 {
-    public class Star : Component, ICollectable
+    public class Tile : Component, ICollidable
     {
-        public Star(Texture2D texture, Rectangle rectangle) : base(texture, rectangle)
+        public Tile(Texture2D texture, Rectangle rectangle) : base(texture, rectangle)
         {
             CollisionRectangle = rectangle;
         }

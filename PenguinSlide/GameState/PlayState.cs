@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Collision;
 using PenguinSlide.Controls;
 using PenguinSlide.Entities;
-using PenguinSlide.LevelComponents;
+using PenguinSlide.Level;
 
 namespace PenguinSlide.GameState
 {
@@ -14,7 +14,7 @@ namespace PenguinSlide.GameState
         private readonly Camera camera;
         private readonly CollisionManager collisionManager;
         private readonly Control control;
-        private readonly Level currentLevel;
+        private readonly Level.Level currentLevel;
         private readonly LevelManager levelManager;
         private readonly Player player;
 

@@ -15,6 +15,16 @@
           <e p="CollisionManager.cs" t="Include" />
           <e p="ICollidable.cs" t="Include" />
         </e>
+        <e p="Components" t="Include">
+          <e p="Component.cs" t="Include" />
+          <e p="Decoration.cs" t="Include" />
+          <e p="ICollectable.cs" t="Include" />
+          <e p="IDamageable.cs" t="Include" />
+          <e p="Portal.cs" t="Include" />
+          <e p="Spike.cs" t="Include" />
+          <e p="Star.cs" t="Include" />
+          <e p="Tile.cs" t="Include" />
+        </e>
         <e p="Content" t="Include">
           <e p="bg-icebergs-1.png" t="Include" />
           <e p="bg_night_1.png" t="Include" />
@@ -24,6 +34,7 @@
               <e p="bg-icebergs-1.xnb" t="Include" />
               <e p="bg_night_1.xnb" t="Include" />
               <e p="bg_winter_trees_1.xnb" t="Include" />
+              <e p="button.xnb" t="Include" />
               <e p="Content" t="Include">
                 <e p="bg-icebergs-1.xnb" t="Include" />
                 <e p="bg_night_1.xnb" t="Include" />
@@ -77,6 +88,7 @@
               <e p="crystal.xnb" t="Include" />
               <e p="igloo.xnb" t="Include" />
               <e p="player.xnb" t="Include" />
+              <e p="shard.xnb" t="Include" />
               <e p="sign_1.xnb" t="Include" />
               <e p="Sign_2.xnb" t="Include" />
               <e p="spikes.xnb" t="Include" />
@@ -119,6 +131,7 @@
               <e p="tree_2.xnb" t="Include" />
             </e>
           </e>
+          <e p="button.png" t="Include" />
           <e p="Content.mgcb" t="Include" />
           <e p="crate.png" t="Include" />
           <e p="crystal.png" t="Include" />
@@ -130,6 +143,7 @@
               <e p="bg-icebergs-1.mgcontent" t="Include" />
               <e p="bg_night_1.mgcontent" t="Include" />
               <e p="bg_winter_trees_1.mgcontent" t="Include" />
+              <e p="button.mgcontent" t="Include" />
               <e p="Content" t="Include">
                 <e p=".mgcontent" t="Include" />
                 <e p=".mgstats" t="Include" />
@@ -185,6 +199,7 @@
               <e p="crystal.mgcontent" t="Include" />
               <e p="igloo.mgcontent" t="Include" />
               <e p="player.mgcontent" t="Include" />
+              <e p="shard.mgcontent" t="Include" />
               <e p="sign_1.mgcontent" t="Include" />
               <e p="Sign_2.mgcontent" t="Include" />
               <e p="spikes.mgcontent" t="Include" />
@@ -229,6 +244,7 @@
           </e>
           <e p="object_04_star.png" t="Include" />
           <e p="player.png" t="Include" />
+          <e p="shard.png" t="Include" />
           <e p="sign_1.png" t="Include" />
           <e p="Sign_2.png" t="Include" />
           <e p="spikes.png" t="Include" />
@@ -286,19 +302,11 @@
         </e>
         <e p="Icon.bmp" t="Include" />
         <e p="Icon.ico" t="Include" />
-        <e p="LevelComponents" t="Include">
+        <e p="Level" t="Include">
           <e p="Background.cs" t="Include" />
           <e p="Camera.cs" t="Include" />
-          <e p="Component.cs" t="Include" />
-          <e p="Decoration.cs" t="Include" />
-          <e p="ICollectable.cs" t="Include" />
-          <e p="IDamageable.cs" t="Include" />
-          <e p="IDecoration.cs" t="Include" />
           <e p="Level.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
-          <e p="Spike.cs" t="Include" />
-          <e p="Star.cs" t="Include" />
-          <e p="Tile.cs" t="Include" />
         </e>
         <e p="Microsoft.Xna.Framework.Content.ContentTypeReader" t="Include" />
         <e p="obj" t="ExcludeRecursive">

@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace PenguinSlide.LevelComponents
+namespace PenguinSlide.Level
 {
     public class Background
     {

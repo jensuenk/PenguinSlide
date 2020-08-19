@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using PenguinSlide.Components;
 
-namespace PenguinSlide.LevelComponents
+namespace PenguinSlide.Level
 {
     public class Level
     {
@@ -25,6 +27,15 @@ namespace PenguinSlide.LevelComponents
         public Vector2 PlayerLocation { get; private set; }
         public int PlayerSize { get; }
         public List<Component> Components { get; } = new List<Component>();
+
+        public List<Decoration> Decorations => Components.OfType<Decoration>().ToList();
+        public List<Portal> Portals => Components.OfType<Portal>().ToList();
+
+        public List<IDamageable> Damageables => Components.OfType<IDamageable>().ToList();
+
+        public List<Tile> Tiles => Components.OfType<Tile>().ToList();
+
+        public List<ICollectable> Collectables => Components.OfType<ICollectable>().ToList();
 
         private void Generate()
         {
@@ -58,7 +69,7 @@ namespace PenguinSlide.LevelComponents
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                     case 7:
-                        Components.Add(new Decoration(contentManager.Load<Texture2D>("igloo"),
+                        Components.Add(new Portal(contentManager.Load<Texture2D>("igloo"),
                             new Rectangle(x * size, y * size, size * 2, size)));
                         break;
                     case 8:
@@ -71,12 +82,6 @@ namespace PenguinSlide.LevelComponents
                         break;
                 }
             }
-        }
-
-        public List<Component> getComponentsByType(Component component)
-        {
-            // TODO:
-            return Components;
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -1,22 +1,21 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Animations;
+using PenguinSlide.Components;
 using PenguinSlide.Controls;
 
 namespace PenguinSlide.Entities
 {
-    public class Player : Entity, IMovable
+    public class Player : Entity
     {
         private int airTime;
         private readonly Animation animationDie = new Animation();
         private readonly Animation animationHurt = new Animation();
         private readonly Animation animationIdle = new Animation();
         private readonly Animation animationJump = new Animation();
-        private readonly Animation animationJumpIn = new Animation();
-
         private readonly Animation animationRun = new Animation();
         private readonly Animation animationSlide = new Animation();
-        private readonly Animation animationSlideIn = new Animation();
         private readonly Control control;
 
         private Animation currentAnimation;
@@ -26,6 +25,7 @@ namespace PenguinSlide.Entities
         private SpriteEffects spriteEffects;
         private readonly Texture2D texture;
         private Vector2 velocity;
+        private int dieAnimationFramesPlayed = 0;
 
         public Player(Texture2D texture, Rectangle rectangle, Vector2 speed, float scale, Control control)
         {
@@ -39,13 +39,15 @@ namespace PenguinSlide.Entities
         }
 
         public Vector2 Position { get; private set; }
+        
+        public List<ICollectable> Collectables { get; set; } = new List<ICollectable>();
 
+        public bool IsAlive { get; set; } = true;
+        
         public Vector2 Speed
         {
             get { return speed; }
         }
-        
-        public bool IsAlive { get; set; }
 
         public Rectangle CollisionRectangle { get; set; }
         public bool CanMoveLeft { get; set; }
@@ -58,9 +60,7 @@ namespace PenguinSlide.Entities
             var animationCreator = new AnimationCreator();
             animationCreator.Create(animationRun, 1440, 0, 144, 128, 4);
             animationCreator.Create(animationIdle, 1440, 0, 144, 128, 1);
-            animationCreator.Create(animationJumpIn, 720, 0, 144, 128, 1);
             animationCreator.Create(animationJump, 864, 0, 144, 128, 1);
-            animationCreator.Create(animationSlideIn, 1152, 0, 144, 128, 1);
             animationCreator.Create(animationSlide, 1296, 0, 144, 128, 1);
             animationCreator.Create(animationHurt, 576, 0, 144, 128, 2);
             animationCreator.Create(animationDie, 0, 0, 144, 128, 4);
@@ -148,12 +148,25 @@ namespace PenguinSlide.Entities
         {
             velocity.X = 0;
             velocity.Y = 0;
-            
-            HandleJump();
-            HandleGravity();
-            HandleMovement();
 
+            if (IsAlive)
+            {
+                HandleJump();
+                HandleGravity();
+                HandleMovement();
+            }
+            else
+            {
+                currentAnimation = animationDie;
+                dieAnimationFramesPlayed++;
+            }
+            
             Position += velocity;
+
+            if (!IsAlive && animationDie.GetFrameAmount() < dieAnimationFramesPlayed - 20)
+            {
+                return;
+            }
             CollisionRectangle = new Rectangle((int) Position.X + (int) (25 * scale), (int) Position.Y,
                 (int) ((currentAnimation.CurrentFrame.SourceRectangle.Width - 50) * scale),
                 (int) (currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
