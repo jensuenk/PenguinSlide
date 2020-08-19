@@ -29,7 +29,6 @@ namespace PenguinSlide
             graphics.PreferredBackBufferHeight = 1080;
             graphics.ApplyChanges();
 
-            //ChangeState(new PlayState(GraphicsDevice, Content, this));
             ChangeState(new MenuState(GraphicsDevice, Content, this));
             base.Initialize();
         }
@@ -37,7 +36,6 @@ namespace PenguinSlide
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            // TODO: use this.Content to load your game content here
         }
 
         protected override void UnloadContent()
@@ -49,14 +47,18 @@ namespace PenguinSlide
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            
             currentState.Update(gameTime);
+            
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
+            
             currentState.Draw(spriteBatch);
+            
             base.Draw(gameTime);
         }
     }

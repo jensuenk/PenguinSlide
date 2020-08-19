@@ -39,10 +39,16 @@
                 <e p="bg-icebergs-1.xnb" t="Include" />
                 <e p="bg_night_1.xnb" t="Include" />
                 <e p="bg_winter_trees_1.xnb" t="Include" />
+                <e p="button.xnb" t="Include" />
                 <e p="crate.xnb" t="Include" />
                 <e p="crystal.xnb" t="Include" />
+                <e p="font.xnb" t="Include" />
                 <e p="igloo.xnb" t="Include" />
+                <e p="logo.xnb" t="Include" />
+                <e p="play-button.xnb" t="Include" />
                 <e p="player.xnb" t="Include" />
+                <e p="quit-button.xnb" t="Include" />
+                <e p="shard.xnb" t="Include" />
                 <e p="sign_1.xnb" t="Include" />
                 <e p="Sign_2.xnb" t="Include" />
                 <e p="spikes.xnb" t="Include" />
@@ -80,14 +86,19 @@
                   <e p="block_snow_2_mid_3.xnb" t="Include" />
                   <e p="block_snow_2_right.xnb" t="Include" />
                   <e p="block_snow_2_single.xnb" t="Include" />
+                  <e p="quit-button.xnb" t="Include" />
                 </e>
                 <e p="tree_1.xnb" t="Include" />
                 <e p="tree_2.xnb" t="Include" />
               </e>
               <e p="crate.xnb" t="Include" />
               <e p="crystal.xnb" t="Include" />
+              <e p="font.xnb" t="Include" />
               <e p="igloo.xnb" t="Include" />
+              <e p="logo.xnb" t="Include" />
+              <e p="play-button.xnb" t="Include" />
               <e p="player.xnb" t="Include" />
+              <e p="quit-button.xnb" t="Include" />
               <e p="shard.xnb" t="Include" />
               <e p="sign_1.xnb" t="Include" />
               <e p="Sign_2.xnb" t="Include" />
@@ -126,6 +137,7 @@
                 <e p="block_snow_2_mid_3.xnb" t="Include" />
                 <e p="block_snow_2_right.xnb" t="Include" />
                 <e p="block_snow_2_single.xnb" t="Include" />
+                <e p="quit-button.xnb" t="Include" />
               </e>
               <e p="tree_1.xnb" t="Include" />
               <e p="tree_2.xnb" t="Include" />
@@ -135,7 +147,9 @@
           <e p="Content.mgcb" t="Include" />
           <e p="crate.png" t="Include" />
           <e p="crystal.png" t="Include" />
+          <e p="font.spritefont" t="Include" />
           <e p="igloo.png" t="Include" />
+          <e p="logo.png" t="Include" />
           <e p="obj" t="Include">
             <e p="DesktopGL" t="Include">
               <e p=".mgcontent" t="Include" />
@@ -150,10 +164,16 @@
                 <e p="bg-icebergs-1.mgcontent" t="Include" />
                 <e p="bg_night_1.mgcontent" t="Include" />
                 <e p="bg_winter_trees_1.mgcontent" t="Include" />
+                <e p="button.mgcontent" t="Include" />
                 <e p="crate.mgcontent" t="Include" />
                 <e p="crystal.mgcontent" t="Include" />
+                <e p="font.mgcontent" t="Include" />
                 <e p="igloo.mgcontent" t="Include" />
+                <e p="logo.mgcontent" t="Include" />
+                <e p="play-button.mgcontent" t="Include" />
                 <e p="player.mgcontent" t="Include" />
+                <e p="quit-button.mgcontent" t="Include" />
+                <e p="shard.mgcontent" t="Include" />
                 <e p="sign_1.mgcontent" t="Include" />
                 <e p="Sign_2.mgcontent" t="Include" />
                 <e p="spikes.mgcontent" t="Include" />
@@ -191,14 +211,19 @@
                   <e p="block_snow_2_mid_3.mgcontent" t="Include" />
                   <e p="block_snow_2_right.mgcontent" t="Include" />
                   <e p="block_snow_2_single.mgcontent" t="Include" />
+                  <e p="quit-button.mgcontent" t="Include" />
                 </e>
                 <e p="tree_1.mgcontent" t="Include" />
                 <e p="tree_2.mgcontent" t="Include" />
               </e>
               <e p="crate.mgcontent" t="Include" />
               <e p="crystal.mgcontent" t="Include" />
+              <e p="font.mgcontent" t="Include" />
               <e p="igloo.mgcontent" t="Include" />
+              <e p="logo.mgcontent" t="Include" />
+              <e p="play-button.mgcontent" t="Include" />
               <e p="player.mgcontent" t="Include" />
+              <e p="quit-button.mgcontent" t="Include" />
               <e p="shard.mgcontent" t="Include" />
               <e p="sign_1.mgcontent" t="Include" />
               <e p="Sign_2.mgcontent" t="Include" />
@@ -237,13 +262,16 @@
                 <e p="block_snow_2_mid_3.mgcontent" t="Include" />
                 <e p="block_snow_2_right.mgcontent" t="Include" />
                 <e p="block_snow_2_single.mgcontent" t="Include" />
+                <e p="quit-button.mgcontent" t="Include" />
               </e>
               <e p="tree_1.mgcontent" t="Include" />
               <e p="tree_2.mgcontent" t="Include" />
             </e>
           </e>
           <e p="object_04_star.png" t="Include" />
+          <e p="play-button.png" t="Include" />
           <e p="player.png" t="Include" />
+          <e p="quit-button.png" t="Include" />
           <e p="shard.png" t="Include" />
           <e p="sign_1.png" t="Include" />
           <e p="Sign_2.png" t="Include" />
@@ -281,6 +309,8 @@
             <e p="block_snow_2_mid_3.png" t="Include" />
             <e p="block_snow_2_right.png" t="Include" />
             <e p="block_snow_2_single.png" t="Include" />
+            <e p="play-button.png" t="Include" />
+            <e p="quit-button.png" t="Include" />
           </e>
           <e p="tree_1.png" t="Include" />
           <e p="tree_2.png" t="Include" />
@@ -302,6 +332,9 @@
         </e>
         <e p="Icon.bmp" t="Include" />
         <e p="Icon.ico" t="Include" />
+        <e p="Interface" t="Include">
+          <e p="Button.cs" t="Include" />
+        </e>
         <e p="Level" t="Include">
           <e p="Background.cs" t="Include" />
           <e p="Camera.cs" t="Include" />

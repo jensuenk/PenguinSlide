@@ -10,5 +10,7 @@ namespace PenguinSlide.Components
         {
             CollisionRectangle = rectangle;
         }
+
+        public Rectangle CollisionRectangle { get; set; }
     }
 }

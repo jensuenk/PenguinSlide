@@ -25,7 +25,9 @@ namespace PenguinSlide.Entities
         private SpriteEffects spriteEffects;
         private readonly Texture2D texture;
         private Vector2 velocity;
-        private int dieAnimationFramesPlayed = 0;
+        private int dieAnimationFramesPlayed;
+
+        public bool PlayedDieAnimation = false;
 
         public Player(Texture2D texture, Rectangle rectangle, Vector2 speed, float scale, Control control)
         {
@@ -36,9 +38,10 @@ namespace PenguinSlide.Entities
             this.scale = scale;
             this.control = control;
             CreateAnimation();
+            currentAnimation = animationIdle;
         }
 
-        public Vector2 Position { get; private set; }
+        public Vector2 Position { get; set; }
         
         public List<ICollectable> Collectables { get; set; } = new List<ICollectable>();
 
@@ -165,8 +168,10 @@ namespace PenguinSlide.Entities
 
             if (!IsAlive && animationDie.GetFrameAmount() < dieAnimationFramesPlayed - 20)
             {
+                PlayedDieAnimation = true;
                 return;
             }
+            
             CollisionRectangle = new Rectangle((int) Position.X + (int) (25 * scale), (int) Position.Y,
                 (int) ((currentAnimation.CurrentFrame.SourceRectangle.Width - 50) * scale),
                 (int) (currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
@@ -178,6 +183,15 @@ namespace PenguinSlide.Entities
         {
             spriteBatch.Draw(texture, Position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f,
                 new Vector2(0, 0), scale, spriteEffects, 1);
+        }
+
+        public void Respawn(Vector2 position)
+        {
+            currentAnimation = animationIdle;
+            dieAnimationFramesPlayed = 0;
+            PlayedDieAnimation = false;
+            IsAlive = true;
+            Position = position;
         }
     }
 }

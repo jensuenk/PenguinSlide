@@ -21,6 +21,8 @@ namespace PenguinSlide.GameState
         public PlayState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
             graphicsDevice, contentManager, game)
         {
+            game.IsMouseVisible = false;
+            
             levelManager = new LevelManager(contentManager, graphicsDevice.Viewport);
             levelManager.GenerateLevels();
             currentLevel = levelManager.CurrentLevel;
@@ -46,6 +48,10 @@ namespace PenguinSlide.GameState
 
         public override void Update(GameTime gameTime)
         {
+            if (player.PlayedDieAnimation)
+            {
+                player.Respawn(currentLevel.PlayerLocation);
+            }
             control.Update();
             collisionManager.UpdateCollision();
             player.Update(gameTime);

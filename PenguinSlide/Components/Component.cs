@@ -4,7 +4,7 @@ using PenguinSlide.Collision;
 
 namespace PenguinSlide.Components
 {
-    public abstract class Component
+    public class Component
     {
         private readonly Texture2D texture;
         private readonly Rectangle rectangle;
@@ -14,8 +14,6 @@ namespace PenguinSlide.Components
             this.texture = texture;
             this.rectangle = rectangle;
         }
-
-        public Rectangle CollisionRectangle { get; set; }
 
         public void Draw(SpriteBatch spriteBatch)
         {

@@ -8,28 +8,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a48775f0-d6e9-4418-aa4b-9452ba781eff" name="Default Changelist" comment="Added more level stuff">
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Components/ICollectable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Components/IDamageable.cs" afterDir="false" />
+    <list default="true" id="a48775f0-d6e9-4418-aa4b-9452ba781eff" name="Default Changelist" comment="Refactoring + die + star collectables">
+      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/font.spritefont" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/play-button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/quit-button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/tiles/play-button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/tiles/quit-button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PenguinSlide/Interface/Button.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Animations/Annimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Animations/Annimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Components/Component.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Component.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Components/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Portal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Components/Spike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Spike.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Components/Star.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Star.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Components/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Tile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Content/Content.mgcb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenguinSlide/Entities/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Entities/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/Background.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Level/Background.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Level/Camera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/Component.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Component.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/Decoration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Decoration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/ICollectable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Portal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/IDecoration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/Level.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/Spike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Spike.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/Star.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Star.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/LevelComponents/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Components/Tile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenguinSlide/PenguinSlide.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/PenguinSlide.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +38,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EF0F4F57-5D6C-4C21-BFC7-10DB8F2F75C6/4a/fbf9dd8c/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PenguinSlide/Interface/Button.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EF0F4F57-5D6C-4C21-BFC7-10DB8F2F75C6/cd/8f8e0e1b/Rectangle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PenguinSlide/PenguinSlide.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -82,21 +79,22 @@
         <option value="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Level/Camera.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Level/Background.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Components/ICollectable.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Components/Decoration.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Components/IDamageable.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Components/Star.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Components/Spike.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Components/Tile.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Components/Component.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Components/Portal.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Animations/Annimation.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Entities/Player.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/PenguinSlide.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Interface/Button.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Components/Portal.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Components/Spike.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Components/Star.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Components/Tile.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Components/Component.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/PenguinSlide.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Entities/Player.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" />
       </list>
     </option>
   </component>
@@ -108,8 +106,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.4750499" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.1986028" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.4752583" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.19847743" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="XThreadsFramesViewSplitterKey" value="0.24421053" />
@@ -152,7 +150,7 @@
       <workItem from="1597740194302" duration="30832000" />
       <workItem from="1597778719511" duration="13660000" />
       <workItem from="1597793345907" duration="54000" />
-      <workItem from="1597827669890" duration="7654000" />
+      <workItem from="1597827669890" duration="21456000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1597580731542</created>
@@ -266,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597793099074</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Refactoring + die + star collectables">
+      <created>1597844054818</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1597844054818</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -301,7 +306,8 @@
     <MESSAGE value="Code cleanup" />
     <MESSAGE value="Refactoring objects + map collision" />
     <MESSAGE value="Added more level stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more level stuff" />
+    <MESSAGE value="Refactoring + die + star collectables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring + die + star collectables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="744" y="353" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597580889639">
@@ -316,90 +322,90 @@
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
     <state x="1026" y="544" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597781876469" />
-    <state width="695" height="201" key="GridCell.Tab.0.bottom" timestamp="1597843142038">
+    <state width="1259" height="201" key="GridCell.Tab.0.bottom" timestamp="1597873769288">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="695" height="201" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597843142038" />
+    <state width="1259" height="201" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597873769288" />
     <state width="1750" height="381" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251403" />
-    <state width="695" height="201" key="GridCell.Tab.0.center" timestamp="1597843142037">
+    <state width="1259" height="201" key="GridCell.Tab.0.center" timestamp="1597873769287">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="695" height="201" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597843142037" />
+    <state width="1259" height="201" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597873769287" />
     <state width="1750" height="381" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251402" />
-    <state width="695" height="201" key="GridCell.Tab.0.left" timestamp="1597843142037">
+    <state width="1259" height="201" key="GridCell.Tab.0.left" timestamp="1597873769287">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="695" height="201" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597843142037" />
+    <state width="1259" height="201" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597873769287" />
     <state width="1750" height="381" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251401" />
-    <state width="695" height="201" key="GridCell.Tab.0.right" timestamp="1597843142038">
+    <state width="1259" height="201" key="GridCell.Tab.0.right" timestamp="1597873769288">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="695" height="201" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597843142038" />
+    <state width="1259" height="201" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597873769288" />
     <state width="1750" height="381" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251402" />
-    <state width="1033" height="388" key="GridCell.Tab.1.bottom" timestamp="1597839058837">
+    <state width="1870" height="388" key="GridCell.Tab.1.bottom" timestamp="1597868181701">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.1.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058837" />
-    <state width="1033" height="388" key="GridCell.Tab.1.center" timestamp="1597839058837">
+    <state width="1870" height="388" key="GridCell.Tab.1.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181701" />
+    <state width="1870" height="388" key="GridCell.Tab.1.center" timestamp="1597868181700">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.1.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058837" />
-    <state width="1033" height="388" key="GridCell.Tab.1.left" timestamp="1597839058836">
+    <state width="1870" height="388" key="GridCell.Tab.1.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181700" />
+    <state width="1870" height="388" key="GridCell.Tab.1.left" timestamp="1597868181700">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.1.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058836" />
-    <state width="1033" height="388" key="GridCell.Tab.1.right" timestamp="1597839058837">
+    <state width="1870" height="388" key="GridCell.Tab.1.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181700" />
+    <state width="1870" height="388" key="GridCell.Tab.1.right" timestamp="1597868181700">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.1.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058837" />
-    <state width="1033" height="388" key="GridCell.Tab.2.bottom" timestamp="1597839058838">
+    <state width="1870" height="388" key="GridCell.Tab.1.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181700" />
+    <state width="1870" height="388" key="GridCell.Tab.2.bottom" timestamp="1597868181703">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.2.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058838" />
-    <state width="1033" height="388" key="GridCell.Tab.2.center" timestamp="1597839058838">
+    <state width="1870" height="388" key="GridCell.Tab.2.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181703" />
+    <state width="1870" height="388" key="GridCell.Tab.2.center" timestamp="1597868181701">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.2.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058838" />
-    <state width="1033" height="388" key="GridCell.Tab.2.left" timestamp="1597839058837">
+    <state width="1870" height="388" key="GridCell.Tab.2.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181701" />
+    <state width="1870" height="388" key="GridCell.Tab.2.left" timestamp="1597868181701">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.2.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058837" />
-    <state width="1033" height="388" key="GridCell.Tab.2.right" timestamp="1597839058838">
+    <state width="1870" height="388" key="GridCell.Tab.2.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181701" />
+    <state width="1870" height="388" key="GridCell.Tab.2.right" timestamp="1597868181702">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.2.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058838" />
-    <state width="1033" height="388" key="GridCell.Tab.3.bottom" timestamp="1597839058839">
+    <state width="1870" height="388" key="GridCell.Tab.2.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181702" />
+    <state width="1870" height="388" key="GridCell.Tab.3.bottom" timestamp="1597868181703">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.3.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058839" />
-    <state width="1033" height="388" key="GridCell.Tab.3.center" timestamp="1597839058839">
+    <state width="1870" height="388" key="GridCell.Tab.3.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181703" />
+    <state width="1870" height="388" key="GridCell.Tab.3.center" timestamp="1597868181703">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.3.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058839" />
-    <state width="1033" height="388" key="GridCell.Tab.3.left" timestamp="1597839058839">
+    <state width="1870" height="388" key="GridCell.Tab.3.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181703" />
+    <state width="1870" height="388" key="GridCell.Tab.3.left" timestamp="1597868181703">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.3.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058839" />
-    <state width="1033" height="388" key="GridCell.Tab.3.right" timestamp="1597839058839">
+    <state width="1870" height="388" key="GridCell.Tab.3.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181703" />
+    <state width="1870" height="388" key="GridCell.Tab.3.right" timestamp="1597868181703">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.3.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058839" />
-    <state width="1033" height="388" key="GridCell.Tab.4.bottom" timestamp="1597839058840">
+    <state width="1870" height="388" key="GridCell.Tab.3.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181703" />
+    <state width="1870" height="388" key="GridCell.Tab.4.bottom" timestamp="1597868181705">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.4.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058840" />
-    <state width="1033" height="388" key="GridCell.Tab.4.center" timestamp="1597839058840">
+    <state width="1870" height="388" key="GridCell.Tab.4.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181705" />
+    <state width="1870" height="388" key="GridCell.Tab.4.center" timestamp="1597868181704">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.4.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058840" />
-    <state width="1033" height="388" key="GridCell.Tab.4.left" timestamp="1597839058840">
+    <state width="1870" height="388" key="GridCell.Tab.4.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181704" />
+    <state width="1870" height="388" key="GridCell.Tab.4.left" timestamp="1597868181704">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.4.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058840" />
-    <state width="1033" height="388" key="GridCell.Tab.4.right" timestamp="1597839058840">
+    <state width="1870" height="388" key="GridCell.Tab.4.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181704" />
+    <state width="1870" height="388" key="GridCell.Tab.4.right" timestamp="1597868181704">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1033" height="388" key="GridCell.Tab.4.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597839058840" />
+    <state width="1870" height="388" key="GridCell.Tab.4.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597868181704" />
     <state x="422" y="464" key="LayersDialog" timestamp="1597663038518">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
@@ -416,5 +422,9 @@
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
     <state x="278" y="428" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597777566620" />
+    <state x="943" y="326" width="672" height="678" key="search.everywhere.popup" timestamp="1597861220774">
+      <screen x="0" y="23" width="2560" height="1338" />
+    </state>
+    <state x="943" y="326" width="672" height="678" key="search.everywhere.popup/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597861220774" />
   </component>
 </project>
