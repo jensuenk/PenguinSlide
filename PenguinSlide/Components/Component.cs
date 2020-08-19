@@ -4,10 +4,10 @@ using PenguinSlide.Collision;
 
 namespace PenguinSlide.Components
 {
-    public class Component
+    public abstract class Component
     {
-        private readonly Texture2D texture;
-        private readonly Rectangle rectangle;
+        protected Texture2D texture;
+        protected Rectangle rectangle;
 
         public Component(Texture2D texture, Rectangle rectangle)
         {

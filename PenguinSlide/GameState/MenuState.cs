@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Components;
-using PenguinSlide.Interface;
 using PenguinSlide.Level;
 
 namespace PenguinSlide.GameState
@@ -27,7 +26,7 @@ namespace PenguinSlide.GameState
 
             int logoWidth = (int)(logoTexture.Width * 0.4);
             int logoHeight = (int)(logoTexture.Height * 0.4);
-            logo = new Component(logoTexture, new Rectangle(graphicsDevice.Viewport.Width / 2 - logoWidth / 2, graphicsDevice.Viewport.Height / 9, logoWidth, logoHeight));
+            logo = new Background(logoTexture, new Rectangle(graphicsDevice.Viewport.Width / 2 - logoWidth / 2, graphicsDevice.Viewport.Height / 9, logoWidth, logoHeight));
             
             int buttonWidth = (int)(playButtonTexture.Width * 0.8);
             int buttonHeight = (int)(playButtonTexture.Height * 0.8);
@@ -64,11 +63,11 @@ namespace PenguinSlide.GameState
         private void PlayButtonClick(object sender, System.EventArgs e)
         {
             game.ChangeState(new PlayState(graphicsDevice, contentManager, game));
+            game.IsMouseVisible = false;
         }
         private void QuitButtonClick(object sender, System.EventArgs e)
         {
             game.Exit();
         }
-
     }
 }

@@ -25,9 +25,6 @@ namespace PenguinSlide.Entities
         private SpriteEffects spriteEffects;
         private readonly Texture2D texture;
         private Vector2 velocity;
-        private int dieAnimationFramesPlayed;
-
-        public bool PlayedDieAnimation = false;
 
         public Player(Texture2D texture, Rectangle rectangle, Vector2 speed, float scale, Control control)
         {
@@ -65,8 +62,8 @@ namespace PenguinSlide.Entities
             animationCreator.Create(animationIdle, 1440, 0, 144, 128, 1);
             animationCreator.Create(animationJump, 864, 0, 144, 128, 1);
             animationCreator.Create(animationSlide, 1296, 0, 144, 128, 1);
-            animationCreator.Create(animationHurt, 576, 0, 144, 128, 2);
-            animationCreator.Create(animationDie, 0, 0, 144, 128, 4);
+            animationCreator.Create(animationHurt, 476, 0, 144, 128, 2);
+            animationCreator.Create(animationDie, 432, 0, 144, 128, 1);
         }
 
         private void HandleMovement()
@@ -161,17 +158,10 @@ namespace PenguinSlide.Entities
             else
             {
                 currentAnimation = animationDie;
-                dieAnimationFramesPlayed++;
             }
             
             Position += velocity;
 
-            if (!IsAlive && animationDie.GetFrameAmount() < dieAnimationFramesPlayed - 20)
-            {
-                PlayedDieAnimation = true;
-                return;
-            }
-            
             CollisionRectangle = new Rectangle((int) Position.X + (int) (25 * scale), (int) Position.Y,
                 (int) ((currentAnimation.CurrentFrame.SourceRectangle.Width - 50) * scale),
                 (int) (currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
@@ -187,10 +177,8 @@ namespace PenguinSlide.Entities
 
         public void Respawn(Vector2 position)
         {
-            currentAnimation = animationIdle;
-            dieAnimationFramesPlayed = 0;
-            PlayedDieAnimation = false;
             IsAlive = true;
+            currentAnimation = animationIdle;
             Position = position;
         }
     }

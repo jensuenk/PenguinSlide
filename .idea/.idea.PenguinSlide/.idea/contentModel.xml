@@ -16,6 +16,7 @@
           <e p="ICollidable.cs" t="Include" />
         </e>
         <e p="Components" t="Include">
+          <e p="Button.cs" t="Include" />
           <e p="Component.cs" t="Include" />
           <e p="Decoration.cs" t="Include" />
           <e p="ICollectable.cs" t="Include" />
@@ -43,11 +44,15 @@
                 <e p="crate.xnb" t="Include" />
                 <e p="crystal.xnb" t="Include" />
                 <e p="font.xnb" t="Include" />
+                <e p="gameover-screen.xnb" t="Include" />
                 <e p="igloo.xnb" t="Include" />
                 <e p="logo.xnb" t="Include" />
                 <e p="play-button.xnb" t="Include" />
                 <e p="player.xnb" t="Include" />
+                <e p="quit-button-small.xnb" t="Include" />
                 <e p="quit-button.xnb" t="Include" />
+                <e p="respawn-button-small.xnb" t="Include" />
+                <e p="respawn-screen.xnb" t="Include" />
                 <e p="shard.xnb" t="Include" />
                 <e p="sign_1.xnb" t="Include" />
                 <e p="Sign_2.xnb" t="Include" />
@@ -94,11 +99,15 @@
               <e p="crate.xnb" t="Include" />
               <e p="crystal.xnb" t="Include" />
               <e p="font.xnb" t="Include" />
+              <e p="gameover-screen.xnb" t="Include" />
               <e p="igloo.xnb" t="Include" />
               <e p="logo.xnb" t="Include" />
               <e p="play-button.xnb" t="Include" />
               <e p="player.xnb" t="Include" />
+              <e p="quit-button-small.xnb" t="Include" />
               <e p="quit-button.xnb" t="Include" />
+              <e p="respawn-button-small.xnb" t="Include" />
+              <e p="respawn-screen.xnb" t="Include" />
               <e p="shard.xnb" t="Include" />
               <e p="sign_1.xnb" t="Include" />
               <e p="Sign_2.xnb" t="Include" />
@@ -148,6 +157,7 @@
           <e p="crate.png" t="Include" />
           <e p="crystal.png" t="Include" />
           <e p="font.spritefont" t="Include" />
+          <e p="gameover-screen.png" t="Include" />
           <e p="igloo.png" t="Include" />
           <e p="logo.png" t="Include" />
           <e p="obj" t="Include">
@@ -168,11 +178,15 @@
                 <e p="crate.mgcontent" t="Include" />
                 <e p="crystal.mgcontent" t="Include" />
                 <e p="font.mgcontent" t="Include" />
+                <e p="gameover-screen.mgcontent" t="Include" />
                 <e p="igloo.mgcontent" t="Include" />
                 <e p="logo.mgcontent" t="Include" />
                 <e p="play-button.mgcontent" t="Include" />
                 <e p="player.mgcontent" t="Include" />
+                <e p="quit-button-small.mgcontent" t="Include" />
                 <e p="quit-button.mgcontent" t="Include" />
+                <e p="respawn-button-small.mgcontent" t="Include" />
+                <e p="respawn-screen.mgcontent" t="Include" />
                 <e p="shard.mgcontent" t="Include" />
                 <e p="sign_1.mgcontent" t="Include" />
                 <e p="Sign_2.mgcontent" t="Include" />
@@ -219,11 +233,15 @@
               <e p="crate.mgcontent" t="Include" />
               <e p="crystal.mgcontent" t="Include" />
               <e p="font.mgcontent" t="Include" />
+              <e p="gameover-screen.mgcontent" t="Include" />
               <e p="igloo.mgcontent" t="Include" />
               <e p="logo.mgcontent" t="Include" />
               <e p="play-button.mgcontent" t="Include" />
               <e p="player.mgcontent" t="Include" />
+              <e p="quit-button-small.mgcontent" t="Include" />
               <e p="quit-button.mgcontent" t="Include" />
+              <e p="respawn-button-small.mgcontent" t="Include" />
+              <e p="respawn-screen.mgcontent" t="Include" />
               <e p="shard.mgcontent" t="Include" />
               <e p="sign_1.mgcontent" t="Include" />
               <e p="Sign_2.mgcontent" t="Include" />
@@ -271,7 +289,10 @@
           <e p="object_04_star.png" t="Include" />
           <e p="play-button.png" t="Include" />
           <e p="player.png" t="Include" />
+          <e p="quit-button-small.png" t="Include" />
           <e p="quit-button.png" t="Include" />
+          <e p="respawn-button-small.png" t="Include" />
+          <e p="respawn-screen.png" t="Include" />
           <e p="shard.png" t="Include" />
           <e p="sign_1.png" t="Include" />
           <e p="Sign_2.png" t="Include" />
@@ -332,9 +353,6 @@
         </e>
         <e p="Icon.bmp" t="Include" />
         <e p="Icon.ico" t="Include" />
-        <e p="Interface" t="Include">
-          <e p="Button.cs" t="Include" />
-        </e>
         <e p="Level" t="Include">
           <e p="Background.cs" t="Include" />
           <e p="Camera.cs" t="Include" />

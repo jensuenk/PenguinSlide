@@ -4,24 +4,18 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PenguinSlide.Components;
 
-namespace PenguinSlide.Interface
+namespace PenguinSlide.Components
 {
     public class Button : Component
     {
         private MouseState currentMouse, previousMouse;
         private bool isHovering;
-        private Texture2D texture;
-        private Rectangle rectangle;
-
         public event EventHandler Click;
 
         public bool Clicked { get; private set; }
         
-
         public Button(Texture2D texture, Rectangle rectangle) : base(texture, rectangle)
         {
-            this.texture = texture;
-            this.rectangle = rectangle;
         }
         public void Update(GameTime gameTime)
         {

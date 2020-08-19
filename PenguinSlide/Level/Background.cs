@@ -1,22 +1,13 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using PenguinSlide.Components;
 
 namespace PenguinSlide.Level
 {
-    public class Background
+    public class Background : Component
     {
-        private readonly Rectangle rectangle;
-        private readonly Texture2D texture;
-
-        public Background(Texture2D texture, Rectangle rectangle)
+        public Background(Texture2D texture, Rectangle rectangle) : base(texture, rectangle)
         {
-            this.texture = texture;
-            this.rectangle = rectangle;
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(texture, rectangle, Color.White);
         }
     }
 }

@@ -7,6 +7,7 @@ namespace PenguinSlide.Entities
     {
         public abstract void Update(GameTime gameTime);
         public abstract void Draw(SpriteBatch spriteBatch);
+        public Vector2 Position { get; set; }
         public Rectangle CollisionRectangle { get; set; }
         public Vector2 Speed { get; }
         public bool CanMoveLeft { get; set; }
