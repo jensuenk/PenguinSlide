@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using PenguinSlide.Collision;
 using PenguinSlide.Components;
 using PenguinSlide.Controls;
@@ -29,7 +31,7 @@ namespace PenguinSlide.GameState
             levelManager = new LevelManager(contentManager, graphicsDevice.Viewport);
             levelManager.GenerateLevels();
             currentLevel = levelManager.CurrentLevel;
-
+            
             var playerTexture = contentManager.Load<Texture2D>("player");
             var backgroundTexture = contentManager.Load<Texture2D>("bg-icebergs-1");
             var respawnBackgroundTexture = contentManager.Load<Texture2D>("respawn-screen");
@@ -53,12 +55,12 @@ namespace PenguinSlide.GameState
                 new Rectangle(0, 0, graphicsDevice.Viewport.Bounds.Width, graphicsDevice.Viewport.Bounds.Height));
             var respawnButton = new Button(respawnButtonTexture,
                 new Rectangle(1025, 700, 160, 160));
-            respawnButton.Click += RespawnButtonClick;
+            respawnButton.Click += RespawnButton_Click;
 
             var quitButton = new Button(quitButtonTexture,
                 new Rectangle(725, 700, 160, 160));
 
-            quitButton.Click += QuitButtonClick;
+            quitButton.Click += QuitButton_Click;
             buttons.Add(respawnButton);
             buttons.Add(quitButton);
 
@@ -80,6 +82,7 @@ namespace PenguinSlide.GameState
             camera.Follow(player);
             if (currentLevel.IsCompleted)
             {
+                SoundPlayer.EndSound.Play();
                 if (levelManager.IsLastLevel(currentLevel))
                 {
                     game.ChangeState(new EndState(graphicsDevice, contentManager, game));
@@ -111,16 +114,18 @@ namespace PenguinSlide.GameState
             spriteBatch.End();
         }
 
-        private void RespawnButtonClick(object sender, EventArgs e)
+        private void RespawnButton_Click(object sender, EventArgs e)
         {
+            SoundPlayer.ButtonSound.Play();
             player.IsAlive = true;
             player.Respawn(currentLevel.PlayerLocation);
             currentLevel.RespawnCollectables();
             game.IsMouseVisible = false;
         }
 
-        private void QuitButtonClick(object sender, EventArgs e)
+        private void QuitButton_Click(object sender, EventArgs e)
         {
+            SoundPlayer.ButtonSound.Play();
             game.ChangeState(new MenuState(graphicsDevice, contentManager, game));
         }
     }

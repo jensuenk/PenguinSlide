@@ -56,6 +56,15 @@
                 <e p="shard.xnb" t="Include" />
                 <e p="sign_1.xnb" t="Include" />
                 <e p="Sign_2.xnb" t="Include" />
+                <e p="sounds" t="Include">
+                  <e p="button.xnb" t="Include" />
+                  <e p="die.xnb" t="Include" />
+                  <e p="finish.xnb" t="Include" />
+                  <e p="jump.xnb" t="Include" />
+                  <e p="music.ogg" t="Include" />
+                  <e p="music.xnb" t="Include" />
+                  <e p="pickup.xnb" t="Include" />
+                </e>
                 <e p="spikes.xnb" t="Include" />
                 <e p="star.xnb" t="Include" />
                 <e p="start-screen.xnb" t="Include" />
@@ -112,6 +121,15 @@
               <e p="shard.xnb" t="Include" />
               <e p="sign_1.xnb" t="Include" />
               <e p="Sign_2.xnb" t="Include" />
+              <e p="sounds" t="Include">
+                <e p="button.xnb" t="Include" />
+                <e p="die.xnb" t="Include" />
+                <e p="finish.xnb" t="Include" />
+                <e p="jump.xnb" t="Include" />
+                <e p="music.ogg" t="Include" />
+                <e p="music.xnb" t="Include" />
+                <e p="pickup.xnb" t="Include" />
+              </e>
               <e p="spikes.xnb" t="Include" />
               <e p="star.xnb" t="Include" />
               <e p="start-screen.xnb" t="Include" />
@@ -192,6 +210,14 @@
                 <e p="shard.mgcontent" t="Include" />
                 <e p="sign_1.mgcontent" t="Include" />
                 <e p="Sign_2.mgcontent" t="Include" />
+                <e p="sounds" t="Include">
+                  <e p="button.mgcontent" t="Include" />
+                  <e p="die.mgcontent" t="Include" />
+                  <e p="finish.mgcontent" t="Include" />
+                  <e p="jump.mgcontent" t="Include" />
+                  <e p="music.mgcontent" t="Include" />
+                  <e p="pickup.mgcontent" t="Include" />
+                </e>
                 <e p="spikes.mgcontent" t="Include" />
                 <e p="star.mgcontent" t="Include" />
                 <e p="start-screen.mgcontent" t="Include" />
@@ -248,6 +274,14 @@
               <e p="shard.mgcontent" t="Include" />
               <e p="sign_1.mgcontent" t="Include" />
               <e p="Sign_2.mgcontent" t="Include" />
+              <e p="sounds" t="Include">
+                <e p="button.mgcontent" t="Include" />
+                <e p="die.mgcontent" t="Include" />
+                <e p="finish.mgcontent" t="Include" />
+                <e p="jump.mgcontent" t="Include" />
+                <e p="music.mgcontent" t="Include" />
+                <e p="pickup.mgcontent" t="Include" />
+              </e>
               <e p="spikes.mgcontent" t="Include" />
               <e p="star.mgcontent" t="Include" />
               <e p="start-screen.mgcontent" t="Include" />
@@ -300,6 +334,14 @@
           <e p="shard.png" t="Include" />
           <e p="sign_1.png" t="Include" />
           <e p="Sign_2.png" t="Include" />
+          <e p="sounds" t="Include">
+            <e p="button.wav" t="Include" />
+            <e p="die.wav" t="Include" />
+            <e p="finish.wav" t="Include" />
+            <e p="jump.wav" t="Include" />
+            <e p="music.ogg" t="Include" />
+            <e p="pickup.wav" t="Include" />
+          </e>
           <e p="spikes.png" t="Include" />
           <e p="start-screen.png" t="Include" />
           <e p="stone.png" t="Include" />
@@ -343,6 +385,7 @@
         </e>
         <e p="Controls" t="Include">
           <e p="Control.cs" t="Include" />
+          <e p="IControlable.cs" t="Include" />
           <e p="KeyboardControl.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
@@ -375,6 +418,7 @@
         <e p="PenguinSlide.cs" t="Include" />
         <e p="PenguinSlide.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
+        <e p="SoundPlayer.cs" t="Include" />
       </e>
       <e p="PenguinSlide.sln" t="IncludeFlat" />
     </e>

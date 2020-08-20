@@ -7,7 +7,7 @@ using PenguinSlide.Controls;
 
 namespace PenguinSlide.Entities
 {
-    public class Player : Entity
+    public class Player : Entity, IMovable, ICollectable
     {
         private readonly Animation animationDie = new Animation();
         private readonly Animation animationHurt = new Animation();
@@ -38,19 +38,9 @@ namespace PenguinSlide.Entities
             currentAnimation = animationIdle;
         }
 
-        public Vector2 Position { get; set; }
-
         public List<ICollectable> Collectables { get; } = new List<ICollectable>();
 
-        public bool IsAlive { get; set; } = true;
-
         public Vector2 Speed => speed;
-
-        public Rectangle CollisionRectangle { get; set; }
-        public bool CanMoveLeft { get; set; }
-        public bool CanMoveRight { get; set; }
-        public bool CanMoveUp { get; set; }
-        public bool CanMoveDown { get; set; }
 
         private void CreateAnimation()
         {
@@ -87,7 +77,10 @@ namespace PenguinSlide.Entities
             }
 
             if (control.Jump && !isJumping && !CanMoveDown)
+            {
+                SoundPlayer.JumpSound.Play();
                 isJumping = true;
+            }
             else if (!control.Jump && isJumping) isJumping = false;
             if (control.Idle) currentAnimation = animationIdle;
 

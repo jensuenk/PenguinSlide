@@ -25,12 +25,12 @@ namespace PenguinSlide.GameState
                 new Rectangle(0, 0, graphicsDevice.Viewport.Bounds.Width, graphicsDevice.Viewport.Bounds.Height));
             var againButton = new Button(respawnButtonTexture,
                 new Rectangle(1025, 700, 160, 160));
-            againButton.Click += RespawnButtonClick;
+            againButton.Click += RespawnButton_Click;
 
             var quitButton = new Button(quitButtonTexture,
                 new Rectangle(725, 700, 160, 160));
 
-            quitButton.Click += QuitButtonClick;
+            quitButton.Click += QuitButton_Click;
             buttons.Add(againButton);
             buttons.Add(quitButton);
         }
@@ -50,13 +50,15 @@ namespace PenguinSlide.GameState
             spriteBatch.End();
         }
 
-        private void RespawnButtonClick(object sender, EventArgs e)
+        private void RespawnButton_Click(object sender, EventArgs e)
         {
+            SoundPlayer.ButtonSound.Play();
             game.ChangeState(new PlayState(graphicsDevice, contentManager, game));
         }
 
-        private void QuitButtonClick(object sender, EventArgs e)
+        private void QuitButton_Click(object sender, EventArgs e)
         {
+            SoundPlayer.ButtonSound.Play();
             game.ChangeState(new MenuState(graphicsDevice, contentManager, game));
         }
     }

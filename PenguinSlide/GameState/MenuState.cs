@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using PenguinSlide.Components;
 using PenguinSlide.Level;
 
@@ -16,6 +17,7 @@ namespace PenguinSlide.GameState
         public MenuState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
             graphicsDevice, contentManager, game)
         {
+            MediaPlayer.Resume();
             game.IsMouseVisible = true;
 
             var playButtonTexture = contentManager.Load<Texture2D>("play-button");
@@ -27,12 +29,12 @@ namespace PenguinSlide.GameState
 
             var playButton = new Button(playButtonTexture,
                 new Rectangle(110, 300, playButtonTexture.Width, playButtonTexture.Height));
-            playButton.Click += PlayButtonClick;
+            playButton.Click += PlayButton_Click;
 
             var quitButton = new Button(quitButtonTexture,
                 new Rectangle(110, 600, quitButtonTexture.Width, quitButtonTexture.Height));
 
-            quitButton.Click += QuitButtonClick;
+            quitButton.Click += QuitButton_Click;
 
             buttons.Add(playButton);
             buttons.Add(quitButton);
@@ -53,13 +55,15 @@ namespace PenguinSlide.GameState
             spriteBatch.End();
         }
 
-        private void PlayButtonClick(object sender, EventArgs e)
+        private void PlayButton_Click(object sender, EventArgs e)
         {
+            MediaPlayer.Pause();
+            SoundPlayer.ButtonSound.Play();
             game.ChangeState(new PlayState(graphicsDevice, contentManager, game));
             game.IsMouseVisible = false;
         }
 
-        private void QuitButtonClick(object sender, EventArgs e)
+        private void QuitButton_Click(object sender, EventArgs e)
         {
             game.Exit();
         }

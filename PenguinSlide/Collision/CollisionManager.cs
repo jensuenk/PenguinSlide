@@ -59,7 +59,10 @@ namespace PenguinSlide.Collision
         {
             foreach (var component in level.Damageables)
                 if (player.CollisionRectangle.Intersects(component.CollisionRectangle))
+                {
                     player.IsAlive = false;
+                    SoundPlayer.DieSound.Play();
+                }
         }
 
         private void UpdateCollectables()
@@ -69,6 +72,7 @@ namespace PenguinSlide.Collision
                 {
                     player.Collectables.Add(component);
                     level.Components.Remove((Component) component);
+                    SoundPlayer.PickupSound.Play();
                 }
         }
 

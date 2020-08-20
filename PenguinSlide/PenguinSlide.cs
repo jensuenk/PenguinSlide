@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using PenguinSlide.GameState;
 
 namespace PenguinSlide
@@ -36,6 +38,17 @@ namespace PenguinSlide
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            
+            SoundPlayer.JumpSound = Content.Load<SoundEffect>("sounds/jump");
+            SoundPlayer.PickupSound = Content.Load<SoundEffect>("sounds/pickup");
+            SoundPlayer.ButtonSound = Content.Load<SoundEffect>("sounds/button");
+            SoundPlayer.DieSound = Content.Load<SoundEffect>("sounds/die");
+            SoundPlayer.EndSound = Content.Load<SoundEffect>("sounds/finish");
+            SoundPlayer.Music = Content.Load<Song>("sounds/music");
+            
+            MediaPlayer.Play(SoundPlayer.Music);
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume -= 0.2f;
         }
 
         protected override void UnloadContent()
