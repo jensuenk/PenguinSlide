@@ -41,7 +41,7 @@ namespace PenguinSlide.Level
 
         public int CollectablesAmount { get; private set; }
 
-        public bool IsCompleted { get; set; } = false;
+        public bool IsCompleted { get; set; }
 
         private void Generate()
         {
@@ -68,11 +68,11 @@ namespace PenguinSlide.Level
                             new Rectangle(x * size, y * size + size / 2, size, size / 2)));
                         break;
                     case 5:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/"),
-                            new Rectangle(x * size, y * size, size, size)));
+                        Components.Add(new Decoration(contentManager.Load<Texture2D>("tree_2"),
+                            new Rectangle(x * size, y * size, size * 2, size * 2)));
                         break;
                     case 6:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/"),
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_ice_01a"),
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                     case 7:
