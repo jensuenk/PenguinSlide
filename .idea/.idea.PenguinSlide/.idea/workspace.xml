@@ -8,13 +8,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a48775f0-d6e9-4418-aa4b-9452ba781eff" name="Default Changelist" comment="Respawn screen">
+    <list default="true" id="a48775f0-d6e9-4418-aa4b-9452ba781eff" name="Default Changelist" comment="Added end state + loading of new level">
+      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/start-screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Content/Content.mgcb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,15 +77,15 @@
         <option value="$PROJECT_DIR$/PenguinSlide/Entities/Player.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Components/Button.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Components/Component.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Level/Background.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Entities/Entity.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Level/Camera.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Collision/CollisionManager.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" />
         <option value="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" />
-        <option value="$PROJECT_DIR$/PenguinSlide/Level/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" />
       </list>
     </option>
   </component>
@@ -142,7 +142,7 @@
       <workItem from="1597778719511" duration="13660000" />
       <workItem from="1597793345907" duration="54000" />
       <workItem from="1597827669890" duration="27142000" />
-      <workItem from="1597916326590" duration="3247000" />
+      <workItem from="1597916326590" duration="4704000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1597580731542</created>
@@ -277,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597880018265</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added end state + loading of new level">
+      <created>1597919848451</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1597919848451</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -315,7 +322,8 @@
     <MESSAGE value="Refactoring + die + star collectables" />
     <MESSAGE value="Start menu + respawn" />
     <MESSAGE value="Respawn screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Respawn screen" />
+    <MESSAGE value="Added end state + loading of new level" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added end state + loading of new level" />
   </component>
   <component name="WindowStateProjectService">
     <state x="744" y="353" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597580889639">
@@ -330,25 +338,25 @@
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
     <state x="1026" y="544" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597781876469" />
-    <state width="1259" height="201" key="GridCell.Tab.0.bottom" timestamp="1597919372316">
+    <state width="1259" height="201" key="GridCell.Tab.0.bottom" timestamp="1597920619480">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1259" height="201" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597919372316" />
+    <state width="1259" height="201" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597920619480" />
     <state width="1750" height="381" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251403" />
-    <state width="1259" height="201" key="GridCell.Tab.0.center" timestamp="1597919372315">
+    <state width="1259" height="201" key="GridCell.Tab.0.center" timestamp="1597920619479">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1259" height="201" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597919372315" />
+    <state width="1259" height="201" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597920619479" />
     <state width="1750" height="381" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251402" />
-    <state width="1259" height="201" key="GridCell.Tab.0.left" timestamp="1597919372315">
+    <state width="1259" height="201" key="GridCell.Tab.0.left" timestamp="1597920619478">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1259" height="201" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597919372315" />
+    <state width="1259" height="201" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597920619478" />
     <state width="1750" height="381" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251401" />
-    <state width="1259" height="201" key="GridCell.Tab.0.right" timestamp="1597919372316">
+    <state width="1259" height="201" key="GridCell.Tab.0.right" timestamp="1597920619479">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="1259" height="201" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597919372316" />
+    <state width="1259" height="201" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597920619479" />
     <state width="1750" height="381" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251402" />
     <state width="1865" height="388" key="GridCell.Tab.1.bottom" timestamp="1597919260866">
       <screen x="0" y="23" width="2560" height="1338" />
@@ -434,24 +442,5 @@
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
     <state x="943" y="326" width="672" height="678" key="search.everywhere.popup/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597878627053" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs</url>
-          <line>84</line>
-          <properties documentPath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" initialLine="84">
-            <startOffsets>
-              <option value="3590" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3621" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

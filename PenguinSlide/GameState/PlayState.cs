@@ -21,7 +21,7 @@ namespace PenguinSlide.GameState
         private readonly LevelManager levelManager;
         private readonly Player player;
         private List<Button> buttons = new List<Button>();
-        private Background respawnScreen;
+        private Background respawnBackground;
 
         public PlayState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
             graphicsDevice, contentManager, game)
@@ -49,7 +49,7 @@ namespace PenguinSlide.GameState
             background = new Background(backgroundTexture,
                 new Rectangle(0, 0, backgroundTexture.Width, graphicsDevice.Viewport.Bounds.Height));
             
-            respawnScreen = new Background(respawnBackgroundTexture,
+            respawnBackground = new Background(respawnBackgroundTexture,
                 new Rectangle(0, 0, graphicsDevice.Viewport.Bounds.Width, graphicsDevice.Viewport.Bounds.Height));
             var respawnButton = new Button(respawnButtonTexture,
                 new Rectangle(1025, 700, 160, 160));
@@ -104,7 +104,7 @@ namespace PenguinSlide.GameState
             if (!player.IsAlive)
             {
                 game.IsMouseVisible = true;
-                respawnScreen.Draw(spriteBatch);
+                respawnBackground.Draw(spriteBatch);
                 foreach (var button in buttons)
                     button.Draw(spriteBatch);
             }

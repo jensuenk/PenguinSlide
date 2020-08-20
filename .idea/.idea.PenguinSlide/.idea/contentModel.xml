@@ -58,6 +58,7 @@
                 <e p="Sign_2.xnb" t="Include" />
                 <e p="spikes.xnb" t="Include" />
                 <e p="star.xnb" t="Include" />
+                <e p="start-screen.xnb" t="Include" />
                 <e p="stone.xnb" t="Include" />
                 <e p="tiles" t="Include">
                   <e p="block_ground_00_single.xnb" t="Include" />
@@ -113,6 +114,7 @@
               <e p="Sign_2.xnb" t="Include" />
               <e p="spikes.xnb" t="Include" />
               <e p="star.xnb" t="Include" />
+              <e p="start-screen.xnb" t="Include" />
               <e p="stone.xnb" t="Include" />
               <e p="tiles" t="Include">
                 <e p="block_ground_00_single.xnb" t="Include" />
@@ -192,6 +194,7 @@
                 <e p="Sign_2.mgcontent" t="Include" />
                 <e p="spikes.mgcontent" t="Include" />
                 <e p="star.mgcontent" t="Include" />
+                <e p="start-screen.mgcontent" t="Include" />
                 <e p="stone.mgcontent" t="Include" />
                 <e p="tiles" t="Include">
                   <e p="block_ground_00_single.mgcontent" t="Include" />
@@ -247,6 +250,7 @@
               <e p="Sign_2.mgcontent" t="Include" />
               <e p="spikes.mgcontent" t="Include" />
               <e p="star.mgcontent" t="Include" />
+              <e p="start-screen.mgcontent" t="Include" />
               <e p="stone.mgcontent" t="Include" />
               <e p="tiles" t="Include">
                 <e p="block_ground_00_single.mgcontent" t="Include" />
@@ -297,6 +301,7 @@
           <e p="sign_1.png" t="Include" />
           <e p="Sign_2.png" t="Include" />
           <e p="spikes.png" t="Include" />
+          <e p="start-screen.png" t="Include" />
           <e p="stone.png" t="Include" />
           <e p="tiles" t="Include">
             <e p="block_ground_00_single.png" t="Include" />
