@@ -8,89 +8,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a48775f0-d6e9-4418-aa4b-9452ba781eff" name="Default Changelist" comment="Map changes">
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/crate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/game-background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/ice-tile-clear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/ice-tile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/igloo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/sign.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/spikes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/level/tree.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/player/player.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/ui/gameover-screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/ui/play-button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/ui/quit-button-small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/ui/quit-button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/ui/respawn-button-small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/ui/respawn-screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PenguinSlide/Content/ui/start-screen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Content/Content.mgcb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/Sign_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/bg-icebergs-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/bg_night_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/bg_winter_trees_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/crate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/crystal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/font.spritefont" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/gameover-screen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/igloo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/object_04_star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/play-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/quit-button-small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/quit-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/respawn-button-small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/shard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/sign_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/sounds/die.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/spikes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/start-screen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/stone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_00_single.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_01_top_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_02_top_mid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_03_top_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_04_mid_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_05_mid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_06_mid_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_08_bottom_mid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_09_bottom_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_10_top_bottom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_11_left_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_12_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_12_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_13_top.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_14_bottom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ground_7_bottom_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ice_01a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ice_01b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ice_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_ice_03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_1_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_1_mid_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_1_mid_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_1_mid_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_1_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_2_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_2_mid_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_2_mid_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_2_mid_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_2_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/block_snow_2_single.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/play-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tiles/quit-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tree_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Content/tree_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/EndState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/MenuState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/GameState/PlayState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PenguinSlide/Level/Level.cs" afterDir="false" />
+    <list default="true" id="a48775f0-d6e9-4418-aa4b-9452ba781eff" name="Default Changelist" comment="Removed unused files">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PenguinSlide/.idea/discord.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +137,7 @@
       <workItem from="1597778719511" duration="13660000" />
       <workItem from="1597793345907" duration="54000" />
       <workItem from="1597827669890" duration="27142000" />
-      <workItem from="1597916326590" duration="24256000" />
+      <workItem from="1597916326590" duration="24635000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1597580731542</created>
@@ -402,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597952159577</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Removed unused files">
+      <created>1597953350221</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1597953350221</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -421,7 +347,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Initial" />
     <MESSAGE value="Added textures + renamed parameters + added scale for player" />
     <MESSAGE value="Added missing files" />
     <MESSAGE value="Created level drawer + manager" />
@@ -446,7 +371,8 @@
     <MESSAGE value="New icons" />
     <MESSAGE value="Added sounds" />
     <MESSAGE value="Map changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Map changes" />
+    <MESSAGE value="Removed unused files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unused files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="744" y="353" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597580889639">
@@ -465,25 +391,25 @@
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
     <state x="1041" y="567" key="Github.CreatePullRequestDialog/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597933855295" />
-    <state width="2518" height="201" key="GridCell.Tab.0.bottom" timestamp="1597952921780">
+    <state width="2518" height="201" key="GridCell.Tab.0.bottom" timestamp="1597953315073">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="2518" height="201" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597952921780" />
+    <state width="2518" height="201" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597953315073" />
     <state width="1750" height="381" key="GridCell.Tab.0.bottom/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251403" />
-    <state width="2518" height="201" key="GridCell.Tab.0.center" timestamp="1597952921779">
+    <state width="2518" height="201" key="GridCell.Tab.0.center" timestamp="1597953315072">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="2518" height="201" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597952921779" />
+    <state width="2518" height="201" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597953315072" />
     <state width="1750" height="381" key="GridCell.Tab.0.center/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251402" />
-    <state width="2518" height="201" key="GridCell.Tab.0.left" timestamp="1597952921779">
+    <state width="2518" height="201" key="GridCell.Tab.0.left" timestamp="1597953315072">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="2518" height="201" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597952921779" />
+    <state width="2518" height="201" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597953315072" />
     <state width="1750" height="381" key="GridCell.Tab.0.left/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251401" />
-    <state width="2518" height="201" key="GridCell.Tab.0.right" timestamp="1597952921780">
+    <state width="2518" height="201" key="GridCell.Tab.0.right" timestamp="1597953315073">
       <screen x="0" y="23" width="2560" height="1338" />
     </state>
-    <state width="2518" height="201" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597952921780" />
+    <state width="2518" height="201" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@0.23.2560.1338" timestamp="1597953315073" />
     <state width="1750" height="381" key="GridCell.Tab.0.right/0.23.2560.1338/2560.149.1792.1097@2560.149.1792.1097" timestamp="1597582251402" />
     <state width="2518" height="388" key="GridCell.Tab.1.bottom" timestamp="1597951803577">
       <screen x="0" y="23" width="2560" height="1338" />
