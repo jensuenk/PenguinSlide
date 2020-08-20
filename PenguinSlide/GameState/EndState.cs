@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,15 +10,17 @@ namespace PenguinSlide.GameState
 {
     internal class EndState : State
     {
-        private List<Button> buttons = new List<Button>();
-        private Background endScreen;
-        public EndState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(graphicsDevice, contentManager, game)
+        private readonly List<Button> buttons = new List<Button>();
+        private readonly Background endScreen;
+
+        public EndState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
+            graphicsDevice, contentManager, game)
         {
             game.IsMouseVisible = true;
             var respawnBackgroundTexture = contentManager.Load<Texture2D>("gameover-screen");
-            Texture2D respawnButtonTexture = contentManager.Load<Texture2D>("respawn-button-small");
-            Texture2D quitButtonTexture = contentManager.Load<Texture2D>("quit-button-small");
-            
+            var respawnButtonTexture = contentManager.Load<Texture2D>("respawn-button-small");
+            var quitButtonTexture = contentManager.Load<Texture2D>("quit-button-small");
+
             endScreen = new Background(respawnBackgroundTexture,
                 new Rectangle(0, 0, graphicsDevice.Viewport.Bounds.Width, graphicsDevice.Viewport.Bounds.Height));
             var againButton = new Button(respawnButtonTexture,
@@ -46,11 +49,13 @@ namespace PenguinSlide.GameState
                 button.Draw(spriteBatch);
             spriteBatch.End();
         }
-        private void RespawnButtonClick(object sender, System.EventArgs e)
+
+        private void RespawnButtonClick(object sender, EventArgs e)
         {
             game.ChangeState(new PlayState(graphicsDevice, contentManager, game));
         }
-        private void QuitButtonClick(object sender, System.EventArgs e)
+
+        private void QuitButtonClick(object sender, EventArgs e)
         {
             game.ChangeState(new MenuState(graphicsDevice, contentManager, game));
         }

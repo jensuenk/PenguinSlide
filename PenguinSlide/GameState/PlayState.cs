@@ -15,13 +15,13 @@ namespace PenguinSlide.GameState
     {
         private readonly Background background;
         private readonly Camera camera;
-        private CollisionManager collisionManager;
         private readonly Control control;
-        private Level.Level currentLevel;
         private readonly LevelManager levelManager;
         private readonly Player player;
-        private List<Button> buttons = new List<Button>();
-        private Background respawnBackground;
+        private readonly List<Button> buttons = new List<Button>();
+        private CollisionManager collisionManager;
+        private Level.Level currentLevel;
+        private readonly Background respawnBackground;
 
         public PlayState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
             graphicsDevice, contentManager, game)
@@ -33,22 +33,22 @@ namespace PenguinSlide.GameState
             var playerTexture = contentManager.Load<Texture2D>("player");
             var backgroundTexture = contentManager.Load<Texture2D>("bg-icebergs-1");
             var respawnBackgroundTexture = contentManager.Load<Texture2D>("respawn-screen");
-            Texture2D respawnButtonTexture = contentManager.Load<Texture2D>("respawn-button-small");
-            Texture2D quitButtonTexture = contentManager.Load<Texture2D>("quit-button-small");
+            var respawnButtonTexture = contentManager.Load<Texture2D>("respawn-button-small");
+            var quitButtonTexture = contentManager.Load<Texture2D>("quit-button-small");
 
             control = new KeyboardControl();
             var playerPosition = currentLevel.PlayerLocation;
             var playerSpeed = new Vector2(7, 10);
             var playerScale = (float) currentLevel.PlayerSize / 144;
 
-            var playerCollisionRectangle = 
+            var playerCollisionRectangle =
                 new Rectangle((int) playerPosition.X, (int) playerPosition.Y, 144, playerTexture.Height);
             player = new Player(playerTexture, playerCollisionRectangle, playerSpeed, playerScale, control);
 
             collisionManager = new CollisionManager(player, currentLevel);
             background = new Background(backgroundTexture,
                 new Rectangle(0, 0, backgroundTexture.Width, graphicsDevice.Viewport.Bounds.Height));
-            
+
             respawnBackground = new Background(respawnBackgroundTexture,
                 new Rectangle(0, 0, graphicsDevice.Viewport.Bounds.Width, graphicsDevice.Viewport.Bounds.Height));
             var respawnButton = new Button(respawnButtonTexture,
@@ -63,7 +63,6 @@ namespace PenguinSlide.GameState
             buttons.Add(quitButton);
 
             camera = new Camera(graphicsDevice.Viewport);
-            
         }
 
         public override void Update(GameTime gameTime)
@@ -108,16 +107,19 @@ namespace PenguinSlide.GameState
                 foreach (var button in buttons)
                     button.Draw(spriteBatch);
             }
+
             spriteBatch.End();
         }
-        private void RespawnButtonClick(object sender, System.EventArgs e)
+
+        private void RespawnButtonClick(object sender, EventArgs e)
         {
             player.IsAlive = true;
             player.Respawn(currentLevel.PlayerLocation);
             currentLevel.RespawnCollectables();
             game.IsMouseVisible = false;
         }
-        private void QuitButtonClick(object sender, System.EventArgs e)
+
+        private void QuitButtonClick(object sender, EventArgs e)
         {
             game.ChangeState(new MenuState(graphicsDevice, contentManager, game));
         }

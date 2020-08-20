@@ -4,6 +4,5 @@ namespace PenguinSlide.Components
 {
     public interface IDamageable : ICollidable
     {
-        
     }
 }

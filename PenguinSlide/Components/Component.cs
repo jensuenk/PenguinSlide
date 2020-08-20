@@ -1,13 +1,12 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PenguinSlide.Collision;
 
 namespace PenguinSlide.Components
 {
     public abstract class Component
     {
-        protected Texture2D texture;
         protected Rectangle rectangle;
+        protected Texture2D texture;
 
         public Component(Texture2D texture, Rectangle rectangle)
         {

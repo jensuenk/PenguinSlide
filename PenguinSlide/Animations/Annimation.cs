@@ -5,10 +5,10 @@ namespace PenguinSlide.Animations
 {
     public class Animation
     {
-        private int counter;
-        public AnimationFrame CurrentFrame;
         private readonly List<AnimationFrame> frames;
         private readonly int speed = 100;
+        private int counter;
+        public AnimationFrame CurrentFrame;
         private double xOffset;
 
         public Animation()

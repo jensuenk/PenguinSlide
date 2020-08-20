@@ -2,7 +2,6 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using PenguinSlide.Components;
 
 namespace PenguinSlide.Components
 {
@@ -10,13 +9,14 @@ namespace PenguinSlide.Components
     {
         private MouseState currentMouse, previousMouse;
         private bool isHovering;
-        public event EventHandler Click;
 
-        public bool Clicked { get; private set; }
-        
         public Button(Texture2D texture, Rectangle rectangle) : base(texture, rectangle)
         {
         }
+
+        public bool Clicked { get; private set; }
+        public event EventHandler Click;
+
         public void Update(GameTime gameTime)
         {
             previousMouse = currentMouse;
@@ -26,14 +26,12 @@ namespace PenguinSlide.Components
 
             isHovering = false;
 
-            if(mouseRectangle.Intersects(rectangle))
+            if (mouseRectangle.Intersects(rectangle))
             {
                 isHovering = true;
 
-                if(currentMouse.LeftButton == ButtonState.Released && previousMouse.LeftButton == ButtonState.Pressed)
-                {
+                if (currentMouse.LeftButton == ButtonState.Released && previousMouse.LeftButton == ButtonState.Pressed)
                     Click?.Invoke(this, new EventArgs());
-                }
             }
         }
 

@@ -1,4 +1,3 @@
-using System;
 using Microsoft.Xna.Framework;
 using PenguinSlide.Components;
 using PenguinSlide.Entities;
@@ -52,34 +51,25 @@ namespace PenguinSlide.Collision
         private void UpdatePortal()
         {
             if (player.CollisionRectangle.Intersects(level.Portal.CollisionRectangle))
-            {
                 if (player.Collectables.Count == level.CollectablesAmount)
-                {
                     level.IsCompleted = true;
-                }
-            }
         }
+
         private void UpdateDamage()
         {
             foreach (var component in level.Damageables)
-            {
                 if (player.CollisionRectangle.Intersects(component.CollisionRectangle))
-                {
                     player.IsAlive = false;
-                }
-            }
         }
 
         private void UpdateCollectables()
         {
             foreach (var component in level.ActiveCollectables)
-            {
                 if (player.CollisionRectangle.Intersects(component.CollisionRectangle))
                 {
                     player.Collectables.Add(component);
-                    level.Components.Remove((Component)component);
+                    level.Components.Remove((Component) component);
                 }
-            }
         }
 
         private bool IsTouchingLeft(Rectangle rectangle)
@@ -100,19 +90,19 @@ namespace PenguinSlide.Collision
 
         private bool IsTouchingRight(Rectangle rectangle)
         {
-            return (player.CollisionRectangle.Left - player.Speed.X - 1 < rectangle.Right &&
+            return player.CollisionRectangle.Left - player.Speed.X - 1 < rectangle.Right &&
                    player.CollisionRectangle.Right > rectangle.Right &&
                    player.CollisionRectangle.Bottom > rectangle.Top &&
-                   player.CollisionRectangle.Top < rectangle.Bottom) || 
+                   player.CollisionRectangle.Top < rectangle.Bottom ||
                    player.CollisionRectangle.Left < level.Bounds.Left;
         }
 
         private bool IsTouchingBottom(Rectangle rectangle)
         {
-            return (player.CollisionRectangle.Top + player.Speed.Y < rectangle.Bottom &&
+            return player.CollisionRectangle.Top + player.Speed.Y < rectangle.Bottom &&
                    player.CollisionRectangle.Bottom > rectangle.Bottom &&
                    player.CollisionRectangle.Right > rectangle.Left &&
-                   player.CollisionRectangle.Left < rectangle.Right) || 
+                   player.CollisionRectangle.Left < rectangle.Right ||
                    player.CollisionRectangle.Top < level.Bounds.Top;
         }
     }

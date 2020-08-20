@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,16 +10,18 @@ namespace PenguinSlide.GameState
 {
     internal class MenuState : State
     {
-        private List<Button> buttons = new List<Button>();
-        private Background background;
-        public MenuState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(graphicsDevice, contentManager, game)
+        private readonly Background background;
+        private readonly List<Button> buttons = new List<Button>();
+
+        public MenuState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
+            graphicsDevice, contentManager, game)
         {
             game.IsMouseVisible = true;
-            
-            Texture2D playButtonTexture = contentManager.Load<Texture2D>("play-button");
-            Texture2D quitButtonTexture = contentManager.Load<Texture2D>("quit-button");
-            Texture2D backgroundTexture = contentManager.Load<Texture2D>("start-screen");
-            
+
+            var playButtonTexture = contentManager.Load<Texture2D>("play-button");
+            var quitButtonTexture = contentManager.Load<Texture2D>("quit-button");
+            var backgroundTexture = contentManager.Load<Texture2D>("start-screen");
+
             background = new Background(backgroundTexture,
                 new Rectangle(0, 0, backgroundTexture.Width, graphicsDevice.Viewport.Bounds.Height));
 
@@ -30,7 +33,7 @@ namespace PenguinSlide.GameState
                 new Rectangle(110, 600, quitButtonTexture.Width, quitButtonTexture.Height));
 
             quitButton.Click += QuitButtonClick;
-            
+
             buttons.Add(playButton);
             buttons.Add(quitButton);
         }
@@ -49,13 +52,14 @@ namespace PenguinSlide.GameState
                 button.Draw(spriteBatch);
             spriteBatch.End();
         }
-        
-        private void PlayButtonClick(object sender, System.EventArgs e)
+
+        private void PlayButtonClick(object sender, EventArgs e)
         {
             game.ChangeState(new PlayState(graphicsDevice, contentManager, game));
             game.IsMouseVisible = false;
         }
-        private void QuitButtonClick(object sender, System.EventArgs e)
+
+        private void QuitButtonClick(object sender, EventArgs e)
         {
             game.Exit();
         }

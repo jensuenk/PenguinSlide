@@ -8,16 +8,16 @@ namespace PenguinSlide
     public class PenguinSlide : Game
     {
         private readonly GraphicsDeviceManager graphics;
-        private SpriteBatch spriteBatch;
 
         private State currentState;
+        private SpriteBatch spriteBatch;
 
         public PenguinSlide()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
-        
+
         public void ChangeState(State state)
         {
             currentState = state;
@@ -47,18 +47,18 @@ namespace PenguinSlide
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            
+
             currentState.Update(gameTime);
-            
+
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
-            
+
             currentState.Draw(spriteBatch);
-            
+
             base.Draw(gameTime);
         }
     }

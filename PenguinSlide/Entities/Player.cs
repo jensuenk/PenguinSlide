@@ -9,7 +9,6 @@ namespace PenguinSlide.Entities
 {
     public class Player : Entity
     {
-        private int airTime;
         private readonly Animation animationDie = new Animation();
         private readonly Animation animationHurt = new Animation();
         private readonly Animation animationIdle = new Animation();
@@ -17,13 +16,14 @@ namespace PenguinSlide.Entities
         private readonly Animation animationRun = new Animation();
         private readonly Animation animationSlide = new Animation();
         private readonly Control control;
+        private readonly float scale;
+        private readonly Texture2D texture;
+        private int airTime;
 
         private Animation currentAnimation;
         private bool isJumping, isFacingRight = true;
-        private readonly float scale;
         private Vector2 speed;
         private SpriteEffects spriteEffects;
-        private readonly Texture2D texture;
         private Vector2 velocity;
 
         public Player(Texture2D texture, Rectangle rectangle, Vector2 speed, float scale, Control control)
@@ -39,15 +39,12 @@ namespace PenguinSlide.Entities
         }
 
         public Vector2 Position { get; set; }
-        
-        public List<ICollectable> Collectables { get; private set; } = new List<ICollectable>();
+
+        public List<ICollectable> Collectables { get; } = new List<ICollectable>();
 
         public bool IsAlive { get; set; } = true;
-        
-        public Vector2 Speed
-        {
-            get { return speed; }
-        }
+
+        public Vector2 Speed => speed;
 
         public Rectangle CollisionRectangle { get; set; }
         public bool CanMoveLeft { get; set; }
@@ -95,7 +92,7 @@ namespace PenguinSlide.Entities
             if (control.Idle) currentAnimation = animationIdle;
 
             if (velocity.Y != 0) currentAnimation = animationJump;
-            
+
             spriteEffects = !isFacingRight ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
         }
 
@@ -159,7 +156,7 @@ namespace PenguinSlide.Entities
             {
                 currentAnimation = animationDie;
             }
-            
+
             Position += velocity;
 
             CollisionRectangle = new Rectangle((int) Position.X + (int) (25 * scale), (int) Position.Y,

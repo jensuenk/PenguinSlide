@@ -20,9 +20,7 @@ namespace PenguinSlide.Level
             var position = Matrix.CreateTranslation(-viewport.Width * 0.5f, -viewport.Height * 0.5f, 0);
 
             if (player.Position.X >= viewport.Width * 0.5f)
-            {
                 position = Matrix.CreateTranslation(-player.Position.X, -viewport.Height * 0.5f, 0);
-            }
 
             var offset = Matrix.CreateTranslation(viewport.Width * 0.5f, viewport.Height * 0.5f, 0);
 
