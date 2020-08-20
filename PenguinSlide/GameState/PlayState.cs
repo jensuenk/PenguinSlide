@@ -89,7 +89,7 @@ namespace PenguinSlide.GameState
                 {
                     currentLevel = levelManager.GetNextLevel();
                     levelManager.CurrentLevel = currentLevel;
-                    player.Position = currentLevel.PlayerLocation;
+                    player.Respawn(currentLevel.PlayerLocation);
                     collisionManager = new CollisionManager(player, currentLevel);
                 }
             }
@@ -114,6 +114,7 @@ namespace PenguinSlide.GameState
         {
             player.IsAlive = true;
             player.Respawn(currentLevel.PlayerLocation);
+            currentLevel.RespawnCollectables();
             game.IsMouseVisible = false;
         }
         private void QuitButtonClick(object sender, System.EventArgs e)

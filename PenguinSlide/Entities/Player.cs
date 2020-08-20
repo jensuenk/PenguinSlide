@@ -40,7 +40,7 @@ namespace PenguinSlide.Entities
 
         public Vector2 Position { get; set; }
         
-        public List<ICollectable> Collectables { get; set; } = new List<ICollectable>();
+        public List<ICollectable> Collectables { get; private set; } = new List<ICollectable>();
 
         public bool IsAlive { get; set; } = true;
         
@@ -180,6 +180,7 @@ namespace PenguinSlide.Entities
             IsAlive = true;
             currentAnimation = animationIdle;
             Position = position;
+            Collectables.Clear();
         }
     }
 }

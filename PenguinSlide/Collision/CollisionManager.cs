@@ -72,7 +72,7 @@ namespace PenguinSlide.Collision
 
         private void UpdateCollectables()
         {
-            foreach (var component in level.Collectables)
+            foreach (var component in level.ActiveCollectables)
             {
                 if (player.CollisionRectangle.Intersects(component.CollisionRectangle))
                 {
