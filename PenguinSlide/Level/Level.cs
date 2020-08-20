@@ -55,36 +55,36 @@ namespace PenguinSlide.Level
                         PlayerLocation = new Vector2(x * size, y * size);
                         break;
                     case 2:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_ground_00_single"),
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("level/ice-tile"),
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                     case 3:
-                        Components.Add(new Star(contentManager.Load<Texture2D>("star"),
+                        Components.Add(new Star(contentManager.Load<Texture2D>("level/star"),
                             new Rectangle(x * size, y * size, size, size)));
                         CollectablesAmount++;
                         break;
                     case 4:
-                        Components.Add(new Spike(contentManager.Load<Texture2D>("spikes"),
+                        Components.Add(new Spike(contentManager.Load<Texture2D>("level/spikes"),
                             new Rectangle(x * size, y * size + size / 2, size, size / 2)));
                         break;
                     case 5:
-                        Components.Add(new Decoration(contentManager.Load<Texture2D>("tree_2"),
+                        Components.Add(new Decoration(contentManager.Load<Texture2D>("level/tree"),
                             new Rectangle(x * size, y * size, size * 2, size * 2)));
                         break;
                     case 6:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("tiles/block_ice_01a"),
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("level/ice-tile-clear"),
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                     case 7:
-                        Components.Add(new Portal(contentManager.Load<Texture2D>("igloo"),
+                        Components.Add(new Portal(contentManager.Load<Texture2D>("level/igloo"),
                             new Rectangle(x * size, y * size, size * 2, size)));
                         break;
                     case 8:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("crate"),
+                        Components.Add(new Tile(contentManager.Load<Texture2D>("level/crate"),
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                     case 9:
-                        Components.Add(new Decoration(contentManager.Load<Texture2D>("sign_2"),
+                        Components.Add(new Decoration(contentManager.Load<Texture2D>("level/sign"),
                             new Rectangle(x * size, y * size, size, size)));
                         break;
                 }

@@ -17,9 +17,9 @@ namespace PenguinSlide.GameState
             graphicsDevice, contentManager, game)
         {
             game.IsMouseVisible = true;
-            var respawnBackgroundTexture = contentManager.Load<Texture2D>("gameover-screen");
-            var respawnButtonTexture = contentManager.Load<Texture2D>("respawn-button-small");
-            var quitButtonTexture = contentManager.Load<Texture2D>("quit-button-small");
+            var respawnBackgroundTexture = contentManager.Load<Texture2D>("ui/gameover-screen");
+            var respawnButtonTexture = contentManager.Load<Texture2D>("ui/respawn-button-small");
+            var quitButtonTexture = contentManager.Load<Texture2D>("ui/quit-button-small");
 
             endScreen = new Background(respawnBackgroundTexture,
                 new Rectangle(0, 0, graphicsDevice.Viewport.Bounds.Width, graphicsDevice.Viewport.Bounds.Height));

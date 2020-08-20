@@ -20,9 +20,9 @@ namespace PenguinSlide.GameState
             MediaPlayer.Resume();
             game.IsMouseVisible = true;
 
-            var playButtonTexture = contentManager.Load<Texture2D>("play-button");
-            var quitButtonTexture = contentManager.Load<Texture2D>("quit-button");
-            var backgroundTexture = contentManager.Load<Texture2D>("start-screen");
+            var playButtonTexture = contentManager.Load<Texture2D>("ui/play-button");
+            var quitButtonTexture = contentManager.Load<Texture2D>("ui/quit-button");
+            var backgroundTexture = contentManager.Load<Texture2D>("ui/start-screen");
 
             background = new Background(backgroundTexture,
                 new Rectangle(0, 0, backgroundTexture.Width, graphicsDevice.Viewport.Bounds.Height));

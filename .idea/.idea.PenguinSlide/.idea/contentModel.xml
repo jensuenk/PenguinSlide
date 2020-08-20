@@ -27,35 +27,23 @@
           <e p="Tile.cs" t="Include" />
         </e>
         <e p="Content" t="Include">
-          <e p="bg-icebergs-1.png" t="Include" />
-          <e p="bg_night_1.png" t="Include" />
-          <e p="bg_winter_trees_1.png" t="Include" />
           <e p="bin" t="Include">
             <e p="DesktopGL" t="Include">
-              <e p="bg-icebergs-1.xnb" t="Include" />
-              <e p="bg_night_1.xnb" t="Include" />
-              <e p="bg_winter_trees_1.xnb" t="Include" />
-              <e p="button.xnb" t="Include" />
               <e p="Content" t="Include">
-                <e p="bg-icebergs-1.xnb" t="Include" />
-                <e p="bg_night_1.xnb" t="Include" />
-                <e p="bg_winter_trees_1.xnb" t="Include" />
-                <e p="button.xnb" t="Include" />
-                <e p="crate.xnb" t="Include" />
-                <e p="crystal.xnb" t="Include" />
-                <e p="font.xnb" t="Include" />
-                <e p="gameover-screen.xnb" t="Include" />
-                <e p="igloo.xnb" t="Include" />
-                <e p="logo.xnb" t="Include" />
-                <e p="play-button.xnb" t="Include" />
-                <e p="player.xnb" t="Include" />
-                <e p="quit-button-small.xnb" t="Include" />
-                <e p="quit-button.xnb" t="Include" />
-                <e p="respawn-button-small.xnb" t="Include" />
-                <e p="respawn-screen.xnb" t="Include" />
-                <e p="shard.xnb" t="Include" />
-                <e p="sign_1.xnb" t="Include" />
-                <e p="Sign_2.xnb" t="Include" />
+                <e p="Level" t="Include">
+                  <e p="crate.xnb" t="Include" />
+                  <e p="game-background.xnb" t="Include" />
+                  <e p="ice-tile-clear.xnb" t="Include" />
+                  <e p="ice-tile.xnb" t="Include" />
+                  <e p="igloo.xnb" t="Include" />
+                  <e p="sign.xnb" t="Include" />
+                  <e p="spikes.xnb" t="Include" />
+                  <e p="star.xnb" t="Include" />
+                  <e p="tree.xnb" t="Include" />
+                </e>
+                <e p="player" t="Include">
+                  <e p="player.xnb" t="Include" />
+                </e>
                 <e p="sounds" t="Include">
                   <e p="button.xnb" t="Include" />
                   <e p="die.xnb" t="Include" />
@@ -65,62 +53,30 @@
                   <e p="music.xnb" t="Include" />
                   <e p="pickup.xnb" t="Include" />
                 </e>
+                <e p="ui" t="Include">
+                  <e p="gameover-screen.xnb" t="Include" />
+                  <e p="play-button.xnb" t="Include" />
+                  <e p="quit-button-small.xnb" t="Include" />
+                  <e p="quit-button.xnb" t="Include" />
+                  <e p="respawn-button-small.xnb" t="Include" />
+                  <e p="respawn-screen.xnb" t="Include" />
+                  <e p="start-screen.xnb" t="Include" />
+                </e>
+              </e>
+              <e p="Level" t="Include">
+                <e p="crate.xnb" t="Include" />
+                <e p="game-background.xnb" t="Include" />
+                <e p="ice-tile-clear.xnb" t="Include" />
+                <e p="ice-tile.xnb" t="Include" />
+                <e p="igloo.xnb" t="Include" />
+                <e p="sign.xnb" t="Include" />
                 <e p="spikes.xnb" t="Include" />
                 <e p="star.xnb" t="Include" />
-                <e p="start-screen.xnb" t="Include" />
-                <e p="stone.xnb" t="Include" />
-                <e p="tiles" t="Include">
-                  <e p="block_ground_00_single.xnb" t="Include" />
-                  <e p="block_ground_01_top_left.xnb" t="Include" />
-                  <e p="block_ground_02_top_mid.xnb" t="Include" />
-                  <e p="block_ground_03_top_right.xnb" t="Include" />
-                  <e p="block_ground_04_mid_left.xnb" t="Include" />
-                  <e p="block_ground_05_mid.xnb" t="Include" />
-                  <e p="block_ground_06_mid_right.xnb" t="Include" />
-                  <e p="block_ground_08_bottom_mid.xnb" t="Include" />
-                  <e p="block_ground_09_bottom_right.xnb" t="Include" />
-                  <e p="block_ground_10_top_bottom.xnb" t="Include" />
-                  <e p="block_ground_11_left_right.xnb" t="Include" />
-                  <e p="block_ground_12_left.xnb" t="Include" />
-                  <e p="block_ground_12_right.xnb" t="Include" />
-                  <e p="block_ground_13_top.xnb" t="Include" />
-                  <e p="block_ground_14_bottom.xnb" t="Include" />
-                  <e p="block_ground_7_bottom_left.xnb" t="Include" />
-                  <e p="block_ice_01a.xnb" t="Include" />
-                  <e p="block_ice_01b.xnb" t="Include" />
-                  <e p="block_ice_02.xnb" t="Include" />
-                  <e p="block_ice_03.xnb" t="Include" />
-                  <e p="block_snow_1_left.xnb" t="Include" />
-                  <e p="block_snow_1_mid_1.xnb" t="Include" />
-                  <e p="block_snow_1_mid_2.xnb" t="Include" />
-                  <e p="block_snow_1_mid_3.xnb" t="Include" />
-                  <e p="block_snow_1_right.xnb" t="Include" />
-                  <e p="block_snow_2_left.xnb" t="Include" />
-                  <e p="block_snow_2_mid_1.xnb" t="Include" />
-                  <e p="block_snow_2_mid_2.xnb" t="Include" />
-                  <e p="block_snow_2_mid_3.xnb" t="Include" />
-                  <e p="block_snow_2_right.xnb" t="Include" />
-                  <e p="block_snow_2_single.xnb" t="Include" />
-                  <e p="quit-button.xnb" t="Include" />
-                </e>
-                <e p="tree_1.xnb" t="Include" />
-                <e p="tree_2.xnb" t="Include" />
+                <e p="tree.xnb" t="Include" />
               </e>
-              <e p="crate.xnb" t="Include" />
-              <e p="crystal.xnb" t="Include" />
-              <e p="font.xnb" t="Include" />
-              <e p="gameover-screen.xnb" t="Include" />
-              <e p="igloo.xnb" t="Include" />
-              <e p="logo.xnb" t="Include" />
-              <e p="play-button.xnb" t="Include" />
-              <e p="player.xnb" t="Include" />
-              <e p="quit-button-small.xnb" t="Include" />
-              <e p="quit-button.xnb" t="Include" />
-              <e p="respawn-button-small.xnb" t="Include" />
-              <e p="respawn-screen.xnb" t="Include" />
-              <e p="shard.xnb" t="Include" />
-              <e p="sign_1.xnb" t="Include" />
-              <e p="Sign_2.xnb" t="Include" />
+              <e p="player" t="Include">
+                <e p="player.xnb" t="Include" />
+              </e>
               <e p="sounds" t="Include">
                 <e p="button.xnb" t="Include" />
                 <e p="die.xnb" t="Include" />
@@ -130,86 +86,50 @@
                 <e p="music.xnb" t="Include" />
                 <e p="pickup.xnb" t="Include" />
               </e>
-              <e p="spikes.xnb" t="Include" />
-              <e p="star.xnb" t="Include" />
-              <e p="start-screen.xnb" t="Include" />
-              <e p="stone.xnb" t="Include" />
-              <e p="tiles" t="Include">
-                <e p="block_ground_00_single.xnb" t="Include" />
-                <e p="block_ground_01_top_left.xnb" t="Include" />
-                <e p="block_ground_02_top_mid.xnb" t="Include" />
-                <e p="block_ground_03_top_right.xnb" t="Include" />
-                <e p="block_ground_04_mid_left.xnb" t="Include" />
-                <e p="block_ground_05_mid.xnb" t="Include" />
-                <e p="block_ground_06_mid_right.xnb" t="Include" />
-                <e p="block_ground_08_bottom_mid.xnb" t="Include" />
-                <e p="block_ground_09_bottom_right.xnb" t="Include" />
-                <e p="block_ground_10_top_bottom.xnb" t="Include" />
-                <e p="block_ground_11_left_right.xnb" t="Include" />
-                <e p="block_ground_12_left.xnb" t="Include" />
-                <e p="block_ground_12_right.xnb" t="Include" />
-                <e p="block_ground_13_top.xnb" t="Include" />
-                <e p="block_ground_14_bottom.xnb" t="Include" />
-                <e p="block_ground_7_bottom_left.xnb" t="Include" />
-                <e p="block_ice_01a.xnb" t="Include" />
-                <e p="block_ice_01b.xnb" t="Include" />
-                <e p="block_ice_02.xnb" t="Include" />
-                <e p="block_ice_03.xnb" t="Include" />
-                <e p="block_snow_1_left.xnb" t="Include" />
-                <e p="block_snow_1_mid_1.xnb" t="Include" />
-                <e p="block_snow_1_mid_2.xnb" t="Include" />
-                <e p="block_snow_1_mid_3.xnb" t="Include" />
-                <e p="block_snow_1_right.xnb" t="Include" />
-                <e p="block_snow_2_left.xnb" t="Include" />
-                <e p="block_snow_2_mid_1.xnb" t="Include" />
-                <e p="block_snow_2_mid_2.xnb" t="Include" />
-                <e p="block_snow_2_mid_3.xnb" t="Include" />
-                <e p="block_snow_2_right.xnb" t="Include" />
-                <e p="block_snow_2_single.xnb" t="Include" />
+              <e p="ui" t="Include">
+                <e p="gameover-screen.xnb" t="Include" />
+                <e p="play-button.xnb" t="Include" />
+                <e p="quit-button-small.xnb" t="Include" />
                 <e p="quit-button.xnb" t="Include" />
+                <e p="respawn-button-small.xnb" t="Include" />
+                <e p="respawn-screen.xnb" t="Include" />
+                <e p="start-screen.xnb" t="Include" />
               </e>
-              <e p="tree_1.xnb" t="Include" />
-              <e p="tree_2.xnb" t="Include" />
             </e>
           </e>
-          <e p="button.png" t="Include" />
           <e p="Content.mgcb" t="Include" />
-          <e p="crate.png" t="Include" />
-          <e p="crystal.png" t="Include" />
-          <e p="font.spritefont" t="Include" />
-          <e p="gameover-screen.png" t="Include" />
-          <e p="igloo.png" t="Include" />
-          <e p="logo.png" t="Include" />
+          <e p="Level" t="Include">
+            <e p="crate.png" t="Include" />
+            <e p="game-background.png" t="Include" />
+            <e p="ice-tile-clear.png" t="Include" />
+            <e p="ice-tile.png" t="Include" />
+            <e p="igloo.png" t="Include" />
+            <e p="sign.png" t="Include" />
+            <e p="spikes.png" t="Include" />
+            <e p="star.png" t="Include" />
+            <e p="tree.png" t="Include" />
+          </e>
           <e p="obj" t="Include">
             <e p="DesktopGL" t="Include">
               <e p=".mgcontent" t="Include" />
               <e p=".mgstats" t="Include" />
-              <e p="bg-icebergs-1.mgcontent" t="Include" />
-              <e p="bg_night_1.mgcontent" t="Include" />
-              <e p="bg_winter_trees_1.mgcontent" t="Include" />
-              <e p="button.mgcontent" t="Include" />
               <e p="Content" t="Include">
                 <e p=".mgcontent" t="Include" />
                 <e p=".mgstats" t="Include" />
-                <e p="bg-icebergs-1.mgcontent" t="Include" />
-                <e p="bg_night_1.mgcontent" t="Include" />
-                <e p="bg_winter_trees_1.mgcontent" t="Include" />
-                <e p="button.mgcontent" t="Include" />
-                <e p="crate.mgcontent" t="Include" />
-                <e p="crystal.mgcontent" t="Include" />
-                <e p="font.mgcontent" t="Include" />
-                <e p="gameover-screen.mgcontent" t="Include" />
-                <e p="igloo.mgcontent" t="Include" />
-                <e p="logo.mgcontent" t="Include" />
-                <e p="play-button.mgcontent" t="Include" />
-                <e p="player.mgcontent" t="Include" />
-                <e p="quit-button-small.mgcontent" t="Include" />
-                <e p="quit-button.mgcontent" t="Include" />
-                <e p="respawn-button-small.mgcontent" t="Include" />
-                <e p="respawn-screen.mgcontent" t="Include" />
-                <e p="shard.mgcontent" t="Include" />
-                <e p="sign_1.mgcontent" t="Include" />
-                <e p="Sign_2.mgcontent" t="Include" />
+                <e p="Level" t="Include">
+                  <e p="crate.mgcontent" t="Include" />
+                  <e p="game-background.mgcontent" t="Include" />
+                  <e p="ice-tile-clear.mgcontent" t="Include" />
+                  <e p="ice-tile.mgcontent" t="Include" />
+                  <e p="igloo.mgcontent" t="Include" />
+                  <e p="sign.mgcontent" t="Include" />
+                  <e p="spikes.mgcontent" t="Include" />
+                  <e p="star.mgcontent" t="Include" />
+                  <e p="tree.mgcontent" t="Include" />
+                </e>
+                <e p="player" t="Include">
+                  <e p="player.mgcontent" t="Include" />
+                </e>
                 <e p="sounds" t="Include">
                   <e p="button.mgcontent" t="Include" />
                   <e p="die.mgcontent" t="Include" />
@@ -218,62 +138,30 @@
                   <e p="music.mgcontent" t="Include" />
                   <e p="pickup.mgcontent" t="Include" />
                 </e>
+                <e p="ui" t="Include">
+                  <e p="gameover-screen.mgcontent" t="Include" />
+                  <e p="play-button.mgcontent" t="Include" />
+                  <e p="quit-button-small.mgcontent" t="Include" />
+                  <e p="quit-button.mgcontent" t="Include" />
+                  <e p="respawn-button-small.mgcontent" t="Include" />
+                  <e p="respawn-screen.mgcontent" t="Include" />
+                  <e p="start-screen.mgcontent" t="Include" />
+                </e>
+              </e>
+              <e p="Level" t="Include">
+                <e p="crate.mgcontent" t="Include" />
+                <e p="game-background.mgcontent" t="Include" />
+                <e p="ice-tile-clear.mgcontent" t="Include" />
+                <e p="ice-tile.mgcontent" t="Include" />
+                <e p="igloo.mgcontent" t="Include" />
+                <e p="sign.mgcontent" t="Include" />
                 <e p="spikes.mgcontent" t="Include" />
                 <e p="star.mgcontent" t="Include" />
-                <e p="start-screen.mgcontent" t="Include" />
-                <e p="stone.mgcontent" t="Include" />
-                <e p="tiles" t="Include">
-                  <e p="block_ground_00_single.mgcontent" t="Include" />
-                  <e p="block_ground_01_top_left.mgcontent" t="Include" />
-                  <e p="block_ground_02_top_mid.mgcontent" t="Include" />
-                  <e p="block_ground_03_top_right.mgcontent" t="Include" />
-                  <e p="block_ground_04_mid_left.mgcontent" t="Include" />
-                  <e p="block_ground_05_mid.mgcontent" t="Include" />
-                  <e p="block_ground_06_mid_right.mgcontent" t="Include" />
-                  <e p="block_ground_08_bottom_mid.mgcontent" t="Include" />
-                  <e p="block_ground_09_bottom_right.mgcontent" t="Include" />
-                  <e p="block_ground_10_top_bottom.mgcontent" t="Include" />
-                  <e p="block_ground_11_left_right.mgcontent" t="Include" />
-                  <e p="block_ground_12_left.mgcontent" t="Include" />
-                  <e p="block_ground_12_right.mgcontent" t="Include" />
-                  <e p="block_ground_13_top.mgcontent" t="Include" />
-                  <e p="block_ground_14_bottom.mgcontent" t="Include" />
-                  <e p="block_ground_7_bottom_left.mgcontent" t="Include" />
-                  <e p="block_ice_01a.mgcontent" t="Include" />
-                  <e p="block_ice_01b.mgcontent" t="Include" />
-                  <e p="block_ice_02.mgcontent" t="Include" />
-                  <e p="block_ice_03.mgcontent" t="Include" />
-                  <e p="block_snow_1_left.mgcontent" t="Include" />
-                  <e p="block_snow_1_mid_1.mgcontent" t="Include" />
-                  <e p="block_snow_1_mid_2.mgcontent" t="Include" />
-                  <e p="block_snow_1_mid_3.mgcontent" t="Include" />
-                  <e p="block_snow_1_right.mgcontent" t="Include" />
-                  <e p="block_snow_2_left.mgcontent" t="Include" />
-                  <e p="block_snow_2_mid_1.mgcontent" t="Include" />
-                  <e p="block_snow_2_mid_2.mgcontent" t="Include" />
-                  <e p="block_snow_2_mid_3.mgcontent" t="Include" />
-                  <e p="block_snow_2_right.mgcontent" t="Include" />
-                  <e p="block_snow_2_single.mgcontent" t="Include" />
-                  <e p="quit-button.mgcontent" t="Include" />
-                </e>
-                <e p="tree_1.mgcontent" t="Include" />
-                <e p="tree_2.mgcontent" t="Include" />
+                <e p="tree.mgcontent" t="Include" />
               </e>
-              <e p="crate.mgcontent" t="Include" />
-              <e p="crystal.mgcontent" t="Include" />
-              <e p="font.mgcontent" t="Include" />
-              <e p="gameover-screen.mgcontent" t="Include" />
-              <e p="igloo.mgcontent" t="Include" />
-              <e p="logo.mgcontent" t="Include" />
-              <e p="play-button.mgcontent" t="Include" />
-              <e p="player.mgcontent" t="Include" />
-              <e p="quit-button-small.mgcontent" t="Include" />
-              <e p="quit-button.mgcontent" t="Include" />
-              <e p="respawn-button-small.mgcontent" t="Include" />
-              <e p="respawn-screen.mgcontent" t="Include" />
-              <e p="shard.mgcontent" t="Include" />
-              <e p="sign_1.mgcontent" t="Include" />
-              <e p="Sign_2.mgcontent" t="Include" />
+              <e p="player" t="Include">
+                <e p="player.mgcontent" t="Include" />
+              </e>
               <e p="sounds" t="Include">
                 <e p="button.mgcontent" t="Include" />
                 <e p="die.mgcontent" t="Include" />
@@ -282,58 +170,20 @@
                 <e p="music.mgcontent" t="Include" />
                 <e p="pickup.mgcontent" t="Include" />
               </e>
-              <e p="spikes.mgcontent" t="Include" />
-              <e p="star.mgcontent" t="Include" />
-              <e p="start-screen.mgcontent" t="Include" />
-              <e p="stone.mgcontent" t="Include" />
-              <e p="tiles" t="Include">
-                <e p="block_ground_00_single.mgcontent" t="Include" />
-                <e p="block_ground_01_top_left.mgcontent" t="Include" />
-                <e p="block_ground_02_top_mid.mgcontent" t="Include" />
-                <e p="block_ground_03_top_right.mgcontent" t="Include" />
-                <e p="block_ground_04_mid_left.mgcontent" t="Include" />
-                <e p="block_ground_05_mid.mgcontent" t="Include" />
-                <e p="block_ground_06_mid_right.mgcontent" t="Include" />
-                <e p="block_ground_08_bottom_mid.mgcontent" t="Include" />
-                <e p="block_ground_09_bottom_right.mgcontent" t="Include" />
-                <e p="block_ground_10_top_bottom.mgcontent" t="Include" />
-                <e p="block_ground_11_left_right.mgcontent" t="Include" />
-                <e p="block_ground_12_left.mgcontent" t="Include" />
-                <e p="block_ground_12_right.mgcontent" t="Include" />
-                <e p="block_ground_13_top.mgcontent" t="Include" />
-                <e p="block_ground_14_bottom.mgcontent" t="Include" />
-                <e p="block_ground_7_bottom_left.mgcontent" t="Include" />
-                <e p="block_ice_01a.mgcontent" t="Include" />
-                <e p="block_ice_01b.mgcontent" t="Include" />
-                <e p="block_ice_02.mgcontent" t="Include" />
-                <e p="block_ice_03.mgcontent" t="Include" />
-                <e p="block_snow_1_left.mgcontent" t="Include" />
-                <e p="block_snow_1_mid_1.mgcontent" t="Include" />
-                <e p="block_snow_1_mid_2.mgcontent" t="Include" />
-                <e p="block_snow_1_mid_3.mgcontent" t="Include" />
-                <e p="block_snow_1_right.mgcontent" t="Include" />
-                <e p="block_snow_2_left.mgcontent" t="Include" />
-                <e p="block_snow_2_mid_1.mgcontent" t="Include" />
-                <e p="block_snow_2_mid_2.mgcontent" t="Include" />
-                <e p="block_snow_2_mid_3.mgcontent" t="Include" />
-                <e p="block_snow_2_right.mgcontent" t="Include" />
-                <e p="block_snow_2_single.mgcontent" t="Include" />
+              <e p="ui" t="Include">
+                <e p="gameover-screen.mgcontent" t="Include" />
+                <e p="play-button.mgcontent" t="Include" />
+                <e p="quit-button-small.mgcontent" t="Include" />
                 <e p="quit-button.mgcontent" t="Include" />
+                <e p="respawn-button-small.mgcontent" t="Include" />
+                <e p="respawn-screen.mgcontent" t="Include" />
+                <e p="start-screen.mgcontent" t="Include" />
               </e>
-              <e p="tree_1.mgcontent" t="Include" />
-              <e p="tree_2.mgcontent" t="Include" />
             </e>
           </e>
-          <e p="object_04_star.png" t="Include" />
-          <e p="play-button.png" t="Include" />
-          <e p="player.png" t="Include" />
-          <e p="quit-button-small.png" t="Include" />
-          <e p="quit-button.png" t="Include" />
-          <e p="respawn-button-small.png" t="Include" />
-          <e p="respawn-screen.png" t="Include" />
-          <e p="shard.png" t="Include" />
-          <e p="sign_1.png" t="Include" />
-          <e p="Sign_2.png" t="Include" />
+          <e p="player" t="Include">
+            <e p="player.png" t="Include" />
+          </e>
           <e p="sounds" t="Include">
             <e p="button.wav" t="Include" />
             <e p="die.wav" t="Include" />
@@ -342,46 +192,15 @@
             <e p="music.ogg" t="Include" />
             <e p="pickup.wav" t="Include" />
           </e>
-          <e p="spikes.png" t="Include" />
-          <e p="start-screen.png" t="Include" />
-          <e p="stone.png" t="Include" />
-          <e p="tiles" t="Include">
-            <e p="block_ground_00_single.png" t="Include" />
-            <e p="block_ground_01_top_left.png" t="Include" />
-            <e p="block_ground_02_top_mid.png" t="Include" />
-            <e p="block_ground_03_top_right.png" t="Include" />
-            <e p="block_ground_04_mid_left.png" t="Include" />
-            <e p="block_ground_05_mid.png" t="Include" />
-            <e p="block_ground_06_mid_right.png" t="Include" />
-            <e p="block_ground_08_bottom_mid.png" t="Include" />
-            <e p="block_ground_09_bottom_right.png" t="Include" />
-            <e p="block_ground_10_top_bottom.png" t="Include" />
-            <e p="block_ground_11_left_right.png" t="Include" />
-            <e p="block_ground_12_left.png" t="Include" />
-            <e p="block_ground_12_right.png" t="Include" />
-            <e p="block_ground_13_top.png" t="Include" />
-            <e p="block_ground_14_bottom.png" t="Include" />
-            <e p="block_ground_7_bottom_left.png" t="Include" />
-            <e p="block_ice_01a.png" t="Include" />
-            <e p="block_ice_01b.png" t="Include" />
-            <e p="block_ice_02.png" t="Include" />
-            <e p="block_ice_03.png" t="Include" />
-            <e p="block_snow_1_left.png" t="Include" />
-            <e p="block_snow_1_mid_1.png" t="Include" />
-            <e p="block_snow_1_mid_2.png" t="Include" />
-            <e p="block_snow_1_mid_3.png" t="Include" />
-            <e p="block_snow_1_right.png" t="Include" />
-            <e p="block_snow_2_left.png" t="Include" />
-            <e p="block_snow_2_mid_1.png" t="Include" />
-            <e p="block_snow_2_mid_2.png" t="Include" />
-            <e p="block_snow_2_mid_3.png" t="Include" />
-            <e p="block_snow_2_right.png" t="Include" />
-            <e p="block_snow_2_single.png" t="Include" />
+          <e p="ui" t="Include">
+            <e p="gameover-screen.png" t="Include" />
             <e p="play-button.png" t="Include" />
+            <e p="quit-button-small.png" t="Include" />
             <e p="quit-button.png" t="Include" />
+            <e p="respawn-button-small.png" t="Include" />
+            <e p="respawn-screen.png" t="Include" />
+            <e p="start-screen.png" t="Include" />
           </e>
-          <e p="tree_1.png" t="Include" />
-          <e p="tree_2.png" t="Include" />
         </e>
         <e p="Controls" t="Include">
           <e p="Control.cs" t="Include" />
