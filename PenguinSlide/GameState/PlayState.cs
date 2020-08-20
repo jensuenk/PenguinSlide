@@ -15,7 +15,7 @@ namespace PenguinSlide.GameState
     {
         private readonly Background background;
         private readonly Camera camera;
-        private readonly CollisionManager collisionManager;
+        private CollisionManager collisionManager;
         private readonly Control control;
         private Level.Level currentLevel;
         private readonly LevelManager levelManager;
@@ -74,10 +74,25 @@ namespace PenguinSlide.GameState
                 foreach (var button in buttons)
                     button.Update(gameTime);
             }
+
             control.Update();
             player.Update(gameTime);
             collisionManager.UpdateCollision();
             camera.Follow(player);
+            if (currentLevel.IsCompleted)
+            {
+                if (levelManager.IsLastLevel(currentLevel))
+                {
+                    game.ChangeState(new EndState(graphicsDevice, contentManager, game));
+                }
+                else
+                {
+                    currentLevel = levelManager.GetNextLevel();
+                    levelManager.CurrentLevel = currentLevel;
+                    player.Position = currentLevel.PlayerLocation;
+                    collisionManager = new CollisionManager(player, currentLevel);
+                }
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -21,6 +21,7 @@ namespace PenguinSlide.Collision
             UpdateMovement();
             UpdateDamage();
             UpdateCollectables();
+            UpdatePortal();
         }
 
         private void UpdateMovement()
@@ -48,6 +49,16 @@ namespace PenguinSlide.Collision
             player.CanMoveDown = canMoveDown;
         }
 
+        private void UpdatePortal()
+        {
+            if (player.CollisionRectangle.Intersects(level.Portal.CollisionRectangle))
+            {
+                if (player.Collectables.Count == level.CollectablesAmount)
+                {
+                    level.IsCompleted = true;
+                }
+            }
+        }
         private void UpdateDamage()
         {
             foreach (var component in level.Damageables)

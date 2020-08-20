@@ -28,14 +28,17 @@ namespace PenguinSlide.Level
         public int PlayerSize { get; }
         public List<Component> Components { get; } = new List<Component>();
 
-        public List<Decoration> Decorations => Components.OfType<Decoration>().ToList();
-        public List<Portal> Portals => Components.OfType<Portal>().ToList();
+        public Portal Portal => Components.OfType<Portal>().ToList().First();
 
         public List<IDamageable> Damageables => Components.OfType<IDamageable>().ToList();
 
         public List<Tile> Tiles => Components.OfType<Tile>().ToList();
 
         public List<ICollectable> Collectables => Components.OfType<ICollectable>().ToList();
+        
+        public int CollectablesAmount { get; private set; }
+
+        public bool IsCompleted { get; set; } = false;
 
         private void Generate()
         {
@@ -55,6 +58,7 @@ namespace PenguinSlide.Level
                     case 3:
                         Components.Add(new Star(contentManager.Load<Texture2D>("star"),
                             new Rectangle(x * size, y * size, size, size)));
+                        //CollectablesAmount++;
                         break;
                     case 4:
                         Components.Add(new Spike(contentManager.Load<Texture2D>("spikes"),
