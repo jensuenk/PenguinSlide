@@ -10,6 +10,7 @@ namespace PenguinSlide.Level
     public class Level
     {
         private readonly ContentManager contentManager;
+        private readonly LevelFactory levelFactory;
         private readonly int[,] map;
         private readonly int size;
 
@@ -18,6 +19,7 @@ namespace PenguinSlide.Level
         public Level(ContentManager contentManager, Viewport viewport, int[,] map)
         {
             this.contentManager = contentManager;
+            levelFactory = new LevelFactory();
             this.map = map;
             Bounds = viewport.Bounds;
             size = viewport.Height / map.GetLength(0);
@@ -33,9 +35,9 @@ namespace PenguinSlide.Level
 
         public Portal Portal => Components.OfType<Portal>().ToList().First();
 
-        public List<IDamageable> Damageables => Components.OfType<IDamageable>().ToList();
+        public IEnumerable<IDamageable> Damageables => Components.OfType<IDamageable>().ToList();
 
-        public List<Tile> Tiles => Components.OfType<Tile>().ToList();
+        public IEnumerable<Tile> Tiles => Components.OfType<Tile>().ToList();
 
         public List<ICollectable> ActiveCollectables => Components.OfType<ICollectable>().ToList();
 
@@ -48,44 +50,18 @@ namespace PenguinSlide.Level
             for (var x = 0; x < map.GetLength(1); x++)
             for (var y = 0; y < map.GetLength(0); y++)
             {
-                var number = map[y, x];
-                switch (number)
+                var id = map[y, x];
+                var component = levelFactory.CreateComponent(id, new Vector2(x, y), size, contentManager);
+                if (component != null)
+                    Components.Add(component);
+                
+                switch (id)
                 {
                     case 1:
                         PlayerLocation = new Vector2(x * size, y * size);
                         break;
-                    case 2:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("level/ice-tile"),
-                            new Rectangle(x * size, y * size, size, size)));
-                        break;
                     case 3:
-                        Components.Add(new Star(contentManager.Load<Texture2D>("level/star"),
-                            new Rectangle(x * size, y * size, size, size)));
                         CollectablesAmount++;
-                        break;
-                    case 4:
-                        Components.Add(new Spike(contentManager.Load<Texture2D>("level/spikes"),
-                            new Rectangle(x * size, y * size + size / 2, size, size / 2)));
-                        break;
-                    case 5:
-                        Components.Add(new Decoration(contentManager.Load<Texture2D>("level/tree"),
-                            new Rectangle(x * size, y * size, size * 2, size * 2)));
-                        break;
-                    case 6:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("level/ice-tile-clear"),
-                            new Rectangle(x * size, y * size, size, size)));
-                        break;
-                    case 7:
-                        Components.Add(new Portal(contentManager.Load<Texture2D>("level/igloo"),
-                            new Rectangle(x * size, y * size, size * 2, size)));
-                        break;
-                    case 8:
-                        Components.Add(new Tile(contentManager.Load<Texture2D>("level/crate"),
-                            new Rectangle(x * size, y * size, size, size)));
-                        break;
-                    case 9:
-                        Components.Add(new Decoration(contentManager.Load<Texture2D>("level/sign"),
-                            new Rectangle(x * size, y * size, size, size)));
                         break;
                 }
             }
