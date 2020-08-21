@@ -73,7 +73,7 @@ namespace PenguinSlide.GameState
             {
                 player.Position = currentLevel.PlayerLocation;
                 foreach (var button in buttons)
-                    button.Update(gameTime);
+                    button.Update();
             }
 
             control.Update();

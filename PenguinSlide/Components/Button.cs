@@ -15,7 +15,7 @@ namespace PenguinSlide.Components
         }
         public event EventHandler Click;
 
-        public void Update(GameTime gameTime)
+        public void Update()
         {
             previousMouse = currentMouse;
             currentMouse = Mouse.GetState();

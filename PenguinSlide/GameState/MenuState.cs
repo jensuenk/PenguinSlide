@@ -43,7 +43,7 @@ namespace PenguinSlide.GameState
         public override void Update(GameTime gameTime)
         {
             foreach (var button in buttons)
-                button.Update(gameTime);
+                button.Update();
         }
 
         public override void Draw(SpriteBatch spriteBatch)

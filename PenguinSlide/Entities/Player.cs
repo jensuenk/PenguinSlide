@@ -8,19 +8,19 @@ using PenguinSlide.Controls;
 
 namespace PenguinSlide.Entities
 {
-    public class Player : Entity, IMovable
+    public class Player : Entity, IMovable, ICollidable
     {
-        private Animation idleAnimation;
-        private Animation jumpAnimation;
-        private Animation runAnimation;
-        private Animation slideAnimation;
         private readonly Control control;
         private readonly float scale;
         private readonly Texture2D texture;
         private int airTime;
 
         private Animation currentAnimation;
+        private Animation idleAnimation;
         private bool isJumping, isFacingRight = true;
+        private Animation jumpAnimation;
+        private Animation runAnimation;
+        private Animation slideAnimation;
         private Vector2 speed;
         private SpriteEffects spriteEffects;
         private Vector2 velocity;
@@ -39,7 +39,14 @@ namespace PenguinSlide.Entities
 
         public List<ICollectable> Collectables { get; } = new List<ICollectable>();
 
+        public Rectangle CollisionRectangle { get; set; }
+        public bool IsAlive { get; set; } = true;
         public Vector2 Speed => speed;
+        public Vector2 Position { get; set; }
+        public bool CanMoveLeft { get; set; }
+        public bool CanMoveRight { get; set; }
+        public bool CanMoveUp { get; set; }
+        public bool CanMoveDown { get; set; }
 
         private void CreateAnimation()
         {
@@ -67,7 +74,7 @@ namespace PenguinSlide.Entities
             {
                 if (isFacingRight && CanMoveRight)
                     velocity.X = Speed.X * 1.6f;
-                else if (CanMoveLeft) 
+                else if (CanMoveLeft)
                     velocity.X = -Speed.X * 1.6f;
             }
 
@@ -76,7 +83,10 @@ namespace PenguinSlide.Entities
                 SoundPlayer.JumpSound.Play();
                 isJumping = true;
             }
-            else if (!control.Jump && isJumping) isJumping = false;
+            else if (!control.Jump && isJumping)
+            {
+                isJumping = false;
+            }
         }
 
         private void HandleGravity()
@@ -85,7 +95,6 @@ namespace PenguinSlide.Entities
             if (!isJumping && CanMoveDown)
             {
                 if (airTime < 20) airTime++;
-
                 velocity.Y += Speed.Y;
             }
 
@@ -99,12 +108,9 @@ namespace PenguinSlide.Entities
         private void HandleJump()
         {
             speed.Y = 10;
-
             if (isJumping && airTime < 25)
             {
                 airTime++;
-
-
                 if (CanMoveUp)
                     velocity.Y -= Speed.Y;
                 else
@@ -126,7 +132,7 @@ namespace PenguinSlide.Entities
 
         private void SetAnimations()
         {
-            if (velocity.Y != 0) 
+            if (velocity.Y != 0)
                 currentAnimation = jumpAnimation;
             else if (control.Slide)
                 currentAnimation = slideAnimation;
@@ -151,7 +157,7 @@ namespace PenguinSlide.Entities
             Position += velocity;
 
             CollisionRectangle = new Rectangle((int) Position.X + (int) (25 * scale), (int) Position.Y,
-                (int) ((currentAnimation.CurrentFrame.SourceRectangle.Width -  50)* scale),
+                (int) ((currentAnimation.CurrentFrame.SourceRectangle.Width - 50) * scale),
                 (int) (currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
 
             currentAnimation.Update(gameTime);
@@ -165,6 +171,7 @@ namespace PenguinSlide.Entities
 
         public void Respawn(Vector2 position)
         {
+            isFacingRight = true;
             IsAlive = true;
             currentAnimation = idleAnimation;
             Position = position;
