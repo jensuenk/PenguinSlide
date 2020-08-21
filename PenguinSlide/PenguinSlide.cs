@@ -31,7 +31,7 @@ namespace PenguinSlide
             graphics.PreferredBackBufferHeight = 1080;
             graphics.ApplyChanges();
 
-            ChangeState(new PlayState(GraphicsDevice, Content, this));
+            ChangeState(new MenuState(GraphicsDevice, Content, this));
             base.Initialize();
         }
 
@@ -44,11 +44,11 @@ namespace PenguinSlide
             SoundPlayer.ButtonSound = Content.Load<SoundEffect>("sounds/button");
             SoundPlayer.DieSound = Content.Load<SoundEffect>("sounds/die");
             SoundPlayer.EndSound = Content.Load<SoundEffect>("sounds/finish");
-            //SoundPlayer.Music = Content.Load<Song>("sounds/music");
+            SoundPlayer.Music = Content.Load<Song>("sounds/music");
             
-            //MediaPlayer.Play(SoundPlayer.Music);
-            //MediaPlayer.IsRepeating = true;
-            //MediaPlayer.Volume -= 0.2f;
+            MediaPlayer.Play(SoundPlayer.Music);
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume -= 0.2f;
         }
 
         protected override void UnloadContent()
