@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using PenguinSlide.GameState;
+using PenguinSlide.Sound;
 
 namespace PenguinSlide
 {
@@ -31,7 +32,7 @@ namespace PenguinSlide
             graphics.PreferredBackBufferHeight = 1080;
             graphics.ApplyChanges();
 
-            ChangeState(new PlayState(GraphicsDevice, Content, this));
+            ChangeState(new MenuState(GraphicsDevice, Content, this));
             base.Initialize();
         }
 

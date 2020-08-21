@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Components;
 using PenguinSlide.Level;
+using PenguinSlide.Sound;
 
 namespace PenguinSlide.GameState
 {
@@ -52,13 +53,13 @@ namespace PenguinSlide.GameState
         private void RespawnButton_Click(object sender, EventArgs e)
         {
             SoundPlayer.ButtonSound.Play();
-            game.ChangeState(new PlayState(graphicsDevice, contentManager, game));
+            Game.ChangeState(new PlayState(GraphicsDevice, ContentManager, Game));
         }
 
         private void QuitButton_Click(object sender, EventArgs e)
         {
             SoundPlayer.ButtonSound.Play();
-            game.ChangeState(new MenuState(graphicsDevice, contentManager, game));
+            Game.ChangeState(new MenuState(GraphicsDevice, ContentManager, Game));
         }
     }
 }

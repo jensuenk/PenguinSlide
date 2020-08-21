@@ -24,7 +24,6 @@ namespace PenguinSlide.Controls
                 Slide = true;
             if (stateKey.IsKeyUp(Keys.Down))
                 Slide = false;
-            Idle = stateKey.GetPressedKeys().Length == 0;
         }
     }
 }

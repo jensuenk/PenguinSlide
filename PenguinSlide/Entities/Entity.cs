@@ -8,39 +8,52 @@ namespace PenguinSlide.Entities
 {
     public abstract class Entity : Component, ICollidable
     {
-        protected SpriteEffects spriteEffects = SpriteEffects.None;
-        protected Animation currentAnimation;
-        protected float scale;
-        protected AnimationCreator animationCreator = new AnimationCreator();
-        public bool IsAlive { get; set; } = true;
-        public Vector2 Position { get; set; }
-        protected Entity(Texture2D texture, Rectangle rectangle, float scale) : base(texture, rectangle)
+        protected readonly AnimationCreator AnimationCreator = new AnimationCreator();
+        protected readonly float Scale;
+        protected Animation CurrentAnimation;
+        protected bool IsFacingRight = true;
+        public Vector2 Speed;
+        protected SpriteEffects SpriteEffects = SpriteEffects.None;
+        protected Vector2 Velocity;
+
+        protected Entity(Texture2D texture, Rectangle rectangle, Vector2 speed, float scale) : base(texture, rectangle)
         {
             CollisionRectangle = rectangle;
-            this.scale = scale;
+            Scale = scale;
+            Speed = speed;
             Position = new Vector2(rectangle.X, rectangle.Y);
             CreateAnimations();
         }
 
+        public bool IsAlive { get; set; } = true;
+        public Vector2 Position { get; set; }
+
+        public Rectangle CollisionRectangle { get; set; }
+
         protected abstract void CreateAnimations();
         protected abstract void SetAnimation();
+        protected abstract void HandleMovement();
 
         public virtual void Update(GameTime gameTime)
         {
+            if (!IsAlive) return;
+            HandleMovement();
             SetAnimation();
-            CollisionRectangle = new Rectangle((int) Position.X + (int) (25 * scale), (int) Position.Y,
-                (int) ((currentAnimation.CurrentFrame.SourceRectangle.Width - 50) * scale),
-                (int) (currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
 
-            currentAnimation.Update(gameTime);
+            Position += Velocity;
+
+            CollisionRectangle = new Rectangle((int) Position.X, (int) Position.Y,
+                (int) (CurrentAnimation.CurrentFrame.SourceRectangle.Width * Scale),
+                (int) (CurrentAnimation.CurrentFrame.SourceRectangle.Height * Scale));
+
+            CurrentAnimation.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, Position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f,
-                new Vector2(0, 0), scale, spriteEffects, 1);
+            if (!IsAlive) return;
+            spriteBatch.Draw(Texture, Position, CurrentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f,
+                new Vector2(0, 0), Scale, SpriteEffects, 1);
         }
-
-        public Rectangle CollisionRectangle { get; set; }
     }
 }

@@ -5,18 +5,18 @@ namespace PenguinSlide.Components
 {
     public abstract class Component
     {
-        protected Rectangle rectangle;
-        protected Texture2D texture;
+        protected Rectangle Rectangle;
+        protected readonly Texture2D Texture;
 
         protected Component(Texture2D texture, Rectangle rectangle)
         {
-            this.texture = texture;
-            this.rectangle = rectangle;
+            Texture = texture;
+            Rectangle = rectangle;
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, rectangle, Color.White);
+            spriteBatch.Draw(Texture, Rectangle, Color.White);
         }
     }
 }

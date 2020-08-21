@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using PenguinSlide.Components;
 using PenguinSlide.Entities;
+using PenguinSlide.Sound;
 
 namespace PenguinSlide.Collision
 {

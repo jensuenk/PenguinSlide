@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Media;
 using PenguinSlide.Components;
 using PenguinSlide.Level;
+using PenguinSlide.Sound;
 
 namespace PenguinSlide.GameState
 {
@@ -17,7 +17,6 @@ namespace PenguinSlide.GameState
         public MenuState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
             graphicsDevice, contentManager, game)
         {
-            //MediaPlayer.Resume();
             game.IsMouseVisible = true;
 
             var playButtonTexture = contentManager.Load<Texture2D>("ui/play-button");
@@ -54,15 +53,14 @@ namespace PenguinSlide.GameState
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            //MediaPlayer.Pause();
             SoundPlayer.ButtonSound.Play();
-            game.ChangeState(new PlayState(graphicsDevice, contentManager, game));
-            game.IsMouseVisible = false;
+            Game.ChangeState(new PlayState(GraphicsDevice, ContentManager, Game));
+            Game.IsMouseVisible = false;
         }
 
         private void QuitButton_Click(object sender, EventArgs e)
         {
-            game.Exit();
+            Game.Exit();
         }
     }
 }

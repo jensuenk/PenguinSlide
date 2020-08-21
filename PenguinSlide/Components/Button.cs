@@ -24,7 +24,7 @@ namespace PenguinSlide.Components
 
             isHovering = false;
 
-            if (mouseRectangle.Intersects(rectangle))
+            if (mouseRectangle.Intersects(Rectangle))
             {
                 isHovering = true;
 
@@ -33,14 +33,14 @@ namespace PenguinSlide.Components
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             var colour = Color.White;
 
             if (isHovering)
                 colour = Color.Gray;
 
-            spriteBatch.Draw(texture, rectangle, colour);
+            spriteBatch.Draw(Texture, Rectangle, colour);
         }
     }
 }

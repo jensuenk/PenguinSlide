@@ -6,15 +6,15 @@ namespace PenguinSlide.GameState
 {
     public abstract class State
     {
-        protected ContentManager contentManager;
-        protected PenguinSlide game;
-        protected GraphicsDevice graphicsDevice;
+        protected readonly ContentManager ContentManager;
+        protected readonly PenguinSlide Game;
+        protected readonly GraphicsDevice GraphicsDevice;
 
-        public State(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game)
+        protected State(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game)
         {
-            this.graphicsDevice = graphicsDevice;
-            this.contentManager = contentManager;
-            this.game = game;
+            GraphicsDevice = graphicsDevice;
+            ContentManager = contentManager;
+            Game = game;
         }
 
         public abstract void Update(GameTime gameTime);

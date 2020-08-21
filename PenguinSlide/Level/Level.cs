@@ -13,7 +13,6 @@ namespace PenguinSlide.Level
         private readonly ContentManager contentManager;
         private readonly LevelFactory levelFactory;
         private readonly int[,] map;
-        private readonly int tileSize;
 
         private List<ICollectable> collectables = new List<ICollectable>();
 
@@ -23,7 +22,7 @@ namespace PenguinSlide.Level
             levelFactory = new LevelFactory();
             this.map = map;
             Bounds = viewport.Bounds;
-            tileSize = viewport.Height / map.GetLength(0);
+            TileSize = viewport.Height / map.GetLength(0);
             Generate();
         }
 
@@ -31,7 +30,8 @@ namespace PenguinSlide.Level
 
         public Vector2 PlayerLocation { get; private set; }
         public List<Enemy> Enemies => Components.OfType<Enemy>().ToList();
-        public int TileSize => tileSize;
+        public int TileSize { get; }
+
         public List<Component> Components { get; } = new List<Component>();
 
         public Portal Portal => Components.OfType<Portal>().ToList().First();
@@ -52,14 +52,14 @@ namespace PenguinSlide.Level
             for (var y = 0; y < map.GetLength(0); y++)
             {
                 var id = map[y, x];
-                var component = levelFactory.CreateComponent(id, new Vector2(x, y), tileSize, contentManager);
+                var component = levelFactory.CreateComponent(id, new Vector2(x, y), TileSize, contentManager);
                 if (component != null)
                     Components.Add(component);
-                
+
                 switch (id)
                 {
                     case 1:
-                        PlayerLocation = new Vector2(x * tileSize, y * tileSize);
+                        PlayerLocation = new Vector2(x * TileSize, y * TileSize);
                         break;
                     case 3:
                         CollectablesAmount++;

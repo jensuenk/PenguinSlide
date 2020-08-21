@@ -8,6 +8,7 @@ using PenguinSlide.Components;
 using PenguinSlide.Controls;
 using PenguinSlide.Entities;
 using PenguinSlide.Level;
+using PenguinSlide.Sound;
 
 namespace PenguinSlide.GameState
 {
@@ -86,7 +87,7 @@ namespace PenguinSlide.GameState
                 SoundPlayer.EndSound.Play();
                 if (levelManager.IsLastLevel(currentLevel))
                 {
-                    game.ChangeState(new EndState(graphicsDevice, contentManager, game));
+                    Game.ChangeState(new EndState(GraphicsDevice, ContentManager, Game));
                 }
                 else
                 {
@@ -112,7 +113,7 @@ namespace PenguinSlide.GameState
             
             if (!player.IsAlive)
             {
-                game.IsMouseVisible = true;
+                Game.IsMouseVisible = true;
                 respawnBackground.Draw(spriteBatch);
                 foreach (var button in buttons)
                     button.Draw(spriteBatch);
@@ -127,13 +128,13 @@ namespace PenguinSlide.GameState
             player.IsAlive = true;
             player.Respawn(currentLevel.PlayerLocation);
             currentLevel.RespawnCollectables();
-            game.IsMouseVisible = false;
+            Game.IsMouseVisible = false;
         }
 
         private void QuitButton_Click(object sender, EventArgs e)
         {
             SoundPlayer.ButtonSound.Play();
-            game.ChangeState(new MenuState(graphicsDevice, contentManager, game));
+            Game.ChangeState(new MenuState(GraphicsDevice, ContentManager, Game));
         }
     }
 }
