@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Media;
 using PenguinSlide.Collision;
 using PenguinSlide.Components;
 using PenguinSlide.Controls;
@@ -39,32 +37,31 @@ namespace PenguinSlide.GameState
             var quitButtonTexture = contentManager.Load<Texture2D>("ui/quit-button-small");
 
             control = new KeyboardControl();
+            
+            camera = new Camera(graphicsDevice.Viewport);
+            
             var playerPosition = currentLevel.PlayerLocation;
             var playerSpeed = new Vector2(7, 10);
             var playerScale = (float) currentLevel.PlayerSize / 144;
-
             var playerCollisionRectangle =
                 new Rectangle((int) playerPosition.X, (int) playerPosition.Y, 144, playerTexture.Height);
             player = new Player(playerTexture, playerCollisionRectangle, playerSpeed, playerScale, control);
 
             collisionManager = new CollisionManager(player, currentLevel);
+            
             background = new Background(backgroundTexture,
                 new Rectangle(0, 0, backgroundTexture.Width, graphicsDevice.Viewport.Bounds.Height));
-
             respawnBackground = new Background(respawnBackgroundTexture,
                 new Rectangle(0, 0, graphicsDevice.Viewport.Bounds.Width, graphicsDevice.Viewport.Bounds.Height));
+            
             var respawnButton = new Button(respawnButtonTexture,
                 new Rectangle(1025, 700, 160, 160));
             respawnButton.Click += RespawnButton_Click;
-
             var quitButton = new Button(quitButtonTexture,
                 new Rectangle(725, 700, 160, 160));
-
             quitButton.Click += QuitButton_Click;
             buttons.Add(respawnButton);
             buttons.Add(quitButton);
-
-            camera = new Camera(graphicsDevice.Viewport);
         }
 
         public override void Update(GameTime gameTime)
@@ -80,6 +77,7 @@ namespace PenguinSlide.GameState
             player.Update(gameTime);
             collisionManager.UpdateCollision();
             camera.Follow(player);
+            
             if (currentLevel.IsCompleted)
             {
                 SoundPlayer.EndSound.Play();
@@ -100,9 +98,11 @@ namespace PenguinSlide.GameState
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin(transformMatrix: camera.Transform);
+            
             background.Draw(spriteBatch);
             currentLevel.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            
             if (!player.IsAlive)
             {
                 game.IsMouseVisible = true;

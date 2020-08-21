@@ -23,13 +23,12 @@ namespace PenguinSlide.GameState
 
             endScreen = new Background(respawnBackgroundTexture,
                 new Rectangle(0, 0, graphicsDevice.Viewport.Bounds.Width, graphicsDevice.Viewport.Bounds.Height));
+            
             var againButton = new Button(respawnButtonTexture,
                 new Rectangle(1025, 700, 160, 160));
             againButton.Click += RespawnButton_Click;
-
             var quitButton = new Button(quitButtonTexture,
                 new Rectangle(725, 700, 160, 160));
-
             quitButton.Click += QuitButton_Click;
             buttons.Add(againButton);
             buttons.Add(quitButton);

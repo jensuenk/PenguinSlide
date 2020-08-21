@@ -30,12 +30,9 @@ namespace PenguinSlide.GameState
             var playButton = new Button(playButtonTexture,
                 new Rectangle(110, 300, playButtonTexture.Width, playButtonTexture.Height));
             playButton.Click += PlayButton_Click;
-
             var quitButton = new Button(quitButtonTexture,
                 new Rectangle(110, 600, quitButtonTexture.Width, quitButtonTexture.Height));
-
             quitButton.Click += QuitButton_Click;
-
             buttons.Add(playButton);
             buttons.Add(quitButton);
         }
