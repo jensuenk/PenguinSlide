@@ -106,10 +106,6 @@ namespace PenguinSlide.GameState
             background.Draw(spriteBatch);
             currentLevel.Draw(spriteBatch);
             player.Draw(spriteBatch);
-            foreach (var enemy in currentLevel.Enemies)
-            {
-                enemy.Draw(spriteBatch);
-            }
             
             if (!player.IsAlive)
             {

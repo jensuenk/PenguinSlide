@@ -23,6 +23,8 @@ namespace PenguinSlide.Entities
             texture, rectangle, speed, scale)
         {
             this.control = control;
+            CreateAnimations();
+            CurrentAnimation = idleAnimation;
         }
 
         public List<ICollectable> Collectables { get; } = new List<ICollectable>();
@@ -37,6 +39,7 @@ namespace PenguinSlide.Entities
             idleAnimation = AnimationCreator.Create(1440, 0, 144, 128, 1);
             jumpAnimation = AnimationCreator.Create(864, 0, 144, 128, 1);
             slideAnimation = AnimationCreator.Create(1152, 0, 144, 128, 2);
+            CurrentAnimation = idleAnimation;
         }
 
         protected override void HandleMovement()

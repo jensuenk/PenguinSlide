@@ -21,6 +21,7 @@ namespace PenguinSlide.Entities
         protected override void CreateAnimations()
         {
             idleAnimation = AnimationCreator.Create(0, 0, 128, 132, 2);
+            CurrentAnimation = idleAnimation;
         }
 
         protected override void SetAnimation()
