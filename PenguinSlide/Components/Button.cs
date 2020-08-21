@@ -13,8 +13,6 @@ namespace PenguinSlide.Components
         public Button(Texture2D texture, Rectangle rectangle) : base(texture, rectangle)
         {
         }
-
-        public bool Clicked { get; private set; }
         public event EventHandler Click;
 
         public void Update(GameTime gameTime)

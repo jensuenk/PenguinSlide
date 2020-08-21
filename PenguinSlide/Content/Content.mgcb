@@ -157,12 +157,6 @@
 /processorParam:Quality=Best
 /build:sounds/jump.wav
 
-#begin sounds/music.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:sounds/music.ogg
-
 #begin sounds/pickup.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

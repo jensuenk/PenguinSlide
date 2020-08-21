@@ -44,11 +44,11 @@ namespace PenguinSlide
             SoundPlayer.ButtonSound = Content.Load<SoundEffect>("sounds/button");
             SoundPlayer.DieSound = Content.Load<SoundEffect>("sounds/die");
             SoundPlayer.EndSound = Content.Load<SoundEffect>("sounds/finish");
-            SoundPlayer.Music = Content.Load<Song>("sounds/music");
+            //SoundPlayer.Music = Content.Load<Song>("sounds/music");
             
-            MediaPlayer.Play(SoundPlayer.Music);
-            MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume -= 0.2f;
+            //MediaPlayer.Play(SoundPlayer.Music);
+            //MediaPlayer.IsRepeating = true;
+            //MediaPlayer.Volume -= 0.2f;
         }
 
         protected override void UnloadContent()
