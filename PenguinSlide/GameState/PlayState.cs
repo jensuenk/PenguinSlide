@@ -32,7 +32,7 @@ namespace PenguinSlide.GameState
             levelManager.GenerateLevels();
             currentLevel = levelManager.CurrentLevel;
             
-            var playerTexture = contentManager.Load<Texture2D>("player/player");
+            var playerTexture = contentManager.Load<Texture2D>("player/player-sprite");
             var backgroundTexture = contentManager.Load<Texture2D>("level/game-background");
             var respawnBackgroundTexture = contentManager.Load<Texture2D>("ui/respawn-screen");
             var respawnButtonTexture = contentManager.Load<Texture2D>("ui/respawn-button-small");

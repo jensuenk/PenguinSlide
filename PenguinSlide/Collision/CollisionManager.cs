@@ -57,6 +57,7 @@ namespace PenguinSlide.Collision
 
         private void UpdateDamage()
         {
+            if (!player.IsAlive) return;
             foreach (var component in level.Damageables)
                 if (player.CollisionRectangle.Intersects(component.CollisionRectangle))
                 {

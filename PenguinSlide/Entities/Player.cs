@@ -2,19 +2,18 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Animations;
+using PenguinSlide.Collision;
 using PenguinSlide.Components;
 using PenguinSlide.Controls;
 
 namespace PenguinSlide.Entities
 {
-    public class Player : Entity, IMovable, ICollectable
+    public class Player : Entity, IMovable
     {
-        private readonly Animation animationDie = new Animation();
-        private readonly Animation animationHurt = new Animation();
-        private readonly Animation animationIdle = new Animation();
-        private readonly Animation animationJump = new Animation();
-        private readonly Animation animationRun = new Animation();
-        private readonly Animation animationSlide = new Animation();
+        private Animation idleAnimation;
+        private Animation jumpAnimation;
+        private Animation runAnimation;
+        private Animation slideAnimation;
         private readonly Control control;
         private readonly float scale;
         private readonly Texture2D texture;
@@ -35,7 +34,7 @@ namespace PenguinSlide.Entities
             this.scale = scale;
             this.control = control;
             CreateAnimation();
-            currentAnimation = animationIdle;
+            currentAnimation = idleAnimation;
         }
 
         public List<ICollectable> Collectables { get; } = new List<ICollectable>();
@@ -45,12 +44,10 @@ namespace PenguinSlide.Entities
         private void CreateAnimation()
         {
             var animationCreator = new AnimationCreator();
-            animationCreator.Create(animationRun, 1440, 0, 144, 128, 4);
-            animationCreator.Create(animationIdle, 1440, 0, 144, 128, 1);
-            animationCreator.Create(animationJump, 864, 0, 144, 128, 1);
-            animationCreator.Create(animationSlide, 1296, 0, 144, 128, 1);
-            animationCreator.Create(animationHurt, 476, 0, 144, 128, 2);
-            animationCreator.Create(animationDie, 432, 0, 144, 128, 1);
+            runAnimation = animationCreator.Create(1440, 0, 144, 128, 4);
+            idleAnimation = animationCreator.Create(1440, 0, 144, 128, 1);
+            jumpAnimation = animationCreator.Create(864, 0, 144, 128, 1);
+            slideAnimation = animationCreator.Create(1152, 0, 144, 128, 2);
         }
 
         private void HandleMovement()
@@ -58,22 +55,20 @@ namespace PenguinSlide.Entities
             if (control.Right)
             {
                 if (CanMoveRight) velocity.X = Speed.X;
-                currentAnimation = animationRun;
                 isFacingRight = true;
             }
             else if (control.Left)
             {
                 if (CanMoveLeft) velocity.X = -Speed.X;
-                currentAnimation = animationRun;
                 isFacingRight = false;
             }
 
             if (control.Slide)
             {
                 if (isFacingRight && CanMoveRight)
-                    velocity.X = Speed.X;
-                else if (CanMoveLeft) velocity.X = -Speed.X;
-                currentAnimation = animationSlide;
+                    velocity.X = Speed.X * 1.6f;
+                else if (CanMoveLeft) 
+                    velocity.X = -Speed.X * 1.6f;
             }
 
             if (control.Jump && !isJumping && !CanMoveDown)
@@ -82,11 +77,6 @@ namespace PenguinSlide.Entities
                 isJumping = true;
             }
             else if (!control.Jump && isJumping) isJumping = false;
-            if (control.Idle) currentAnimation = animationIdle;
-
-            if (velocity.Y != 0) currentAnimation = animationJump;
-
-            spriteEffects = !isFacingRight ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
         }
 
         private void HandleGravity()
@@ -134,26 +124,34 @@ namespace PenguinSlide.Entities
             velocity.Y = 0;
         }
 
+        private void SetAnimations()
+        {
+            if (velocity.Y != 0) 
+                currentAnimation = jumpAnimation;
+            else if (control.Slide)
+                currentAnimation = slideAnimation;
+            else if (control.Right || control.Left)
+                currentAnimation = runAnimation;
+            else
+                currentAnimation = idleAnimation;
+            spriteEffects = !isFacingRight ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+        }
+
         public override void Update(GameTime gameTime)
         {
             velocity.X = 0;
             velocity.Y = 0;
 
-            if (IsAlive)
-            {
-                HandleJump();
-                HandleGravity();
-                HandleMovement();
-            }
-            else
-            {
-                currentAnimation = animationDie;
-            }
+            if (!IsAlive) return;
+            HandleJump();
+            HandleGravity();
+            HandleMovement();
+            SetAnimations();
 
             Position += velocity;
 
             CollisionRectangle = new Rectangle((int) Position.X + (int) (25 * scale), (int) Position.Y,
-                (int) ((currentAnimation.CurrentFrame.SourceRectangle.Width - 50) * scale),
+                (int) ((currentAnimation.CurrentFrame.SourceRectangle.Width -  50)* scale),
                 (int) (currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
 
             currentAnimation.Update(gameTime);
@@ -168,7 +166,7 @@ namespace PenguinSlide.Entities
         public void Respawn(Vector2 position)
         {
             IsAlive = true;
-            currentAnimation = animationIdle;
+            currentAnimation = idleAnimation;
             Position = position;
             Collectables.Clear();
         }
