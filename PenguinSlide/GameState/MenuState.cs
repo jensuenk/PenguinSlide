@@ -17,7 +17,7 @@ namespace PenguinSlide.GameState
         public MenuState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
             graphicsDevice, contentManager, game)
         {
-            MediaPlayer.Resume();
+            //MediaPlayer.Resume();
             game.IsMouseVisible = true;
 
             var playButtonTexture = contentManager.Load<Texture2D>("ui/play-button");
@@ -54,7 +54,7 @@ namespace PenguinSlide.GameState
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            MediaPlayer.Pause();
+            //MediaPlayer.Pause();
             SoundPlayer.ButtonSound.Play();
             game.ChangeState(new PlayState(graphicsDevice, contentManager, game));
             game.IsMouseVisible = false;

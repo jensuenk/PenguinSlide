@@ -42,10 +42,9 @@ namespace PenguinSlide.GameState
             
             var playerPosition = currentLevel.PlayerLocation;
             var playerSpeed = new Vector2(7, 10);
-            var playerScale = (float) currentLevel.PlayerSize / 144;
             var playerCollisionRectangle =
                 new Rectangle((int) playerPosition.X, (int) playerPosition.Y, 144, playerTexture.Height);
-            player = new Player(playerTexture, playerCollisionRectangle, playerSpeed, playerScale, control);
+            player = new Player(playerTexture, playerCollisionRectangle, playerSpeed, (float) currentLevel.TileSize / 144, control);
 
             collisionManager = new CollisionManager(player, currentLevel);
             
@@ -75,6 +74,10 @@ namespace PenguinSlide.GameState
 
             control.Update();
             player.Update(gameTime);
+            foreach (var enemy in currentLevel.Enemies)
+            {
+                enemy.Update(gameTime);
+            }
             collisionManager.UpdateCollision();
             camera.Follow(player);
             
@@ -102,6 +105,10 @@ namespace PenguinSlide.GameState
             background.Draw(spriteBatch);
             currentLevel.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            foreach (var enemy in currentLevel.Enemies)
+            {
+                enemy.Draw(spriteBatch);
+            }
             
             if (!player.IsAlive)
             {

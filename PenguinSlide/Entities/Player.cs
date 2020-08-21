@@ -2,55 +2,39 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Animations;
-using PenguinSlide.Collision;
 using PenguinSlide.Components;
 using PenguinSlide.Controls;
 
 namespace PenguinSlide.Entities
 {
-    public class Player : Entity, IMovable, ICollidable
+    public class Player : Entity, IMovable
     {
         private readonly Control control;
-        private readonly float scale;
-        private readonly Texture2D texture;
         private int airTime;
 
-        private Animation currentAnimation;
         private Animation idleAnimation;
         private bool isJumping, isFacingRight = true;
         private Animation jumpAnimation;
         private Animation runAnimation;
         private Animation slideAnimation;
         private Vector2 speed;
-        private SpriteEffects spriteEffects;
         private Vector2 velocity;
 
-        public Player(Texture2D texture, Rectangle rectangle, Vector2 speed, float scale, Control control)
+        public Player(Texture2D texture, Rectangle rectangle, Vector2 speed, float scale, Control control) : base(texture, rectangle, scale)
         {
-            this.texture = texture;
-            CollisionRectangle = rectangle;
-            Position = new Vector2(rectangle.X, rectangle.Y);
             this.speed = speed;
-            this.scale = scale;
             this.control = control;
-            CreateAnimation();
-            currentAnimation = idleAnimation;
         }
 
         public List<ICollectable> Collectables { get; } = new List<ICollectable>();
-
-        public Rectangle CollisionRectangle { get; set; }
-        public bool IsAlive { get; set; } = true;
         public Vector2 Speed => speed;
-        public Vector2 Position { get; set; }
         public bool CanMoveLeft { get; set; }
         public bool CanMoveRight { get; set; }
         public bool CanMoveUp { get; set; }
         public bool CanMoveDown { get; set; }
 
-        private void CreateAnimation()
+        protected override void CreateAnimations()
         {
-            var animationCreator = new AnimationCreator();
             runAnimation = animationCreator.Create(1440, 0, 144, 128, 4);
             idleAnimation = animationCreator.Create(1440, 0, 144, 128, 1);
             jumpAnimation = animationCreator.Create(864, 0, 144, 128, 1);
@@ -130,7 +114,7 @@ namespace PenguinSlide.Entities
             velocity.Y = 0;
         }
 
-        private void SetAnimations()
+        protected override void SetAnimation()
         {
             if (velocity.Y != 0)
                 currentAnimation = jumpAnimation;
@@ -152,7 +136,7 @@ namespace PenguinSlide.Entities
             HandleJump();
             HandleGravity();
             HandleMovement();
-            SetAnimations();
+            SetAnimation();
 
             Position += velocity;
 
@@ -161,12 +145,6 @@ namespace PenguinSlide.Entities
                 (int) (currentAnimation.CurrentFrame.SourceRectangle.Height * scale));
 
             currentAnimation.Update(gameTime);
-        }
-
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(texture, Position, currentAnimation.CurrentFrame.SourceRectangle, Color.White, 0f,
-                new Vector2(0, 0), scale, spriteEffects, 1);
         }
 
         public void Respawn(Vector2 position)

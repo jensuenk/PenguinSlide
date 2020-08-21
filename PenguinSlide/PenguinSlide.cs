@@ -31,7 +31,7 @@ namespace PenguinSlide
             graphics.PreferredBackBufferHeight = 1080;
             graphics.ApplyChanges();
 
-            ChangeState(new MenuState(GraphicsDevice, Content, this));
+            ChangeState(new PlayState(GraphicsDevice, Content, this));
             base.Initialize();
         }
 

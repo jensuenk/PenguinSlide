@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using PenguinSlide.Components;
+using PenguinSlide.Entities;
 
 namespace PenguinSlide.Level
 {
@@ -12,7 +13,7 @@ namespace PenguinSlide.Level
         private readonly ContentManager contentManager;
         private readonly LevelFactory levelFactory;
         private readonly int[,] map;
-        private readonly int size;
+        private readonly int tileSize;
 
         private List<ICollectable> collectables = new List<ICollectable>();
 
@@ -22,15 +23,15 @@ namespace PenguinSlide.Level
             levelFactory = new LevelFactory();
             this.map = map;
             Bounds = viewport.Bounds;
-            size = viewport.Height / map.GetLength(0);
-            PlayerSize = size;
+            tileSize = viewport.Height / map.GetLength(0);
             Generate();
         }
 
         public Rectangle Bounds { get; }
 
         public Vector2 PlayerLocation { get; private set; }
-        public int PlayerSize { get; }
+        public List<Enemy> Enemies => Components.OfType<Enemy>().ToList();
+        public int TileSize => tileSize;
         public List<Component> Components { get; } = new List<Component>();
 
         public Portal Portal => Components.OfType<Portal>().ToList().First();
@@ -51,14 +52,14 @@ namespace PenguinSlide.Level
             for (var y = 0; y < map.GetLength(0); y++)
             {
                 var id = map[y, x];
-                var component = levelFactory.CreateComponent(id, new Vector2(x, y), size, contentManager);
+                var component = levelFactory.CreateComponent(id, new Vector2(x, y), tileSize, contentManager);
                 if (component != null)
                     Components.Add(component);
                 
                 switch (id)
                 {
                     case 1:
-                        PlayerLocation = new Vector2(x * size, y * size);
+                        PlayerLocation = new Vector2(x * tileSize, y * tileSize);
                         break;
                     case 3:
                         CollectablesAmount++;
