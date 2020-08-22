@@ -20,7 +20,7 @@ namespace PenguinSlide.Entities
 
         protected override void CreateAnimations()
         {
-            idleAnimation = AnimationCreator.Create(0, 0, 128, 132, 2);
+            idleAnimation = AnimationCreator.Create(0, 0, 128, Texture.Height, 2);
             CurrentAnimation = idleAnimation;
         }
 

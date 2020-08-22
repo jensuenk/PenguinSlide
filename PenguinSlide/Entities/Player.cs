@@ -35,10 +35,10 @@ namespace PenguinSlide.Entities
 
         protected override void CreateAnimations()
         {
-            runAnimation = AnimationCreator.Create(1440, 0, 144, 128, 4);
-            idleAnimation = AnimationCreator.Create(1440, 0, 144, 128, 1);
-            jumpAnimation = AnimationCreator.Create(864, 0, 144, 128, 1);
-            slideAnimation = AnimationCreator.Create(1152, 0, 144, 128, 2);
+            runAnimation = AnimationCreator.Create(1440, 0, 144, Texture.Height, 4);
+            idleAnimation = AnimationCreator.Create(1440, 0, 144, Texture.Height, 1);
+            jumpAnimation = AnimationCreator.Create(864, 0, 144, Texture.Height, 1);
+            slideAnimation = AnimationCreator.Create(1152, 0, 144, Texture.Height, 2);
             CurrentAnimation = idleAnimation;
         }
 

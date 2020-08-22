@@ -181,6 +181,13 @@
 /processorParam:Quality=Best
 /build:sounds/pickup.wav
 
+#begin ui/font.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:ui/font.spritefont
+
 #begin ui/gameover-screen.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -252,6 +259,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:ui/respawn-screen.png
+
+#begin ui/score-field.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:ui/score-field.png
 
 #begin ui/start-screen.png
 /importer:TextureImporter

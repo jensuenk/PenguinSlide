@@ -14,15 +14,17 @@ namespace PenguinSlide.GameState
 {
     internal class PlayState : State
     {
-        private readonly Background background;
-        private readonly Camera camera;
-        private readonly Control control;
         private readonly LevelManager levelManager;
-        private readonly Player player;
-        private readonly List<Button> buttons = new List<Button>();
-        private CollisionManager collisionManager;
         private Level.Level currentLevel;
+        private readonly Control control;
+        private readonly Camera camera;
+        private readonly Player player;
+        private readonly Score score;
+        private readonly Component scoreInterface;
+        private CollisionManager collisionManager;
+        private readonly Background background;
         private readonly Background respawnBackground;
+        private readonly List<Button> buttons = new List<Button>();
 
         public PlayState(GraphicsDevice graphicsDevice, ContentManager contentManager, PenguinSlide game) : base(
             graphicsDevice, contentManager, game)
@@ -32,6 +34,8 @@ namespace PenguinSlide.GameState
             currentLevel = levelManager.CurrentLevel;
             
             var playerTexture = contentManager.Load<Texture2D>("player/player-sprite");
+            var font = contentManager.Load<SpriteFont>("ui/font");
+            var scoreInterfaceTexture = contentManager.Load<Texture2D>("ui/score-field");
             var backgroundTexture = contentManager.Load<Texture2D>("level/game-background");
             var respawnBackgroundTexture = contentManager.Load<Texture2D>("ui/respawn-screen");
             var respawnButtonTexture = contentManager.Load<Texture2D>("ui/respawn-button-small");
@@ -45,7 +49,13 @@ namespace PenguinSlide.GameState
             var playerSpeed = new Vector2(7, 10);
             var playerCollisionRectangle =
                 new Rectangle((int) playerPosition.X, (int) playerPosition.Y, 144, playerTexture.Height);
-            player = new Player(playerTexture, playerCollisionRectangle, playerSpeed, (float) currentLevel.TileSize / 144, control);
+            player = new Player(playerTexture, playerCollisionRectangle, playerSpeed,
+                (float) currentLevel.TileSize / 144, control);
+            
+            score = new Score(font, new Vector2(140, 40));
+            score.Needed = currentLevel.CollectablesAmount;
+            scoreInterface = new Decoration(scoreInterfaceTexture, new Rectangle(30, 30, 
+                scoreInterfaceTexture.Width / 2, scoreInterfaceTexture.Height / 2));
 
             collisionManager = new CollisionManager(player, currentLevel);
             
@@ -79,9 +89,12 @@ namespace PenguinSlide.GameState
             {
                 enemy.Update(gameTime);
             }
+
+            score.Collected = player.Collectables.Count;
+                
             collisionManager.UpdateCollision();
             camera.Follow(player);
-            
+
             if (currentLevel.IsCompleted)
             {
                 SoundPlayer.EndSound.Play();
@@ -95,6 +108,7 @@ namespace PenguinSlide.GameState
                     levelManager.CurrentLevel = currentLevel;
                     player.Respawn(currentLevel.PlayerLocation);
                     collisionManager = new CollisionManager(player, currentLevel);
+                    score.Needed = currentLevel.CollectablesAmount;
                 }
             }
         }
@@ -103,18 +117,25 @@ namespace PenguinSlide.GameState
         {
             spriteBatch.Begin(transformMatrix: camera.Transform);
             
-            background.Draw(spriteBatch);
-            currentLevel.Draw(spriteBatch);
-            player.Draw(spriteBatch);
-            
             if (!player.IsAlive)
             {
                 Game.IsMouseVisible = true;
                 respawnBackground.Draw(spriteBatch);
                 foreach (var button in buttons)
                     button.Draw(spriteBatch);
+                spriteBatch.End();
+                return;
             }
-
+            
+            background.Draw(spriteBatch);
+            currentLevel.Draw(spriteBatch);
+            player.Draw(spriteBatch);
+            
+            spriteBatch.End();
+            
+            spriteBatch.Begin();
+            scoreInterface.Draw(spriteBatch);
+            score.Draw(spriteBatch);
             spriteBatch.End();
         }
 
