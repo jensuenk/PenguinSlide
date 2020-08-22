@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -45,11 +46,18 @@ namespace PenguinSlide
             SoundPlayer.ButtonSound = Content.Load<SoundEffect>("sounds/button");
             SoundPlayer.DieSound = Content.Load<SoundEffect>("sounds/die");
             SoundPlayer.EndSound = Content.Load<SoundEffect>("sounds/finish");
-            SoundPlayer.Music = Content.Load<Song>("sounds/music");
-            
-            MediaPlayer.Play(SoundPlayer.Music);
-            MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume -= 0.2f;
+            try
+            {
+                SoundPlayer.Music = Content.Load<Song>("sounds/music");
+
+                MediaPlayer.Play(SoundPlayer.Music);
+                MediaPlayer.IsRepeating = true;
+                MediaPlayer.Volume -= 0.2f;
+            }
+            catch (Exception)
+            {
+                // Media Player not installed
+            }
         }
 
         protected override void UnloadContent()
